@@ -23,11 +23,25 @@ import { RocketIcon, SparklesIcon } from 'glaze-icons/react';
 
 <RocketIcon size={40} />
 <SparklesIcon size={40} hue="pink" radius="round" title="New" />
+<HeartIcon size={48} color="#ff2d55" gloss={0.9} glyph={18} />
 ```
 
-Props: `size` (px, default 32), `hue` (red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose, ink),
-`radius` (`sharp` | `soft` | `round` | `circle` | number on a 32 grid), `title`
-(gives the icon an accessible name; without it the icon is decorative).
+Every option works as a React prop and as a `glaze()` option:
+
+| Option | Values | Default |
+| --- | --- | --- |
+| `size` | px | 32 |
+| `hue` | one of the 18 hues below | the icon's own |
+| `color` | any hex; light and dark shades are derived from it | none |
+| `radius` | `sharp`, `soft`, `round`, `circle`, or 0 to 16 | `soft` (8) |
+| `glyph` | glyph size on the 32 grid, 8 to 26 | 17 |
+| `gloss` | top light, 0 to 1 | 0.6 |
+| `rim` | glass line inside the edge, 0 to 1 | 0.7 |
+| `shadow` | glyph shadow, 0 to 1 | 0.6 |
+| `stroke` | line weight for outline glyphs, 1 to 3 | 2 |
+| `title` | accessible name; without it the icon is decorative | none |
+
+Hues: red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose and ink, using the Tailwind CSS v4 palette.
 
 ## Plain JS
 
@@ -46,10 +60,11 @@ a CSS background, or paste it into Figma.
 | Layer | Value |
 | --- | --- |
 | Fill | vertical gradient, hue 400 to 600 |
-| Edge | 2px band of hue 500 |
-| Highlight | 1px white at 20%, inset 2px |
-| Glyph | white, 50% of the tile, drop shadow 0 1px 1.6px black/35% |
-| Shadow (CSS) | `drop-shadow(0 6px 8px rgb(0 0 0/.12))` |
+| Gloss | white light from the top edge, gone by the middle |
+| Edge | hairline of black at 10% |
+| Rim | 1px glass line just inside the edge, brightest at the top |
+| Glyph | white, 17 of 32 units, short soft shadow |
+| Shadow (CSS) | `drop-shadow(0 6px 10px rgb(0 0 0/.12))` |
 
 ## Categories
 
