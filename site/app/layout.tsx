@@ -1,22 +1,12 @@
 import type { Metadata, Viewport } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
-import localFont from 'next/font/local';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/Toaster';
 import { themeScript } from '@/components/ThemeToggle';
 import { SITE } from '@/lib/icons';
 import './globals.css';
-
-const serif = localFont({
-  src: [
-    { path: '../node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2', style: 'normal', weight: '400' },
-    { path: '../node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2', style: 'italic', weight: '400' },
-  ],
-  variable: '--font-instrument',
-  display: 'swap',
-});
 
 const description = `${SITE.count} glossy app-tile icons in 18 colours. Recolour any icon, pick its corners, and copy it as SVG, React, Tailwind or plain JS. Free and open source under MIT.`;
 
@@ -27,7 +17,7 @@ export const metadata: Metadata = {
   applicationName: SITE.name,
   keywords: ['icons', 'svg icons', 'react icons', 'app icons', 'glossy icons', 'gradient icons', 'tailwind icons', 'open source icons', 'free icons'],
   alternates: { canonical: '/' },
-  openGraph: { type: 'website', siteName: SITE.name, url: '/', title: `${SITE.name}: glossy app icons for your interface`, description, images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Glazed Icons over a painted spring landscape' }] },
+  openGraph: { type: 'website', siteName: SITE.name, url: '/', title: `${SITE.name}: glossy app icons for your interface`, description, images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Glazed Icons over a painted spring meadow' }] },
   twitter: { card: 'summary_large_image', title: SITE.name, description, images: ['/og.png'] },
   icons: { icon: '/icon.svg', apple: '/apple-icon.png' },
 };
@@ -41,7 +31,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} ${serif.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
