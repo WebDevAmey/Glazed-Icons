@@ -1,0 +1,2358 @@
+{
+  "version": "0.1.0",
+  "hues": {
+    "red": [
+      "#f87171",
+      "#ef4444",
+      "#dc2626"
+    ],
+    "orange": [
+      "#fb923c",
+      "#f97316",
+      "#ea580c"
+    ],
+    "amber": [
+      "#fbbf24",
+      "#f59e0b",
+      "#d97706"
+    ],
+    "yellow": [
+      "#facc15",
+      "#eab308",
+      "#ca8a04"
+    ],
+    "lime": [
+      "#a3e635",
+      "#84cc16",
+      "#65a30d"
+    ],
+    "green": [
+      "#4ade80",
+      "#22c55e",
+      "#16a34a"
+    ],
+    "emerald": [
+      "#34d399",
+      "#10b981",
+      "#059669"
+    ],
+    "teal": [
+      "#2dd4bf",
+      "#14b8a6",
+      "#0d9488"
+    ],
+    "cyan": [
+      "#22d3ee",
+      "#06b6d4",
+      "#0891b2"
+    ],
+    "sky": [
+      "#38bdf8",
+      "#0ea5e9",
+      "#0284c7"
+    ],
+    "blue": [
+      "#60a5fa",
+      "#3b82f6",
+      "#2563eb"
+    ],
+    "indigo": [
+      "#818cf8",
+      "#6366f1",
+      "#4f46e5"
+    ],
+    "violet": [
+      "#a78bfa",
+      "#8b5cf6",
+      "#7c3aed"
+    ],
+    "purple": [
+      "#c084fc",
+      "#a855f7",
+      "#9333ea"
+    ],
+    "fuchsia": [
+      "#e879f9",
+      "#d946ef",
+      "#c026d3"
+    ],
+    "pink": [
+      "#f472b6",
+      "#ec4899",
+      "#db2777"
+    ],
+    "rose": [
+      "#fb7185",
+      "#f43f5e",
+      "#e11d48"
+    ],
+    "ink": [
+      "#525252",
+      "#262626",
+      "#171717"
+    ]
+  },
+  "icons": [
+    {
+      "name": "code",
+      "category": "Development",
+      "hue": "blue",
+      "tags": [
+        "html",
+        "markup",
+        "brackets",
+        "dev"
+      ],
+      "style": "stroke",
+      "component": "CodeIcon"
+    },
+    {
+      "name": "terminal",
+      "category": "Development",
+      "hue": "ink",
+      "tags": [
+        "console",
+        "shell",
+        "cli",
+        "command"
+      ],
+      "style": "stroke",
+      "component": "TerminalIcon"
+    },
+    {
+      "name": "git-branch",
+      "category": "Development",
+      "hue": "indigo",
+      "tags": [
+        "version",
+        "control",
+        "merge",
+        "fork"
+      ],
+      "style": "stroke",
+      "component": "GitBranchIcon"
+    },
+    {
+      "name": "git-pull-request",
+      "category": "Development",
+      "hue": "violet",
+      "tags": [
+        "pr",
+        "review",
+        "merge"
+      ],
+      "style": "stroke",
+      "component": "GitPullRequestIcon"
+    },
+    {
+      "name": "git-commit",
+      "category": "Development",
+      "hue": "sky",
+      "tags": [
+        "version",
+        "history"
+      ],
+      "style": "stroke",
+      "component": "GitCommitIcon"
+    },
+    {
+      "name": "bug",
+      "category": "Development",
+      "hue": "red",
+      "tags": [
+        "issue",
+        "error",
+        "debug"
+      ],
+      "style": "fill",
+      "component": "BugIcon"
+    },
+    {
+      "name": "braces",
+      "category": "Development",
+      "hue": "fuchsia",
+      "tags": [
+        "json",
+        "object",
+        "code"
+      ],
+      "style": "stroke",
+      "component": "BracesIcon"
+    },
+    {
+      "name": "api",
+      "category": "Development",
+      "hue": "teal",
+      "tags": [
+        "endpoint",
+        "rest"
+      ],
+      "style": "stroke",
+      "component": "ApiIcon"
+    },
+    {
+      "name": "webhook",
+      "category": "Development",
+      "hue": "pink",
+      "tags": [
+        "hook",
+        "event",
+        "trigger"
+      ],
+      "style": "stroke",
+      "component": "WebhookIcon"
+    },
+    {
+      "name": "package",
+      "category": "Development",
+      "hue": "amber",
+      "tags": [
+        "box",
+        "npm",
+        "module",
+        "bundle"
+      ],
+      "style": "stroke",
+      "component": "PackageIcon"
+    },
+    {
+      "name": "puzzle",
+      "category": "Development",
+      "hue": "purple",
+      "tags": [
+        "plugin",
+        "extension",
+        "addon"
+      ],
+      "style": "fill",
+      "component": "PuzzleIcon"
+    },
+    {
+      "name": "function",
+      "category": "Development",
+      "hue": "cyan",
+      "tags": [
+        "math",
+        "lambda",
+        "fx"
+      ],
+      "style": "fill",
+      "component": "FunctionIcon"
+    },
+    {
+      "name": "cube",
+      "category": "Development",
+      "hue": "cyan",
+      "tags": [
+        "3d",
+        "box",
+        "model",
+        "object"
+      ],
+      "style": "stroke",
+      "component": "CubeIcon"
+    },
+    {
+      "name": "stack",
+      "category": "Development",
+      "hue": "purple",
+      "tags": [
+        "layers",
+        "stack",
+        "pile"
+      ],
+      "style": "fill",
+      "component": "StackIcon"
+    },
+    {
+      "name": "binary-tree",
+      "category": "Development",
+      "hue": "emerald",
+      "tags": [
+        "structure",
+        "graph",
+        "hierarchy"
+      ],
+      "style": "fill",
+      "component": "BinaryTreeIcon"
+    },
+    {
+      "name": "sitemap",
+      "category": "Development",
+      "hue": "blue",
+      "tags": [
+        "tree",
+        "structure",
+        "navigation"
+      ],
+      "style": "fill",
+      "component": "SitemapIcon"
+    },
+    {
+      "name": "database",
+      "category": "Cloud & Data",
+      "hue": "orange",
+      "tags": [
+        "storage",
+        "sql",
+        "db"
+      ],
+      "style": "stroke",
+      "component": "DatabaseIcon"
+    },
+    {
+      "name": "server",
+      "category": "Cloud & Data",
+      "hue": "violet",
+      "tags": [
+        "rack",
+        "hosting",
+        "backend"
+      ],
+      "style": "stroke",
+      "component": "ServerIcon"
+    },
+    {
+      "name": "cloud",
+      "category": "Cloud & Data",
+      "hue": "sky",
+      "tags": [
+        "weather",
+        "storage",
+        "sky"
+      ],
+      "style": "fill",
+      "component": "CloudIcon"
+    },
+    {
+      "name": "cloud-upload",
+      "category": "Cloud & Data",
+      "hue": "green",
+      "tags": [
+        "upload",
+        "backup",
+        "sync"
+      ],
+      "style": "stroke",
+      "component": "CloudUploadIcon"
+    },
+    {
+      "name": "cloud-download",
+      "category": "Cloud & Data",
+      "hue": "blue",
+      "tags": [
+        "download",
+        "sync"
+      ],
+      "style": "stroke",
+      "component": "CloudDownloadIcon"
+    },
+    {
+      "name": "cloud-computing",
+      "category": "Cloud & Data",
+      "hue": "indigo",
+      "tags": [
+        "cloud",
+        "network",
+        "hosting"
+      ],
+      "style": "fill",
+      "component": "CloudComputingIcon"
+    },
+    {
+      "name": "container",
+      "category": "Cloud & Data",
+      "hue": "teal",
+      "tags": [
+        "docker",
+        "box",
+        "deploy"
+      ],
+      "style": "fill",
+      "component": "ContainerIcon"
+    },
+    {
+      "name": "cpu",
+      "category": "Cloud & Data",
+      "hue": "emerald",
+      "tags": [
+        "chip",
+        "processor",
+        "hardware"
+      ],
+      "style": "stroke",
+      "component": "CpuIcon"
+    },
+    {
+      "name": "plug",
+      "category": "Cloud & Data",
+      "hue": "blue",
+      "tags": [
+        "connect",
+        "integration",
+        "power"
+      ],
+      "style": "stroke",
+      "component": "PlugIcon"
+    },
+    {
+      "name": "refresh",
+      "category": "Cloud & Data",
+      "hue": "green",
+      "tags": [
+        "sync",
+        "reload",
+        "repeat"
+      ],
+      "style": "stroke",
+      "component": "RefreshIcon"
+    },
+    {
+      "name": "archive",
+      "category": "Cloud & Data",
+      "hue": "amber",
+      "tags": [
+        "box",
+        "store",
+        "backup"
+      ],
+      "style": "fill",
+      "component": "ArchiveIcon"
+    },
+    {
+      "name": "sparkles",
+      "category": "AI & Magic",
+      "hue": "violet",
+      "tags": [
+        "ai",
+        "magic",
+        "stars",
+        "new"
+      ],
+      "style": "stroke",
+      "component": "SparklesIcon"
+    },
+    {
+      "name": "wand",
+      "category": "AI & Magic",
+      "hue": "amber",
+      "tags": [
+        "magic",
+        "generate",
+        "ai"
+      ],
+      "style": "stroke",
+      "component": "WandIcon"
+    },
+    {
+      "name": "brain",
+      "category": "AI & Magic",
+      "hue": "fuchsia",
+      "tags": [
+        "ai",
+        "mind",
+        "think"
+      ],
+      "style": "stroke",
+      "component": "BrainIcon"
+    },
+    {
+      "name": "robot",
+      "category": "AI & Magic",
+      "hue": "sky",
+      "tags": [
+        "bot",
+        "ai",
+        "automation"
+      ],
+      "style": "stroke",
+      "component": "RobotIcon"
+    },
+    {
+      "name": "message-chatbot",
+      "category": "AI & Magic",
+      "hue": "blue",
+      "tags": [
+        "bot",
+        "chat",
+        "ai",
+        "assistant"
+      ],
+      "style": "fill",
+      "component": "MessageChatbotIcon"
+    },
+    {
+      "name": "atom",
+      "category": "AI & Magic",
+      "hue": "cyan",
+      "tags": [
+        "science",
+        "react",
+        "physics"
+      ],
+      "style": "fill",
+      "component": "AtomIcon"
+    },
+    {
+      "name": "bulb",
+      "category": "AI & Magic",
+      "hue": "yellow",
+      "tags": [
+        "idea",
+        "light",
+        "tip"
+      ],
+      "style": "fill",
+      "component": "BulbIcon"
+    },
+    {
+      "name": "bolt",
+      "category": "AI & Magic",
+      "hue": "pink",
+      "tags": [
+        "lightning",
+        "fast",
+        "power",
+        "energy"
+      ],
+      "style": "fill",
+      "component": "BoltIcon"
+    },
+    {
+      "name": "flame",
+      "category": "AI & Magic",
+      "hue": "orange",
+      "tags": [
+        "fire",
+        "hot",
+        "trending"
+      ],
+      "style": "fill",
+      "component": "FlameIcon"
+    },
+    {
+      "name": "rocket",
+      "category": "AI & Magic",
+      "hue": "red",
+      "tags": [
+        "launch",
+        "ship",
+        "startup"
+      ],
+      "style": "stroke",
+      "component": "RocketIcon"
+    },
+    {
+      "name": "shield-check",
+      "category": "Security",
+      "hue": "blue",
+      "tags": [
+        "secure",
+        "verified",
+        "safe"
+      ],
+      "style": "fill",
+      "component": "ShieldCheckIcon"
+    },
+    {
+      "name": "shield-lock",
+      "category": "Security",
+      "hue": "indigo",
+      "tags": [
+        "secure",
+        "private",
+        "protected"
+      ],
+      "style": "fill",
+      "component": "ShieldLockIcon"
+    },
+    {
+      "name": "lock",
+      "category": "Security",
+      "hue": "pink",
+      "tags": [
+        "password",
+        "secure",
+        "locked"
+      ],
+      "style": "fill",
+      "component": "LockIcon"
+    },
+    {
+      "name": "key",
+      "category": "Security",
+      "hue": "orange",
+      "tags": [
+        "password",
+        "access",
+        "auth"
+      ],
+      "style": "fill",
+      "component": "KeyIcon"
+    },
+    {
+      "name": "fingerprint",
+      "category": "Security",
+      "hue": "violet",
+      "tags": [
+        "biometric",
+        "touch",
+        "id"
+      ],
+      "style": "stroke",
+      "component": "FingerprintIcon"
+    },
+    {
+      "name": "face-id",
+      "category": "Security",
+      "hue": "teal",
+      "tags": [
+        "biometric",
+        "scan"
+      ],
+      "style": "stroke",
+      "component": "FaceIdIcon"
+    },
+    {
+      "name": "eye",
+      "category": "Security",
+      "hue": "blue",
+      "tags": [
+        "view",
+        "visible",
+        "show"
+      ],
+      "style": "fill",
+      "component": "EyeIcon"
+    },
+    {
+      "name": "eye-off",
+      "category": "Security",
+      "hue": "green",
+      "tags": [
+        "hidden",
+        "hide",
+        "invisible"
+      ],
+      "style": "stroke",
+      "component": "EyeOffIcon"
+    },
+    {
+      "name": "user-shield",
+      "category": "Security",
+      "hue": "emerald",
+      "tags": [
+        "admin",
+        "role",
+        "protected"
+      ],
+      "style": "stroke",
+      "component": "UserShieldIcon"
+    },
+    {
+      "name": "mail",
+      "category": "Communication",
+      "hue": "pink",
+      "tags": [
+        "email",
+        "envelope",
+        "inbox"
+      ],
+      "style": "fill",
+      "component": "MailIcon"
+    },
+    {
+      "name": "mail-opened",
+      "category": "Communication",
+      "hue": "rose",
+      "tags": [
+        "email",
+        "read"
+      ],
+      "style": "fill",
+      "component": "MailOpenedIcon"
+    },
+    {
+      "name": "send",
+      "category": "Communication",
+      "hue": "violet",
+      "tags": [
+        "paper",
+        "plane",
+        "share"
+      ],
+      "style": "stroke",
+      "component": "SendIcon"
+    },
+    {
+      "name": "inbox",
+      "category": "Communication",
+      "hue": "blue",
+      "tags": [
+        "tray",
+        "mail"
+      ],
+      "style": "stroke",
+      "component": "InboxIcon"
+    },
+    {
+      "name": "message",
+      "category": "Communication",
+      "hue": "indigo",
+      "tags": [
+        "chat",
+        "comment",
+        "bubble"
+      ],
+      "style": "fill",
+      "component": "MessageIcon"
+    },
+    {
+      "name": "message-circle",
+      "category": "Communication",
+      "hue": "green",
+      "tags": [
+        "chat",
+        "comment",
+        "bubble"
+      ],
+      "style": "fill",
+      "component": "MessageCircleIcon"
+    },
+    {
+      "name": "messages",
+      "category": "Communication",
+      "hue": "sky",
+      "tags": [
+        "chat",
+        "conversation",
+        "thread"
+      ],
+      "style": "stroke",
+      "component": "MessagesIcon"
+    },
+    {
+      "name": "phone",
+      "category": "Communication",
+      "hue": "emerald",
+      "tags": [
+        "call",
+        "telephone"
+      ],
+      "style": "fill",
+      "component": "PhoneIcon"
+    },
+    {
+      "name": "video",
+      "category": "Communication",
+      "hue": "blue",
+      "tags": [
+        "camera",
+        "call",
+        "meeting"
+      ],
+      "style": "fill",
+      "component": "VideoIcon"
+    },
+    {
+      "name": "microphone",
+      "category": "Communication",
+      "hue": "red",
+      "tags": [
+        "mic",
+        "voice",
+        "record"
+      ],
+      "style": "fill",
+      "component": "MicrophoneIcon"
+    },
+    {
+      "name": "at",
+      "category": "Communication",
+      "hue": "cyan",
+      "tags": [
+        "mention",
+        "email"
+      ],
+      "style": "stroke",
+      "component": "AtIcon"
+    },
+    {
+      "name": "share",
+      "category": "Communication",
+      "hue": "purple",
+      "tags": [
+        "social",
+        "network"
+      ],
+      "style": "stroke",
+      "component": "ShareIcon"
+    },
+    {
+      "name": "bell",
+      "category": "Time & Alerts",
+      "hue": "amber",
+      "tags": [
+        "notification",
+        "alert"
+      ],
+      "style": "fill",
+      "component": "BellIcon"
+    },
+    {
+      "name": "bell-ringing",
+      "category": "Time & Alerts",
+      "hue": "orange",
+      "tags": [
+        "notification",
+        "ring",
+        "alert"
+      ],
+      "style": "fill",
+      "component": "BellRingingIcon"
+    },
+    {
+      "name": "alarm",
+      "category": "Time & Alerts",
+      "hue": "red",
+      "tags": [
+        "clock",
+        "wake",
+        "timer"
+      ],
+      "style": "fill",
+      "component": "AlarmIcon"
+    },
+    {
+      "name": "clock",
+      "category": "Time & Alerts",
+      "hue": "purple",
+      "tags": [
+        "time",
+        "watch"
+      ],
+      "style": "fill",
+      "component": "ClockIcon"
+    },
+    {
+      "name": "hourglass",
+      "category": "Time & Alerts",
+      "hue": "cyan",
+      "tags": [
+        "wait",
+        "loading",
+        "timer"
+      ],
+      "style": "fill",
+      "component": "HourglassIcon"
+    },
+    {
+      "name": "calendar",
+      "category": "Time & Alerts",
+      "hue": "indigo",
+      "tags": [
+        "date",
+        "schedule",
+        "event"
+      ],
+      "style": "fill",
+      "component": "CalendarIcon"
+    },
+    {
+      "name": "calendar-event",
+      "category": "Time & Alerts",
+      "hue": "green",
+      "tags": [
+        "date",
+        "event",
+        "day"
+      ],
+      "style": "fill",
+      "component": "CalendarEventIcon"
+    },
+    {
+      "name": "alert-triangle",
+      "category": "Time & Alerts",
+      "hue": "amber",
+      "tags": [
+        "warning",
+        "caution"
+      ],
+      "style": "fill",
+      "component": "AlertTriangleIcon"
+    },
+    {
+      "name": "alert-circle",
+      "category": "Time & Alerts",
+      "hue": "red",
+      "tags": [
+        "error",
+        "warning"
+      ],
+      "style": "fill",
+      "component": "AlertCircleIcon"
+    },
+    {
+      "name": "info-circle",
+      "category": "Time & Alerts",
+      "hue": "blue",
+      "tags": [
+        "information",
+        "help"
+      ],
+      "style": "fill",
+      "component": "InfoCircleIcon"
+    },
+    {
+      "name": "circle-check",
+      "category": "Time & Alerts",
+      "hue": "emerald",
+      "tags": [
+        "success",
+        "done",
+        "ok",
+        "tick"
+      ],
+      "style": "fill",
+      "component": "CircleCheckIcon"
+    },
+    {
+      "name": "circle-x",
+      "category": "Time & Alerts",
+      "hue": "rose",
+      "tags": [
+        "close",
+        "cancel",
+        "error"
+      ],
+      "style": "fill",
+      "component": "CircleXIcon"
+    },
+    {
+      "name": "help-circle",
+      "category": "Time & Alerts",
+      "hue": "violet",
+      "tags": [
+        "question",
+        "faq",
+        "support"
+      ],
+      "style": "fill",
+      "component": "HelpCircleIcon"
+    },
+    {
+      "name": "chart-pie",
+      "category": "Analytics",
+      "hue": "green",
+      "tags": [
+        "pie",
+        "stats",
+        "report"
+      ],
+      "style": "fill",
+      "component": "ChartPieIcon"
+    },
+    {
+      "name": "chart-bar",
+      "category": "Analytics",
+      "hue": "red",
+      "tags": [
+        "bars",
+        "stats"
+      ],
+      "style": "stroke",
+      "component": "ChartBarIcon"
+    },
+    {
+      "name": "chart-line",
+      "category": "Analytics",
+      "hue": "indigo",
+      "tags": [
+        "trend",
+        "graph",
+        "stats"
+      ],
+      "style": "stroke",
+      "component": "ChartLineIcon"
+    },
+    {
+      "name": "chart-donut",
+      "category": "Analytics",
+      "hue": "purple",
+      "tags": [
+        "donut",
+        "stats",
+        "report"
+      ],
+      "style": "fill",
+      "component": "ChartDonutIcon"
+    },
+    {
+      "name": "chart-area",
+      "category": "Analytics",
+      "hue": "sky",
+      "tags": [
+        "area",
+        "graph"
+      ],
+      "style": "fill",
+      "component": "ChartAreaIcon"
+    },
+    {
+      "name": "chart-candle",
+      "category": "Analytics",
+      "hue": "emerald",
+      "tags": [
+        "stock",
+        "trading",
+        "finance"
+      ],
+      "style": "fill",
+      "component": "ChartCandleIcon"
+    },
+    {
+      "name": "trending-up",
+      "category": "Analytics",
+      "hue": "green",
+      "tags": [
+        "growth",
+        "increase"
+      ],
+      "style": "stroke",
+      "component": "TrendingUpIcon"
+    },
+    {
+      "name": "trending-down",
+      "category": "Analytics",
+      "hue": "rose",
+      "tags": [
+        "decline",
+        "decrease"
+      ],
+      "style": "stroke",
+      "component": "TrendingDownIcon"
+    },
+    {
+      "name": "gauge",
+      "category": "Analytics",
+      "hue": "orange",
+      "tags": [
+        "speed",
+        "meter",
+        "performance"
+      ],
+      "style": "fill",
+      "component": "GaugeIcon"
+    },
+    {
+      "name": "dashboard",
+      "category": "Analytics",
+      "hue": "blue",
+      "tags": [
+        "meter",
+        "speed",
+        "overview"
+      ],
+      "style": "fill",
+      "component": "DashboardIcon"
+    },
+    {
+      "name": "target",
+      "category": "Analytics",
+      "hue": "red",
+      "tags": [
+        "goal",
+        "aim",
+        "focus"
+      ],
+      "style": "stroke",
+      "component": "TargetIcon"
+    },
+    {
+      "name": "presentation",
+      "category": "Analytics",
+      "hue": "amber",
+      "tags": [
+        "slides",
+        "board",
+        "pitch"
+      ],
+      "style": "fill",
+      "component": "PresentationIcon"
+    },
+    {
+      "name": "photo",
+      "category": "Media",
+      "hue": "teal",
+      "tags": [
+        "image",
+        "picture",
+        "gallery"
+      ],
+      "style": "fill",
+      "component": "PhotoIcon"
+    },
+    {
+      "name": "camera",
+      "category": "Media",
+      "hue": "ink",
+      "tags": [
+        "photo",
+        "capture"
+      ],
+      "style": "fill",
+      "component": "CameraIcon"
+    },
+    {
+      "name": "player-play",
+      "category": "Media",
+      "hue": "violet",
+      "tags": [
+        "play",
+        "start",
+        "video"
+      ],
+      "style": "fill",
+      "component": "PlayerPlayIcon"
+    },
+    {
+      "name": "player-pause",
+      "category": "Media",
+      "hue": "indigo",
+      "tags": [
+        "pause",
+        "stop"
+      ],
+      "style": "fill",
+      "component": "PlayerPauseIcon"
+    },
+    {
+      "name": "player-skip-forward",
+      "category": "Media",
+      "hue": "blue",
+      "tags": [
+        "next",
+        "skip"
+      ],
+      "style": "fill",
+      "component": "PlayerSkipForwardIcon"
+    },
+    {
+      "name": "music",
+      "category": "Media",
+      "hue": "pink",
+      "tags": [
+        "note",
+        "song",
+        "audio"
+      ],
+      "style": "stroke",
+      "component": "MusicIcon"
+    },
+    {
+      "name": "headphones",
+      "category": "Media",
+      "hue": "purple",
+      "tags": [
+        "audio",
+        "listen",
+        "sound"
+      ],
+      "style": "fill",
+      "component": "HeadphonesIcon"
+    },
+    {
+      "name": "volume",
+      "category": "Media",
+      "hue": "sky",
+      "tags": [
+        "sound",
+        "speaker",
+        "audio"
+      ],
+      "style": "stroke",
+      "component": "VolumeIcon"
+    },
+    {
+      "name": "waveform",
+      "category": "Media",
+      "hue": "emerald",
+      "tags": [
+        "sound",
+        "audio",
+        "signal"
+      ],
+      "style": "stroke",
+      "component": "WaveformIcon"
+    },
+    {
+      "name": "movie",
+      "category": "Media",
+      "hue": "red",
+      "tags": [
+        "film",
+        "cinema",
+        "video"
+      ],
+      "style": "stroke",
+      "component": "MovieIcon"
+    },
+    {
+      "name": "device-gamepad",
+      "category": "Media",
+      "hue": "orange",
+      "tags": [
+        "game",
+        "controller",
+        "play"
+      ],
+      "style": "fill",
+      "component": "DeviceGamepadIcon"
+    },
+    {
+      "name": "disc",
+      "category": "Media",
+      "hue": "fuchsia",
+      "tags": [
+        "cd",
+        "vinyl",
+        "record"
+      ],
+      "style": "fill",
+      "component": "DiscIcon"
+    },
+    {
+      "name": "file",
+      "category": "Files",
+      "hue": "blue",
+      "tags": [
+        "document",
+        "page"
+      ],
+      "style": "fill",
+      "component": "FileIcon"
+    },
+    {
+      "name": "file-text",
+      "category": "Files",
+      "hue": "indigo",
+      "tags": [
+        "document",
+        "text",
+        "page"
+      ],
+      "style": "fill",
+      "component": "FileTextIcon"
+    },
+    {
+      "name": "file-code",
+      "category": "Files",
+      "hue": "cyan",
+      "tags": [
+        "code",
+        "document"
+      ],
+      "style": "fill",
+      "component": "FileCodeIcon"
+    },
+    {
+      "name": "file-check",
+      "category": "Files",
+      "hue": "emerald",
+      "tags": [
+        "approved",
+        "document"
+      ],
+      "style": "fill",
+      "component": "FileCheckIcon"
+    },
+    {
+      "name": "file-analytics",
+      "category": "Files",
+      "hue": "green",
+      "tags": [
+        "report",
+        "document",
+        "chart"
+      ],
+      "style": "fill",
+      "component": "FileAnalyticsIcon"
+    },
+    {
+      "name": "file-invoice",
+      "category": "Files",
+      "hue": "amber",
+      "tags": [
+        "bill",
+        "receipt"
+      ],
+      "style": "fill",
+      "component": "FileInvoiceIcon"
+    },
+    {
+      "name": "folder",
+      "category": "Files",
+      "hue": "sky",
+      "tags": [
+        "directory",
+        "files"
+      ],
+      "style": "fill",
+      "component": "FolderIcon"
+    },
+    {
+      "name": "folders",
+      "category": "Files",
+      "hue": "amber",
+      "tags": [
+        "directories",
+        "files"
+      ],
+      "style": "fill",
+      "component": "FoldersIcon"
+    },
+    {
+      "name": "clipboard-check",
+      "category": "Files",
+      "hue": "teal",
+      "tags": [
+        "task",
+        "done",
+        "list"
+      ],
+      "style": "fill",
+      "component": "ClipboardCheckIcon"
+    },
+    {
+      "name": "book",
+      "category": "Files",
+      "hue": "orange",
+      "tags": [
+        "read",
+        "docs",
+        "guide"
+      ],
+      "style": "fill",
+      "component": "BookIcon"
+    },
+    {
+      "name": "bookmark",
+      "category": "Files",
+      "hue": "purple",
+      "tags": [
+        "save",
+        "favorite"
+      ],
+      "style": "fill",
+      "component": "BookmarkIcon"
+    },
+    {
+      "name": "copy",
+      "category": "Files",
+      "hue": "violet",
+      "tags": [
+        "duplicate",
+        "clone"
+      ],
+      "style": "stroke",
+      "component": "CopyIcon"
+    },
+    {
+      "name": "trash",
+      "category": "Files",
+      "hue": "red",
+      "tags": [
+        "delete",
+        "remove",
+        "bin"
+      ],
+      "style": "fill",
+      "component": "TrashIcon"
+    },
+    {
+      "name": "palette",
+      "category": "Design",
+      "hue": "pink",
+      "tags": [
+        "color",
+        "paint",
+        "theme"
+      ],
+      "style": "fill",
+      "component": "PaletteIcon"
+    },
+    {
+      "name": "brush",
+      "category": "Design",
+      "hue": "orange",
+      "tags": [
+        "paint",
+        "draw"
+      ],
+      "style": "stroke",
+      "component": "BrushIcon"
+    },
+    {
+      "name": "pencil",
+      "category": "Design",
+      "hue": "green",
+      "tags": [
+        "edit",
+        "write"
+      ],
+      "style": "stroke",
+      "component": "PencilIcon"
+    },
+    {
+      "name": "ballpen",
+      "category": "Design",
+      "hue": "blue",
+      "tags": [
+        "pen",
+        "write",
+        "sign"
+      ],
+      "style": "fill",
+      "component": "BallpenIcon"
+    },
+    {
+      "name": "crop",
+      "category": "Design",
+      "hue": "blue",
+      "tags": [
+        "cut",
+        "resize",
+        "image"
+      ],
+      "style": "stroke",
+      "component": "CropIcon"
+    },
+    {
+      "name": "artboard",
+      "category": "Design",
+      "hue": "indigo",
+      "tags": [
+        "canvas",
+        "frame"
+      ],
+      "style": "fill",
+      "component": "ArtboardIcon"
+    },
+    {
+      "name": "layout-grid",
+      "category": "Design",
+      "hue": "purple",
+      "tags": [
+        "grid",
+        "tiles",
+        "apps"
+      ],
+      "style": "fill",
+      "component": "LayoutGridIcon"
+    },
+    {
+      "name": "layout-dashboard",
+      "category": "Design",
+      "hue": "teal",
+      "tags": [
+        "panels",
+        "layout"
+      ],
+      "style": "fill",
+      "component": "LayoutDashboardIcon"
+    },
+    {
+      "name": "layout-sidebar",
+      "category": "Design",
+      "hue": "sky",
+      "tags": [
+        "sidebar",
+        "panel"
+      ],
+      "style": "fill",
+      "component": "LayoutSidebarIcon"
+    },
+    {
+      "name": "color-swatch",
+      "category": "Design",
+      "hue": "fuchsia",
+      "tags": [
+        "palette",
+        "colors"
+      ],
+      "style": "stroke",
+      "component": "ColorSwatchIcon"
+    },
+    {
+      "name": "vector",
+      "category": "Design",
+      "hue": "violet",
+      "tags": [
+        "bezier",
+        "path"
+      ],
+      "style": "stroke",
+      "component": "VectorIcon"
+    },
+    {
+      "name": "typography",
+      "category": "Design",
+      "hue": "ink",
+      "tags": [
+        "text",
+        "font",
+        "letter"
+      ],
+      "style": "stroke",
+      "component": "TypographyIcon"
+    },
+    {
+      "name": "focus",
+      "category": "Design",
+      "hue": "purple",
+      "tags": [
+        "target",
+        "center"
+      ],
+      "style": "stroke",
+      "component": "FocusIcon"
+    },
+    {
+      "name": "home",
+      "category": "Navigation",
+      "hue": "blue",
+      "tags": [
+        "house",
+        "main",
+        "start"
+      ],
+      "style": "fill",
+      "component": "HomeIcon"
+    },
+    {
+      "name": "search",
+      "category": "Navigation",
+      "hue": "indigo",
+      "tags": [
+        "find",
+        "magnify"
+      ],
+      "style": "stroke",
+      "component": "SearchIcon"
+    },
+    {
+      "name": "compass",
+      "category": "Navigation",
+      "hue": "rose",
+      "tags": [
+        "direction",
+        "explore"
+      ],
+      "style": "fill",
+      "component": "CompassIcon"
+    },
+    {
+      "name": "map",
+      "category": "Navigation",
+      "hue": "violet",
+      "tags": [
+        "location",
+        "directions"
+      ],
+      "style": "stroke",
+      "component": "MapIcon"
+    },
+    {
+      "name": "map-pin",
+      "category": "Navigation",
+      "hue": "red",
+      "tags": [
+        "location",
+        "place",
+        "marker"
+      ],
+      "style": "fill",
+      "component": "MapPinIcon"
+    },
+    {
+      "name": "navigation",
+      "category": "Navigation",
+      "hue": "sky",
+      "tags": [
+        "arrow",
+        "location",
+        "gps"
+      ],
+      "style": "fill",
+      "component": "NavigationIcon"
+    },
+    {
+      "name": "world",
+      "category": "Navigation",
+      "hue": "blue",
+      "tags": [
+        "globe",
+        "earth",
+        "language"
+      ],
+      "style": "stroke",
+      "component": "WorldIcon"
+    },
+    {
+      "name": "link",
+      "category": "Navigation",
+      "hue": "pink",
+      "tags": [
+        "url",
+        "chain"
+      ],
+      "style": "stroke",
+      "component": "LinkIcon"
+    },
+    {
+      "name": "external-link",
+      "category": "Navigation",
+      "hue": "ink",
+      "tags": [
+        "open",
+        "new",
+        "window"
+      ],
+      "style": "stroke",
+      "component": "ExternalLinkIcon"
+    },
+    {
+      "name": "upload",
+      "category": "Navigation",
+      "hue": "sky",
+      "tags": [
+        "arrow",
+        "up",
+        "send"
+      ],
+      "style": "stroke",
+      "component": "UploadIcon"
+    },
+    {
+      "name": "download",
+      "category": "Navigation",
+      "hue": "orange",
+      "tags": [
+        "arrow",
+        "down",
+        "save"
+      ],
+      "style": "stroke",
+      "component": "DownloadIcon"
+    },
+    {
+      "name": "arrow-up-right",
+      "category": "Navigation",
+      "hue": "green",
+      "tags": [
+        "diagonal",
+        "go"
+      ],
+      "style": "stroke",
+      "component": "ArrowUpRightIcon"
+    },
+    {
+      "name": "maximize",
+      "category": "Navigation",
+      "hue": "violet",
+      "tags": [
+        "fullscreen",
+        "expand"
+      ],
+      "style": "stroke",
+      "component": "MaximizeIcon"
+    },
+    {
+      "name": "arrows-diagonal",
+      "category": "Navigation",
+      "hue": "purple",
+      "tags": [
+        "expand",
+        "resize"
+      ],
+      "style": "stroke",
+      "component": "ArrowsDiagonalIcon"
+    },
+    {
+      "name": "settings",
+      "category": "Interface",
+      "hue": "blue",
+      "tags": [
+        "gear",
+        "preferences",
+        "cog"
+      ],
+      "style": "fill",
+      "component": "SettingsIcon"
+    },
+    {
+      "name": "adjustments",
+      "category": "Interface",
+      "hue": "cyan",
+      "tags": [
+        "sliders",
+        "controls",
+        "tune"
+      ],
+      "style": "fill",
+      "component": "AdjustmentsIcon"
+    },
+    {
+      "name": "filter",
+      "category": "Interface",
+      "hue": "indigo",
+      "tags": [
+        "funnel",
+        "sort"
+      ],
+      "style": "fill",
+      "component": "FilterIcon"
+    },
+    {
+      "name": "toggle-right",
+      "category": "Interface",
+      "hue": "pink",
+      "tags": [
+        "switch",
+        "on"
+      ],
+      "style": "fill",
+      "component": "ToggleRightIcon"
+    },
+    {
+      "name": "apps",
+      "category": "Interface",
+      "hue": "orange",
+      "tags": [
+        "grid",
+        "menu",
+        "launcher"
+      ],
+      "style": "fill",
+      "component": "AppsIcon"
+    },
+    {
+      "name": "menu",
+      "category": "Interface",
+      "hue": "ink",
+      "tags": [
+        "hamburger",
+        "lines",
+        "nav"
+      ],
+      "style": "stroke",
+      "component": "MenuIcon"
+    },
+    {
+      "name": "dots",
+      "category": "Interface",
+      "hue": "ink",
+      "tags": [
+        "more",
+        "ellipsis",
+        "options"
+      ],
+      "style": "stroke",
+      "component": "DotsIcon"
+    },
+    {
+      "name": "plus",
+      "category": "Interface",
+      "hue": "green",
+      "tags": [
+        "add",
+        "new",
+        "create"
+      ],
+      "style": "stroke",
+      "component": "PlusIcon"
+    },
+    {
+      "name": "check",
+      "category": "Interface",
+      "hue": "emerald",
+      "tags": [
+        "tick",
+        "done",
+        "ok"
+      ],
+      "style": "stroke",
+      "component": "CheckIcon"
+    },
+    {
+      "name": "x",
+      "category": "Interface",
+      "hue": "red",
+      "tags": [
+        "close",
+        "cancel",
+        "remove"
+      ],
+      "style": "stroke",
+      "component": "XIcon"
+    },
+    {
+      "name": "circle-plus",
+      "category": "Interface",
+      "hue": "blue",
+      "tags": [
+        "add",
+        "new"
+      ],
+      "style": "fill",
+      "component": "CirclePlusIcon"
+    },
+    {
+      "name": "tag",
+      "category": "Interface",
+      "hue": "amber",
+      "tags": [
+        "label",
+        "price"
+      ],
+      "style": "fill",
+      "component": "TagIcon"
+    },
+    {
+      "name": "star",
+      "category": "Interface",
+      "hue": "amber",
+      "tags": [
+        "favorite",
+        "rating"
+      ],
+      "style": "fill",
+      "component": "StarIcon"
+    },
+    {
+      "name": "heart",
+      "category": "Interface",
+      "hue": "rose",
+      "tags": [
+        "like",
+        "love",
+        "favorite"
+      ],
+      "style": "fill",
+      "component": "HeartIcon"
+    },
+    {
+      "name": "thumb-up",
+      "category": "Interface",
+      "hue": "blue",
+      "tags": [
+        "like",
+        "approve"
+      ],
+      "style": "fill",
+      "component": "ThumbUpIcon"
+    },
+    {
+      "name": "pin",
+      "category": "Interface",
+      "hue": "red",
+      "tags": [
+        "pinned",
+        "keep"
+      ],
+      "style": "fill",
+      "component": "PinIcon"
+    },
+    {
+      "name": "shopping-cart",
+      "category": "Commerce",
+      "hue": "blue",
+      "tags": [
+        "cart",
+        "buy",
+        "store"
+      ],
+      "style": "fill",
+      "component": "ShoppingCartIcon"
+    },
+    {
+      "name": "basket",
+      "category": "Commerce",
+      "hue": "orange",
+      "tags": [
+        "shop",
+        "buy"
+      ],
+      "style": "fill",
+      "component": "BasketIcon"
+    },
+    {
+      "name": "credit-card",
+      "category": "Commerce",
+      "hue": "indigo",
+      "tags": [
+        "payment",
+        "card"
+      ],
+      "style": "fill",
+      "component": "CreditCardIcon"
+    },
+    {
+      "name": "wallet",
+      "category": "Commerce",
+      "hue": "amber",
+      "tags": [
+        "money",
+        "payment"
+      ],
+      "style": "stroke",
+      "component": "WalletIcon"
+    },
+    {
+      "name": "cash",
+      "category": "Commerce",
+      "hue": "green",
+      "tags": [
+        "money",
+        "bill"
+      ],
+      "style": "fill",
+      "component": "CashIcon"
+    },
+    {
+      "name": "coin",
+      "category": "Commerce",
+      "hue": "yellow",
+      "tags": [
+        "money",
+        "currency"
+      ],
+      "style": "fill",
+      "component": "CoinIcon"
+    },
+    {
+      "name": "receipt",
+      "category": "Commerce",
+      "hue": "teal",
+      "tags": [
+        "invoice",
+        "bill"
+      ],
+      "style": "fill",
+      "component": "ReceiptIcon"
+    },
+    {
+      "name": "gift",
+      "category": "Commerce",
+      "hue": "pink",
+      "tags": [
+        "present",
+        "reward"
+      ],
+      "style": "fill",
+      "component": "GiftIcon"
+    },
+    {
+      "name": "discount",
+      "category": "Commerce",
+      "hue": "rose",
+      "tags": [
+        "sale",
+        "percent",
+        "offer"
+      ],
+      "style": "fill",
+      "component": "DiscountIcon"
+    },
+    {
+      "name": "truck",
+      "category": "Commerce",
+      "hue": "sky",
+      "tags": [
+        "delivery",
+        "shipping"
+      ],
+      "style": "fill",
+      "component": "TruckIcon"
+    },
+    {
+      "name": "building-store",
+      "category": "Commerce",
+      "hue": "violet",
+      "tags": [
+        "shop",
+        "storefront"
+      ],
+      "style": "stroke",
+      "component": "BuildingStoreIcon"
+    },
+    {
+      "name": "trophy",
+      "category": "Commerce",
+      "hue": "amber",
+      "tags": [
+        "winner",
+        "award",
+        "prize"
+      ],
+      "style": "fill",
+      "component": "TrophyIcon"
+    },
+    {
+      "name": "award",
+      "category": "Commerce",
+      "hue": "orange",
+      "tags": [
+        "medal",
+        "badge"
+      ],
+      "style": "fill",
+      "component": "AwardIcon"
+    },
+    {
+      "name": "sun",
+      "category": "Nature",
+      "hue": "amber",
+      "tags": [
+        "weather",
+        "light",
+        "day"
+      ],
+      "style": "fill",
+      "component": "SunIcon"
+    },
+    {
+      "name": "moon",
+      "category": "Nature",
+      "hue": "indigo",
+      "tags": [
+        "night",
+        "dark",
+        "mode"
+      ],
+      "style": "fill",
+      "component": "MoonIcon"
+    },
+    {
+      "name": "cloud-rain",
+      "category": "Nature",
+      "hue": "sky",
+      "tags": [
+        "weather",
+        "rain"
+      ],
+      "style": "stroke",
+      "component": "CloudRainIcon"
+    },
+    {
+      "name": "droplet",
+      "category": "Nature",
+      "hue": "cyan",
+      "tags": [
+        "water",
+        "drop",
+        "liquid"
+      ],
+      "style": "fill",
+      "component": "DropletIcon"
+    },
+    {
+      "name": "leaf",
+      "category": "Nature",
+      "hue": "green",
+      "tags": [
+        "eco",
+        "plant",
+        "nature"
+      ],
+      "style": "stroke",
+      "component": "LeafIcon"
+    },
+    {
+      "name": "seedling",
+      "category": "Nature",
+      "hue": "lime",
+      "tags": [
+        "grow",
+        "plant",
+        "sprout"
+      ],
+      "style": "fill",
+      "component": "SeedlingIcon"
+    },
+    {
+      "name": "flower",
+      "category": "Nature",
+      "hue": "pink",
+      "tags": [
+        "bloom",
+        "plant"
+      ],
+      "style": "fill",
+      "component": "FlowerIcon"
+    },
+    {
+      "name": "mountain",
+      "category": "Nature",
+      "hue": "emerald",
+      "tags": [
+        "landscape",
+        "outdoor"
+      ],
+      "style": "fill",
+      "component": "MountainIcon"
+    },
+    {
+      "name": "wind",
+      "category": "Nature",
+      "hue": "teal",
+      "tags": [
+        "air",
+        "weather",
+        "breeze"
+      ],
+      "style": "stroke",
+      "component": "WindIcon"
+    },
+    {
+      "name": "snowflake",
+      "category": "Nature",
+      "hue": "sky",
+      "tags": [
+        "cold",
+        "winter"
+      ],
+      "style": "stroke",
+      "component": "SnowflakeIcon"
+    },
+    {
+      "name": "paw",
+      "category": "Nature",
+      "hue": "orange",
+      "tags": [
+        "pet",
+        "animal",
+        "dog",
+        "cat"
+      ],
+      "style": "fill",
+      "component": "PawIcon"
+    },
+    {
+      "name": "butterfly",
+      "category": "Nature",
+      "hue": "fuchsia",
+      "tags": [
+        "insect",
+        "nature"
+      ],
+      "style": "fill",
+      "component": "ButterflyIcon"
+    },
+    {
+      "name": "user",
+      "category": "People",
+      "hue": "blue",
+      "tags": [
+        "person",
+        "profile",
+        "account"
+      ],
+      "style": "fill",
+      "component": "UserIcon"
+    },
+    {
+      "name": "users",
+      "category": "People",
+      "hue": "indigo",
+      "tags": [
+        "team",
+        "group",
+        "people"
+      ],
+      "style": "stroke",
+      "component": "UsersIcon"
+    },
+    {
+      "name": "user-plus",
+      "category": "People",
+      "hue": "green",
+      "tags": [
+        "invite",
+        "add",
+        "member"
+      ],
+      "style": "stroke",
+      "component": "UserPlusIcon"
+    },
+    {
+      "name": "user-circle",
+      "category": "People",
+      "hue": "purple",
+      "tags": [
+        "avatar",
+        "account"
+      ],
+      "style": "stroke",
+      "component": "UserCircleIcon"
+    },
+    {
+      "name": "mood-smile",
+      "category": "People",
+      "hue": "amber",
+      "tags": [
+        "happy",
+        "face",
+        "emoji"
+      ],
+      "style": "fill",
+      "component": "MoodSmileIcon"
+    },
+    {
+      "name": "mood-happy",
+      "category": "People",
+      "hue": "yellow",
+      "tags": [
+        "happy",
+        "face",
+        "emoji"
+      ],
+      "style": "fill",
+      "component": "MoodHappyIcon"
+    },
+    {
+      "name": "confetti",
+      "category": "People",
+      "hue": "pink",
+      "tags": [
+        "party",
+        "celebrate"
+      ],
+      "style": "fill",
+      "component": "ConfettiIcon"
+    },
+    {
+      "name": "device-desktop",
+      "category": "Devices",
+      "hue": "blue",
+      "tags": [
+        "computer",
+        "monitor",
+        "screen"
+      ],
+      "style": "fill",
+      "component": "DeviceDesktopIcon"
+    },
+    {
+      "name": "device-laptop",
+      "category": "Devices",
+      "hue": "ink",
+      "tags": [
+        "computer",
+        "notebook"
+      ],
+      "style": "stroke",
+      "component": "DeviceLaptopIcon"
+    },
+    {
+      "name": "device-mobile",
+      "category": "Devices",
+      "hue": "indigo",
+      "tags": [
+        "phone",
+        "smartphone"
+      ],
+      "style": "fill",
+      "component": "DeviceMobileIcon"
+    },
+    {
+      "name": "device-tablet",
+      "category": "Devices",
+      "hue": "purple",
+      "tags": [
+        "ipad",
+        "tablet"
+      ],
+      "style": "fill",
+      "component": "DeviceTabletIcon"
+    },
+    {
+      "name": "device-watch",
+      "category": "Devices",
+      "hue": "rose",
+      "tags": [
+        "watch",
+        "wearable"
+      ],
+      "style": "fill",
+      "component": "DeviceWatchIcon"
+    },
+    {
+      "name": "keyboard",
+      "category": "Devices",
+      "hue": "ink",
+      "tags": [
+        "type",
+        "keys"
+      ],
+      "style": "fill",
+      "component": "KeyboardIcon"
+    },
+    {
+      "name": "mouse",
+      "category": "Devices",
+      "hue": "sky",
+      "tags": [
+        "pointer",
+        "click"
+      ],
+      "style": "fill",
+      "component": "MouseIcon"
+    },
+    {
+      "name": "battery",
+      "category": "Devices",
+      "hue": "green",
+      "tags": [
+        "power",
+        "charge"
+      ],
+      "style": "fill",
+      "component": "BatteryIcon"
+    },
+    {
+      "name": "wifi",
+      "category": "Devices",
+      "hue": "blue",
+      "tags": [
+        "wireless",
+        "network",
+        "internet"
+      ],
+      "style": "stroke",
+      "component": "WifiIcon"
+    },
+    {
+      "name": "bluetooth",
+      "category": "Devices",
+      "hue": "indigo",
+      "tags": [
+        "wireless",
+        "pair"
+      ],
+      "style": "stroke",
+      "component": "BluetoothIcon"
+    },
+    {
+      "name": "printer",
+      "category": "Devices",
+      "hue": "teal",
+      "tags": [
+        "print",
+        "paper"
+      ],
+      "style": "stroke",
+      "component": "PrinterIcon"
+    }
+  ]
+}
