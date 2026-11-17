@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="footer-card">
-          <div className="art-strip" aria-hidden="true"><ArtImage name="lavender" sizes="(max-width: 1240px) 100vw, 1240px" alt="" /></div>
+          <div className="art-strip" aria-hidden="true"><ArtImage name="pagoda" sizes="(max-width: 1240px) 100vw, 1240px" alt="" /></div>
           <div className="footer-top">
             <div className="footer-cta">
               <h2 className="h2">Free to use. Free to fork.</h2>
