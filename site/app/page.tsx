@@ -47,7 +47,7 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <section className="hero" aria-labelledby="hero-title">
-        <ArtImage name="fuji" sizes="100vw" priority alt="" />
+        <ArtImage name="pagoda" sizes="100vw" priority alt="" />
         <div className="hero-copy">
           <Link href="/docs/" className="badge" data-enter="1">
             <Tile icon={icon('sparkles')} hue="violet" size={22} />
