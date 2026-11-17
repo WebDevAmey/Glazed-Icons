@@ -247,7 +247,7 @@ button { font: inherit; color: inherit; }
 
 /* ---------- hero: one painting, one message ---------- */
 .hero { position: relative; margin-top: -60px; min-height: min(100svh, 900px); display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 150px 24px 36px; overflow: hidden; isolation: isolate; text-align: center; }
-.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; z-index: -2; }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 85% 55%; z-index: -2; }
 .hero::before {
   content: ''; position: absolute; inset: 0; z-index: -1;
   background:
@@ -277,7 +277,7 @@ button { font: inherit; color: inherit; }
 
 @media (max-width: 760px) {
   .hero { min-height: 100svh; padding: 120px 16px 24px; }
-  .hero > img { object-position: 30% 50%; }
+  .hero > img { object-position: 62% 50%; }
   .hero::before { background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 92%, transparent) 0%, color-mix(in srgb, var(--paper) 75%, transparent) 42%, transparent 62%); }
 }
 
@@ -403,7 +403,7 @@ button { font: inherit; color: inherit; }
 .footer { padding: 72px 0 14px; }
 .footer-card { position: relative; overflow: hidden; isolation: isolate; border-radius: 28px; background: var(--night); color: #eef0fb; }
 .footer-card .art-strip { position: absolute; left: 0; right: 0; bottom: 0; height: 52%; z-index: -1; -webkit-mask: linear-gradient(180deg, transparent, #000 45%); mask: linear-gradient(180deg, transparent, #000 45%); }
-.footer-card .art-strip img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 62%; }
+.footer-card .art-strip img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 64%; }
 .footer-card::before { content: ''; position: absolute; inset: 0; z-index: -2; background: radial-gradient(60% 50% at 85% 10%, rgb(233 85 143 / 0.22), transparent 70%), radial-gradient(50% 50% at 10% 0%, rgb(120 110 255 / 0.18), transparent 70%); }
 .footer-top { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 48px; padding: 64px 56px 40px; }
 .footer-cta { display: flex; flex-direction: column; gap: 20px; max-width: 460px; }
