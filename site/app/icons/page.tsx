@@ -14,11 +14,11 @@ export default function IconsPage() {
   return (
     <div className="container">
       <div className="art page-banner">
-        <ArtImage name="meadow" sizes="(max-width: 1240px) 100vw, 1240px" priority style={{ objectPosition: '20% 45%' }} />
+        <ArtImage name="crystal" sizes="(max-width: 1240px) 100vw, 1240px" priority style={{ objectPosition: '50% 55%' }} />
         <h1 className="display">All {SITE.count} icons</h1>
-        <p className="lede">Search by name, tag, category or colour. Set a colour and corners, then open any icon to copy or download it.</p>
+        <p className="lede">Search by name, tag or colour, or filter by category. Open any icon to customise it.</p>
       </div>
-      <Suspense fallback={<div className="panel" style={{ minHeight: 600 }} />}>
+      <Suspense fallback={<div style={{ minHeight: 600 }} />}>
         <Browser />
       </Suspense>
     </div>
