@@ -1,6 +1,6 @@
 import type { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from 'react';
-import type { GlazeHue, GlazeRadius } from './index';
-export interface GlazeIconProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'title'> { size?: number; hue?: GlazeHue; radius?: GlazeRadius; title?: string }
+import type { GlazeOptions } from './index';
+export interface GlazeIconProps extends Omit<HTMLAttributes<HTMLSpanElement>, 'title' | 'color'>, Omit<GlazeOptions, 'title'> { title?: string }
 type C = ForwardRefExoticComponent<GlazeIconProps & RefAttributes<HTMLSpanElement>>;
 export declare const CodeIcon: C;
 export declare const TerminalIcon: C;
