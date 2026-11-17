@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { CATEGORIES, HUE_NAMES, icon, SITE } from '@/lib/icons';
 import { Dock } from '@/components/Dock';
-import { Lens } from '@/components/Lens';
+import { ArtImage } from '@/components/Art';
+import { HeroSide } from '@/components/HeroSide';
 import { InstallButton } from '@/components/InstallButton';
 import { Playground } from '@/components/Playground';
 import { Anatomy } from '@/components/Anatomy';
@@ -26,6 +27,10 @@ const FAQ = [
   ['Can I request an icon?', 'Open an issue on GitHub with the name and what it is for, or add a line to src/catalog.py and send a pull request.'],
 ];
 
+const Arrow = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+);
+
 export default function Home() {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -43,32 +48,57 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <section className="hero" aria-labelledby="hero-title">
-        <div className="container hero-copy">
-          <h1 id="hero-title" className="display" data-enter="1">App icon polish for every icon in your interface.</h1>
-          <p className="lede" data-enter="2">
-            {SITE.count} glossy tile icons in {HUE_NAMES.length} colours. Copy one as SVG, React or Tailwind, recolour it, round its corners. Free and open source.
-          </p>
-          <div className="hero-actions" data-enter="3">
-            <Link className="btn btn-primary" href="/icons/">Browse all {SITE.count} icons</Link>
-            <InstallButton />
+        <div className="container hero-grid">
+          <div className="art hero-frame">
+            <ArtImage name="meadow" sizes="(max-width: 1080px) 100vw, 840px" priority />
+            <div className="hero-copy">
+              <h1 id="hero-title" className="display" data-enter="1">Glossy icons for modern products</h1>
+              <p className="lede" data-enter="2">
+                {SITE.count} hand-tuned tile icons in {HUE_NAMES.length} colours. Copy one as SVG, React or Tailwind, recolour it, round its corners. Free and open source.
+              </p>
+              <div className="hero-actions" data-enter="3">
+                <Link className="btn btn-primary" href="/icons/">Browse icons<Arrow /></Link>
+                <InstallButton />
+              </div>
+              <ul className="hero-stats" data-enter="4">
+                <li><Tile icon={icon('apps')} hue="pink" size={30} /><div><strong>{SITE.count} icons</strong><span>{CATEGORIES.length} categories</span></div></li>
+                <li><Tile icon={icon('palette')} hue="violet" size={30} /><div><strong>{HUE_NAMES.length} colours</strong><span>Any icon, any hue</span></div></li>
+                <li><Tile icon={icon('git-branch')} hue="sky" size={30} /><div><strong>Open source</strong><span>MIT licence</span></div></li>
+              </ul>
+            </div>
+            <div className="hero-dock" data-enter="5"><Dock /></div>
           </div>
+          <HeroSide />
         </div>
-        <div className="container hero-stage" data-enter="4">
-          <Lens />
-          <Dock />
+        <div className="container features">
+          <Link href="/icons/" className="feature">
+            <div className="feature-copy">
+              <Tile icon={icon('sparkles')} size={40} />
+              <h2 className="h3">Expressive, not noisy</h2>
+              <p>Bright tiles with one quiet recipe, so a page full of them still reads calm.</p>
+            </div>
+            <div className="art"><ArtImage name="arches" sizes="(max-width: 860px) 100vw, 400px" /><span className="go" aria-hidden="true"><Arrow /></span></div>
+          </Link>
+          <Link href="/docs/" className="feature">
+            <div className="feature-copy">
+              <Tile icon={icon('package')} size={40} />
+              <h2 className="h3">Ready for production</h2>
+              <p>SVG files, a plain JS function, typed React components and Tailwind classes.</p>
+            </div>
+            <div className="art"><ArtImage name="pagoda" sizes="(max-width: 860px) 100vw, 400px" /><span className="go" aria-hidden="true"><Arrow /></span></div>
+          </Link>
+          <a href={SITE.repo} className="feature" target="_blank" rel="noopener">
+            <div className="feature-copy">
+              <Tile icon={icon('code')} hue="ink" size={40} />
+              <h2 className="h3">Open source, for good</h2>
+              <p>MIT licensed. Fork it, extend it, ship it in products you sell.</p>
+            </div>
+            <div className="art"><ArtImage name="clouds" sizes="(max-width: 860px) 100vw, 400px" /><span className="go" aria-hidden="true"><Arrow /></span></div>
+          </a>
         </div>
       </section>
 
-      <section className="container" aria-label="At a glance">
-        <div className="proof">
-          <div><strong>{SITE.count} icons</strong><span>{CATEGORIES.length} categories</span></div>
-          <div><strong>{HUE_NAMES.length} colours</strong><span>Any icon, any hue</span></div>
-          <div><strong>4 formats</strong><span>SVG, JS, React, Tailwind</span></div>
-          <div><strong>MIT</strong><span>Free for commercial use</span></div>
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="make-title">
+      <section className="section" aria-labelledby="make-title" style={{ paddingTop: 140 }}>
         <div className="container split">
           <div className="section-head" style={{ marginBottom: 0 }}>
             <h2 id="make-title" className="h2">Your colours, your corners.</h2>
@@ -141,22 +171,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container" aria-labelledby="close-title">
-        <div className="closing">
-          <Lens />
-          <div className="closing-in">
-            <div className="stack" aria-hidden="true">
-              {(['heart', 'bolt', 'leaf', 'cloud', 'sparkles'] as const).map((n) => <Tile key={n} icon={icon(n)} size={44} />)}
-            </div>
-            <h2 id="close-title" className="h2">Free to use. Free to fork.</h2>
-            <p className="lede">MIT licensed for personal and commercial work. Missing an icon? Add a line to the catalog and open a pull request.</p>
-            <div className="hero-actions" style={{ justifyContent: 'flex-start', marginTop: 0 }}>
-              <Link className="btn btn-primary" href="/icons/">Browse icons</Link>
-              <a className="btn btn-quiet" href={SITE.repo} target="_blank" rel="noopener">View source on GitHub</a>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
