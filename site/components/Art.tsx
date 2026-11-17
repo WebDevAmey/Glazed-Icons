@@ -1,6 +1,7 @@
 /** Rendered dreamscapes, served as sized WebP from /public/art. */
 export const ART = {
-  dunes: { widths: [800, 1199, 1600, 2000], ratio: 675 / 1199, alt: 'Soft pink dunes beside still water and a single red tree' },
+  fuji: { widths: [960, 1440, 2048], ratio: 768 / 2048, alt: 'A woman beneath cherry blossom by a still lake, looking toward Mount Fuji at sunrise' },
+  pagoda: { widths: [1240, 2048], ratio: 768 / 2048, alt: '' },
   lavender: { widths: [735, 1200, 1470], ratio: 490 / 735, alt: 'Lavender grass islands in a calm lilac lake' },
   crystal: { widths: [736, 1104], ratio: 414 / 736, alt: 'A blossom tree on an island of ice, ringed by pink crystals and floating spheres' },
   frost: { widths: [736, 1104], ratio: 521 / 736, alt: 'A frosted tree beside glass crystals on pink moss under a pale moon' },
