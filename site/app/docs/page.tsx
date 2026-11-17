@@ -24,7 +24,7 @@ export default function Docs() {
   return (
     <div className="container">
       <div className="art page-banner">
-        <ArtImage name="clouds" sizes="(max-width: 1240px) 100vw, 1240px" priority style={{ objectPosition: '50% 40%' }} />
+        <ArtImage name="frost" sizes="(max-width: 1240px) 100vw, 1240px" priority style={{ objectPosition: '50% 40%' }} />
         <h1 className="display">Docs</h1>
         <p className="lede">Everything you need to put a Glazed icon on screen. It takes about a minute.</p>
       </div>
@@ -48,13 +48,19 @@ export function Launch() {
     </>
   );
 }`}</code></pre>
-          <p>Every icon is a named export ending in <code>Icon</code>. Your bundler keeps only the ones you import.</p>
+          <p>Every icon is a named export ending in <code>Icon</code>. Your bundler keeps only the ones you import. Every icon page has sliders for these options and writes the code for you.</p>
           <table>
             <thead><tr><th>Prop</th><th>Type</th><th>Default</th></tr></thead>
             <tbody>
               <tr><td><code>size</code></td><td>number, in px</td><td>32</td></tr>
               <tr><td><code>hue</code></td><td>one of the {HUE_NAMES.length} hues</td><td>the icon&apos;s own</td></tr>
-              <tr><td><code>radius</code></td><td><code>sharp</code>, <code>soft</code>, <code>round</code>, <code>circle</code> or a number on a 32 grid</td><td><code>soft</code></td></tr>
+              <tr><td><code>color</code></td><td>any hex; light and dark shades are derived</td><td>none</td></tr>
+              <tr><td><code>radius</code></td><td><code>sharp</code>, <code>soft</code>, <code>round</code>, <code>circle</code> or 0 to 16</td><td><code>soft</code> (8)</td></tr>
+              <tr><td><code>glyph</code></td><td>glyph size on the 32 grid, 8 to 26</td><td>17</td></tr>
+              <tr><td><code>gloss</code></td><td>top light, 0 to 1</td><td>0.6</td></tr>
+              <tr><td><code>rim</code></td><td>glass line inside the edge, 0 to 1</td><td>0.7</td></tr>
+              <tr><td><code>shadow</code></td><td>glyph shadow, 0 to 1</td><td>0.6</td></tr>
+              <tr><td><code>stroke</code></td><td>line weight for outline glyphs, 1 to 3</td><td>2</td></tr>
               <tr><td><code>title</code></td><td>string, the accessible name</td><td>none, so the icon is decorative</td></tr>
             </tbody>
           </table>
@@ -80,7 +86,7 @@ console.log(icons.length); // ${SITE.count}`}</code></pre>
 </div>`}</code></pre>
 
           <h2 id="colours">Colours and corners</h2>
-          <p>Hues: {HUE_NAMES.join(', ')}. Each uses its Tailwind 400, 500 and 600 shades; <code>ink</code> is a neutral near-black. Corners are 4, 8, 11 or 16 on a 32-unit tile.</p>
+          <p>Hues: {HUE_NAMES.join(', ')}. Each uses its Tailwind 400, 500 and 600 shades; <code>ink</code> is a neutral near-black. Corners are 4, 8, 11 or 16 on a 32-unit tile, or any number in between. Pass <code>color</code> with any hex to go beyond the palette.</p>
 
           <h2 id="accessibility">Accessibility</h2>
           <p>Without a <code>title</code>, an icon is hidden from screen readers, which is right when a text label sits next to it. Give a <code>title</code> when the icon stands alone, and give icon-only buttons an <code>aria-label</code>.</p>
