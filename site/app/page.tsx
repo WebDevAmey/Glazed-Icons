@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { CATEGORIES, HUE_NAMES, icon, SITE } from '@/lib/icons';
 import { Dock } from '@/components/Dock';
 import { ArtImage } from '@/components/Art';
-import { HeroSide } from '@/components/HeroSide';
 import { InstallButton } from '@/components/InstallButton';
 import { Playground } from '@/components/Playground';
 import { Anatomy } from '@/components/Anatomy';
@@ -48,28 +47,23 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <section className="hero" aria-labelledby="hero-title">
-        <div className="container hero-grid">
-          <div className="art hero-frame">
-            <ArtImage name="meadow" sizes="(max-width: 1080px) 100vw, 840px" priority />
-            <div className="hero-copy">
-              <h1 id="hero-title" className="display" data-enter="1">Glossy icons for modern products</h1>
-              <p className="lede" data-enter="2">
-                {SITE.count} hand-tuned tile icons in {HUE_NAMES.length} colours. Copy one as SVG, React or Tailwind, recolour it, round its corners. Free and open source.
-              </p>
-              <div className="hero-actions" data-enter="3">
-                <Link className="btn btn-primary" href="/icons/">Browse icons<Arrow /></Link>
-                <InstallButton />
-              </div>
-              <ul className="hero-stats" data-enter="4">
-                <li><Tile icon={icon('apps')} hue="pink" size={30} /><div><strong>{SITE.count} icons</strong><span>{CATEGORIES.length} categories</span></div></li>
-                <li><Tile icon={icon('palette')} hue="violet" size={30} /><div><strong>{HUE_NAMES.length} colours</strong><span>Any icon, any hue</span></div></li>
-                <li><Tile icon={icon('git-branch')} hue="sky" size={30} /><div><strong>Open source</strong><span>MIT licence</span></div></li>
-              </ul>
-            </div>
-            <div className="hero-dock" data-enter="5"><Dock /></div>
+        <ArtImage name="meadow" sizes="100vw" priority alt="" />
+        <div className="hero-copy">
+          <Link href="/docs/" className="badge" data-enter="1">
+            <Tile icon={icon('sparkles')} hue="violet" size={22} />
+            {SITE.count} icons, now with React components
+          </Link>
+          <h1 id="hero-title" className="display" data-enter="2">Glossy icons, ready to ship.</h1>
+          <p className="lede" data-enter="3">Colour-coded app icons for your product. Copy one as SVG, React or Tailwind, free under MIT.</p>
+          <div className="hero-actions" data-enter="4">
+            <Link className="btn btn-white" href="/icons/">Browse icons<Arrow /></Link>
+            <InstallButton />
           </div>
-          <HeroSide />
         </div>
+        <div className="hero-dock" data-enter="5"><Dock /></div>
+      </section>
+
+      <section aria-label="Highlights">
         <div className="container features">
           <Link href="/icons/" className="feature">
             <div className="feature-copy">
@@ -98,7 +92,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="make-title" style={{ paddingTop: 140 }}>
+      <section className="section" aria-labelledby="make-title">
         <div className="container split">
           <div className="section-head" style={{ marginBottom: 0 }}>
             <h2 id="make-title" className="h2">Your colours, your corners.</h2>
