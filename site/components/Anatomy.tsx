@@ -4,10 +4,10 @@ import { useState } from 'react';
 import { icon } from '@/lib/icons';
 
 const LAYERS = [
-  { id: 'glyph', name: 'Glyph', text: 'White, half the tile, lifted by a short soft shadow.', code: 'drop-shadow 0 1px black/35', sw: 'linear-gradient(180deg,#fff,#e8e8ee)' },
-  { id: 'hi', name: 'Highlight', text: 'A 1px line of white at 20%, two pixels in. This is the glaze.', code: 'ring-1 ring-white/20', sw: 'linear-gradient(180deg,#bcd3ff,#8fb2ff)' },
-  { id: 'edge', name: 'Edge band', text: 'Two pixels of the 500 shade, so the tile holds its shape on any ground.', code: 'ring-offset-2 · 500', sw: '#3b82f6' },
-  { id: 'grad', name: 'Gradient', text: 'The 400 shade at the top falling to 600, as if lit from above.', code: 'from-400 to-600', sw: 'linear-gradient(180deg,#60a5fa,#2563eb)' },
+  { id: 'glyph', name: 'Glyph', text: 'White, a little over half the tile, lifted by a short soft shadow.', code: 'glyph · shadow', sw: 'linear-gradient(180deg,#fff,#e8e8ee)' },
+  { id: 'hi', name: 'Rim', text: 'A 1px glass line just inside the edge, brightest at the top.', code: 'rim', sw: 'linear-gradient(180deg,#fff,#ffd3ea)' },
+  { id: 'edge', name: 'Gloss', text: 'Light from the top edge, gone by the middle, like a lacquered key.', code: 'gloss', sw: 'linear-gradient(180deg,#fff,#fb64b6)' },
+  { id: 'grad', name: 'Colour', text: 'The 400 shade at the top falling to 600, framed by a hairline edge.', code: 'hue · color', sw: 'linear-gradient(180deg,#fb64b6,#e60076)' },
 ] as const;
 
 export function Anatomy() {

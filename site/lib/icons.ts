@@ -1,6 +1,6 @@
 import data from './generated/data.json';
 // Plain ESM copied from the library by scripts/sync.mjs
-import { toSvg as coreToSvg } from './generated/core.mjs';
+import { toSvg as coreToSvg, shadesFrom, DEFAULTS as CORE_DEFAULTS } from './generated/core.mjs';
 
 export type Hue = keyof typeof data.hues;
 export type Radius = 'sharp' | 'soft' | 'round' | 'circle';
@@ -13,11 +13,24 @@ export interface Icon {
   body: string;
 }
 
+/** Everything a tile can be told, shared by the site, the SVG export and the code snippets. */
+export interface TileOptions {
+  hue?: Hue;
+  color?: string;
+  radius?: Radius | number;
+  glyph?: number;
+  gloss?: number;
+  rim?: number;
+  shadow?: number;
+  stroke?: number;
+}
+
 export const HUES = data.hues as Record<Hue, [string, string, string]>;
 export const HUE_NAMES = Object.keys(HUES) as Hue[];
 export const ICONS = data.icons as Icon[];
 export const RADII: Record<Radius, number> = { sharp: 4, soft: 8, round: 11, circle: 16 };
 export const RADIUS_NAMES: Radius[] = ['sharp', 'soft', 'round', 'circle'];
+export const DEFAULTS = CORE_DEFAULTS as { size: number; radius: 'soft'; glyph: number; gloss: number; rim: number; shadow: number; stroke: number };
 export const CATEGORIES = [...new Set(ICONS.map((i) => i.category))];
 
 const byName = new Map(ICONS.map((i) => [i.name, i]));
@@ -36,29 +49,49 @@ export const pascal = (n: string) => n.split('-').map((p) => p[0].toUpperCase() 
 export const component = (n: string) => `${pascal(n)}Icon`;
 export const label = (n: string) => n.replace(/-/g, ' ');
 
-export function toSvg(ic: Icon, opts: { size?: number; hue?: Hue; radius?: Radius } = {}): string {
+export function shades(ic: Icon, opts: TileOptions = {}): [string, string, string] {
+  if (opts.color) return shadesFrom(opts.color) as [string, string, string];
+  return HUES[opts.hue ?? ic.hue];
+}
+
+export function toSvg(ic: Icon, opts: TileOptions & { size?: number } = {}): string {
   return coreToSvg(ic, HUES, opts);
 }
 
-export function snippets(ic: Icon, hue: Hue, radius: Radius, size = 40) {
-  const props = [`size={${size}}`];
-  if (hue !== ic.hue) props.push(`hue="${hue}"`);
-  if (radius !== 'soft') props.push(`radius="${radius}"`);
-  const opts = [`size: ${size}`];
-  if (hue !== ic.hue) opts.push(`hue: '${hue}'`);
-  if (radius !== 'soft') opts.push(`radius: '${radius}'`);
-  const rc = { sharp: 'rounded-sm', soft: 'rounded-lg', round: 'rounded-[11px]', circle: 'rounded-full' }[radius];
-  const grad = hue === 'ink'
-    ? 'from-neutral-600 to-neutral-900 ring-offset-neutral-800'
-    : `from-${hue}-400 to-${hue}-600 ring-offset-${hue}-500`;
+const round = (n: number) => Math.round(n * 100) / 100;
+
+/** Only the options that differ from the defaults, so snippets stay short. */
+export function changed(ic: Icon, opts: TileOptions) {
+  const out: [string, string | number][] = [];
+  if (opts.color) out.push(['color', opts.color]);
+  else if (opts.hue && opts.hue !== ic.hue) out.push(['hue', opts.hue]);
+  if (opts.radius !== undefined && opts.radius !== 'soft' && opts.radius !== RADII.soft) out.push(['radius', opts.radius]);
+  if (opts.glyph !== undefined && opts.glyph !== DEFAULTS.glyph) out.push(['glyph', opts.glyph]);
+  if (opts.gloss !== undefined && round(opts.gloss) !== DEFAULTS.gloss) out.push(['gloss', round(opts.gloss)]);
+  if (opts.rim !== undefined && round(opts.rim) !== DEFAULTS.rim) out.push(['rim', round(opts.rim)]);
+  if (opts.shadow !== undefined && round(opts.shadow) !== DEFAULTS.shadow) out.push(['shadow', round(opts.shadow)]);
+  if (ic.style === 'stroke' && opts.stroke !== undefined && opts.stroke !== DEFAULTS.stroke) out.push(['stroke', opts.stroke]);
+  return out;
+}
+
+export function snippets(ic: Icon, opts: TileOptions = {}, size = 40) {
+  const diff = changed(ic, opts);
+  const jsxProps = [`size={${size}}`, ...diff.map(([k, v]) => (typeof v === 'number' ? `${k}={${v}}` : `${k}="${v}"`))];
+  const jsOpts = [`size: ${size}`, ...diff.map(([k, v]) => (typeof v === 'number' ? `${k}: ${v}` : `${k}: '${v}'`))];
+  const hue = opts.hue ?? ic.hue;
+  const r = typeof opts.radius === 'number' ? opts.radius : RADII[opts.radius ?? 'soft'];
+  const rc = r >= 16 ? 'rounded-full' : `rounded-[${Math.round(r)}px]`;
+  const grad = opts.color
+    ? `from-[${shadesFrom(opts.color)[0]}] to-[${shadesFrom(opts.color)[2]}]`
+    : hue === 'ink' ? 'from-neutral-600 to-neutral-900' : `from-${hue}-400 to-${hue}-600`;
   const paint = ic.style === 'fill'
     ? 'fill="currentColor"'
-    : 'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+    : `fill="none" stroke="currentColor" stroke-width="${opts.stroke ?? 2}" stroke-linecap="round" stroke-linejoin="round"`;
   return {
-    react: `import { ${component(ic.name)} } from '${SITE.pkg}/react';\n\n<${component(ic.name)} ${props.join(' ')} />`,
-    js: `import { glaze } from '${SITE.pkg}';\n\nel.innerHTML = glaze('${ic.name}', { ${opts.join(', ')} });`,
-    svg: toSvg(ic, { size, hue, radius }),
-    tailwind: `<div class="flex size-8 items-center justify-center ${rc} bg-linear-to-b ${grad} shadow-lg ring-1 ring-white/20 ring-offset-2 ring-inset">\n  <svg class="size-4 text-white drop-shadow-xl drop-shadow-black/40" viewBox="0 0 24 24" ${paint}>${ic.body.replace(/#fff/g, 'currentColor')}</svg>\n</div>`,
+    react: `import { ${component(ic.name)} } from '${SITE.pkg}/react';\n\n<${component(ic.name)} ${jsxProps.join(' ')} />`,
+    js: `import { glaze } from '${SITE.pkg}';\n\nel.innerHTML = glaze('${ic.name}', { ${jsOpts.join(', ')} });`,
+    svg: toSvg(ic, { ...opts, size }),
+    tailwind: `<div class="relative flex size-8 items-center justify-center overflow-hidden ${rc} bg-linear-to-b ${grad} shadow-[inset_0_0_0_1px_rgb(0_0_0/.1),inset_0_0_0_2px_rgb(255_255_255/.22)] before:absolute before:inset-x-0 before:top-0 before:h-1/2 before:bg-linear-to-b before:from-white/25 before:to-transparent">\n  <svg class="relative size-[17px] text-white drop-shadow-[0_1px_1px_rgb(0_0_0/.3)]" viewBox="0 0 24 24" ${paint}>${ic.body.replace(/#fff/g, 'currentColor')}</svg>\n</div>`,
   };
 }
 export type SnippetKind = keyof ReturnType<typeof snippets>;
