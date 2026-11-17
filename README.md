@@ -84,8 +84,18 @@ Add a line, run both steps, open a pull request. `src/core.mjs` holds the tile r
 
 ## Website
 
-`site/index.html` is the icon browser: search, recolour, and copy or download any icon.
-It is a single static file, so any static host works.
+The site in `site/` is a Next.js app exported as static HTML: a landing page, a browser
+for every icon, a page per icon, docs, a sitemap and share images.
+
+```bash
+cd site
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # static site in site/out
+```
+
+To deploy on Vercel, import the repo and set the root directory to `site`. Set
+`NEXT_PUBLIC_SITE_URL` to your domain so canonical links and the sitemap point at it.
 
 ## Credits
 
