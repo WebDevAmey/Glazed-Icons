@@ -4,41 +4,27 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { icon, SITE } from '@/lib/icons';
 import { Tile } from './Tile';
-import { ThemeToggle } from './ThemeToggle';
 import { SearchPalette } from './SearchPalette';
 
-const LINKS = [
-  { href: '/icons/', label: 'Icons' },
-  { href: '/docs/', label: 'Docs' },
-];
-
+/** Clove's floating plaque: logo left, quiet links right, one raised action. */
 export function Nav() {
   const path = usePathname();
+  const here = (p: string) => (path.startsWith(p) ? 'page' : undefined);
   return (
     <header className="nav">
-      <div className="container">
-        <div className="nav-bar">
-          <div style={{ display: 'flex', alignItems: 'center', gap: 22 }}>
-            <Link href="/" className="brand" aria-label={`${SITE.name}, home`}>
-              <Tile icon={icon('flower')} size={30} />
-              <span>Glazed</span>
-            </Link>
-            <nav className="nav-links" aria-label="Main">
-              {LINKS.map((l) => (
-                <Link key={l.href} href={l.href} aria-current={path.startsWith(l.href.slice(0, -1)) ? 'page' : undefined}>{l.label}</Link>
-              ))}
-              <a className="wide" href={SITE.repo} target="_blank" rel="noopener">GitHub</a>
-            </nav>
-          </div>
-          <div className="nav-right">
-            <SearchPalette />
-            <ThemeToggle />
-            <Link className="btn btn-primary btn-sm nav-cta" href="/docs/">
-              Get started
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            </Link>
-          </div>
-        </div>
+      <div className="nav-bar">
+        <Link href="/" className="brand" aria-label={`${SITE.name} homepage`}>
+          <Tile icon={icon('flower')} size={24} />
+          <span>Glazed</span>
+        </Link>
+        <nav aria-label="Primary" className="nav-links">
+          <Link href="/icons/" aria-current={here('/icons')}>Icons</Link>
+          <Link href="/docs/" aria-current={here('/docs')}>Docs</Link>
+          <Link href="/#compare" className="md-up">Compare</Link>
+          <a href={SITE.repo} target="_blank" rel="noopener" className="md-up">GitHub</a>
+          <SearchPalette />
+          <Link href="/docs/" className="nav-cta">Get started</Link>
+        </nav>
       </div>
     </header>
   );
