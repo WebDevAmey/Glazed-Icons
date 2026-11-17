@@ -44,7 +44,8 @@
     "tailwind"
   ],
   "scripts": {
-    "icons:extract": "python3 scripts/extract.py"
+    "icons:extract": "python3 scripts/extract.py",
+    "build": "node scripts/build.mjs"
   },
   "devDependencies": {
     "@tabler/icons": "3.34.1"
