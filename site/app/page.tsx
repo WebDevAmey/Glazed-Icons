@@ -47,7 +47,7 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <section className="hero" aria-labelledby="hero-title">
-        <ArtImage name="meadow" sizes="100vw" priority alt="" />
+        <ArtImage name="dunes" sizes="100vw" priority alt="" />
         <div className="hero-copy">
           <Link href="/docs/" className="badge" data-enter="1">
             <Tile icon={icon('sparkles')} hue="violet" size={22} />
@@ -71,7 +71,7 @@ export default function Home() {
               <h2 className="h3">Expressive, not noisy</h2>
               <p>Bright tiles with one quiet recipe, so a page full of them still reads calm.</p>
             </div>
-            <div className="art"><ArtImage name="arches" sizes="(max-width: 860px) 100vw, 400px" /><span className="go" aria-hidden="true"><Arrow /></span></div>
+            <div className="art"><ArtImage name="crystal" sizes="(max-width: 860px) 100vw, 400px" /><span className="go" aria-hidden="true"><Arrow /></span></div>
           </Link>
           <Link href="/docs/" className="feature">
             <div className="feature-copy">
@@ -79,7 +79,7 @@ export default function Home() {
               <h2 className="h3">Ready for production</h2>
               <p>SVG files, a plain JS function, typed React components and Tailwind classes.</p>
             </div>
-            <div className="art"><ArtImage name="pagoda" sizes="(max-width: 860px) 100vw, 400px" /><span className="go" aria-hidden="true"><Arrow /></span></div>
+            <div className="art"><ArtImage name="frost" sizes="(max-width: 860px) 100vw, 400px" /><span className="go" aria-hidden="true"><Arrow /></span></div>
           </Link>
           <a href={SITE.repo} className="feature" target="_blank" rel="noopener">
             <div className="feature-copy">
@@ -87,7 +87,7 @@ export default function Home() {
               <h2 className="h3">Open source, for good</h2>
               <p>MIT licensed. Fork it, extend it, ship it in products you sell.</p>
             </div>
-            <div className="art"><ArtImage name="clouds" sizes="(max-width: 860px) 100vw, 400px" /><span className="go" aria-hidden="true"><Arrow /></span></div>
+            <div className="art"><ArtImage name="lavender" sizes="(max-width: 860px) 100vw, 400px" /><span className="go" aria-hidden="true"><Arrow /></span></div>
           </a>
         </div>
       </section>
@@ -107,7 +107,7 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <h2 id="anat-title" className="h2">Built like a real app tile.</h2>
-            <p className="body">Four layers, the same at 16 pixels and at 512. Point at a layer to see where it sits.</p>
+            <p className="body">Four layers, the same at 16 pixels and at 512, and each one has a slider. Point at a layer to see where it sits.</p>
           </div>
           <Anatomy />
         </div>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   applicationName: SITE.name,
   keywords: ['icons', 'svg icons', 'react icons', 'app icons', 'glossy icons', 'gradient icons', 'tailwind icons', 'open source icons', 'free icons'],
   alternates: { canonical: '/' },
-  openGraph: { type: 'website', siteName: SITE.name, url: '/', title: `${SITE.name}: glossy app icons for your interface`, description, images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Glazed Icons over a painted spring meadow' }] },
+  openGraph: { type: 'website', siteName: SITE.name, url: '/', title: `${SITE.name}: glossy app icons for your interface`, description, images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Glazed Icons over a soft pink landscape' }] },
   twitter: { card: 'summary_large_image', title: SITE.name, description, images: ['/og.png'] },
   icons: { icon: '/icon.svg', apple: '/apple-icon.png' },
 };
