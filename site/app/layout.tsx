@@ -5,10 +5,10 @@ import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
 import { Toaster } from '@/components/Toaster';
 import { themeScript } from '@/components/ThemeToggle';
-import { SITE } from '@/lib/icons';
+import { HUE_NAMES, SITE } from '@/lib/icons';
 import './globals.css';
 
-const description = `${SITE.count} glossy app-tile icons in 18 colours. Recolour any icon, pick its corners, and copy it as SVG, React, Tailwind or plain JS. Free and open source under MIT.`;
+const description = `${SITE.count} glossy app-tile icons in ${HUE_NAMES.length} colours, including the new Abstract collection. Recolour any icon, pick its corners, and copy it as SVG, React, Tailwind or plain JS. Free and open source under MIT.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),

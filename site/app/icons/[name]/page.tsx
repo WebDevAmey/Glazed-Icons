@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ICONS, SITE, component, getIcon, label } from '@/lib/icons';
+import { HUE_NAMES, ICONS, SITE, component, getIcon, label } from '@/lib/icons';
 import { IconStudio } from '@/components/IconStudio';
 import { Tile } from '@/components/Tile';
 
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ic = getIcon((await params).name);
   if (!ic) return {};
   const title = `${label(ic.name)[0].toUpperCase()}${label(ic.name).slice(1)} icon`;
-  const description = `Free glossy ${label(ic.name)} icon in ${ic.hue}. Copy it as SVG, React (<${component(ic.name)} />) or Tailwind, recolour it in 18 hues, or download a PNG. Tags: ${ic.tags.join(', ')}.`;
+  const description = `Free glossy ${label(ic.name)} icon in ${ic.hue}. Copy it as SVG, React (<${component(ic.name)} />) or Tailwind, recolour it in ${HUE_NAMES.length} hues, or download a PNG. Tags: ${ic.tags.join(', ')}.`;
   return {
     title,
     description,
