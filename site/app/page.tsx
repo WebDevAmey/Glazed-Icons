@@ -7,6 +7,8 @@ import { Anatomy } from '@/components/Anatomy';
 import { CodeTabs } from '@/components/CodeTabs';
 import { Tile } from '@/components/Tile';
 import { Faq } from '@/components/Faq';
+import { ObjectCard } from '@/components/ObjectCard';
+import { GLASS } from '@/lib/illustrations';
 
 const COMPARE: [string, string, string][] = [
   ['What you drop in', 'A finished, full-colour tile', 'A one-colour glyph you style yourself'],
@@ -142,6 +144,24 @@ export default function Home() {
               <div className="hero-actions" style={{ justifyContent: 'flex-start', marginTop: 4 }}>
                 <Link className="btn btn-white" href="/icons/?category=Blossom">Explore the collection<Arrow /></Link>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="glass-title" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="glass-show">
+            <div className="glass-copy">
+              <p className="abstract-kicker" style={{ color: 'var(--muted)' }}>New illustrations, {GLASS.count} objects</p>
+              <h2 id="glass-title" className="h2">{GLASS.title}</h2>
+              <p className="lede">{GLASS.description}</p>
+              <div className="hero-actions" style={{ justifyContent: 'flex-start', marginTop: 4 }}>
+                <Link className="btn btn-primary btn-lg" href="/objects/">Explore the objects<Arrow /></Link>
+              </div>
+            </div>
+            <div className="glass-grid">
+              {GLASS.items.slice(0, 10).map((it) => <ObjectCard key={it.name} it={it} />)}
             </div>
           </div>
         </div>
