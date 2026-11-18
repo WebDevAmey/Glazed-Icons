@@ -9,7 +9,7 @@ import { CodeTabs } from './CodeTabs';
 import { Seg } from './Seg';
 import { Slider } from './Slider';
 
-type Ground = 'light' | 'dark' | 'scene';
+type Ground = 'light' | 'dark';
 
 /** One-click palettes for multi-colour glyphs. Applied to every slot after the outline, in turn. */
 const PRESETS: { name: string; colors: string[] }[] = [
@@ -40,7 +40,7 @@ export function IconStudio({ icon }: { icon: Icon }) {
     <div className="studio">
       <div className="studio-stage" data-ground={ground} style={{ ['--glow' as string]: shades(icon, opts)[1] }}>
         <div className="studio-ground" aria-hidden="true" />
-        <Seg label="Preview background" className="stage-seg" value={ground} onChange={setGround} options={[{ value: 'light', label: 'Light' }, { value: 'dark', label: 'Dark' }, { value: 'scene', label: 'Scene' }]} />
+        <Seg label="Preview background" className="stage-seg" value={ground} onChange={setGround} options={[{ value: 'light', label: 'Light' }, { value: 'dark', label: 'Dark' }]} />
         <div className="studio-tile">
           <Tile icon={icon} {...opts} size={176} />
         </div>
