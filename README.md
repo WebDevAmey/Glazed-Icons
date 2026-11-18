@@ -1,10 +1,11 @@
 # Glaze Icons
 
-194 glossy app-tile icons. Every icon is a coloured tile with a soft gradient,
+234 glossy app-tile icons. Every icon is a coloured tile with a soft gradient,
 an inset highlight ring and a white glyph, the look of a polished app dock, ready to drop
 into buttons, feature lists, docs and landing pages.
 
-- 194 icons in 16 categories, 18 hues
+- 234 icons in 17 categories, 19 hues
+- The Abstract collection: 40 original geometric glyphs in dark ink
 - Plain SVG, framework-free JS, and tree-shakable React components
 - Recolour any icon to any hue, four corner radii, any size
 - Typed names and options
@@ -31,17 +32,18 @@ Every option works as a React prop and as a `glaze()` option:
 | Option | Values | Default |
 | --- | --- | --- |
 | `size` | px | 32 |
-| `hue` | one of the 18 hues below | the icon's own |
+| `hue` | one of the 19 hues below | the icon's own |
 | `color` | any hex; light and dark shades are derived from it | none |
+| `ink` | glyph colour as a hex | white; near-black for Abstract |
 | `radius` | `sharp`, `soft`, `round`, `circle`, or 0 to 16 | `soft` (8) |
-| `glyph` | glyph size on the 32 grid, 8 to 26 | 17 |
+| `glyph` | glyph size on the 32 grid, 8 to 26 | 17; 20 for Abstract |
 | `gloss` | top light, 0 to 1 | 0.6 |
 | `rim` | glass line inside the edge, 0 to 1 | 0.7 |
-| `shadow` | glyph shadow, 0 to 1 | 0.6 |
+| `shadow` | glyph shadow, 0 to 1 | 0.6; 0 for dark ink |
 | `stroke` | line weight for outline glyphs, 1 to 3 | 2 |
 | `title` | accessible name; without it the icon is decorative | none |
 
-Hues: red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose and ink, using the Tailwind CSS v4 palette.
+Hues: red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose, cream and ink. All but cream come from the Tailwind CSS v4 palette.
 
 ## Plain JS
 
@@ -66,6 +68,20 @@ a CSS background, or paste it into Figma.
 | Glyph | white, 17 of 32 units, short soft shadow |
 | Shadow (CSS) | `drop-shadow(0 6px 10px rgb(0 0 0/.12))` |
 
+## The Abstract collection
+
+A collection exploring abstract geometry, spatial forms, organic patterns, movement and
+unconventional silhouettes: fans, arches, crescents, petals, waves, orbits and stairs. The 40
+glyphs are drawn for Glazed in `scripts/abstract.py` from exact circles, rings, sectors and
+curves, and sit in dark ink on bright and cream tiles.
+
+```jsx
+import { OrbitIcon, BloomIcon } from 'glaze-icons/react';
+
+<OrbitIcon size={48} />
+<BloomIcon size={48} hue="cream" />
+```
+
 ## Categories
 
 - Development: 16
@@ -84,6 +100,7 @@ a CSS background, or paste it into Figma.
 - Nature: 12
 - People: 7
 - Devices: 11
+- Abstract: 40
 
 ## Contributing
 
@@ -91,6 +108,7 @@ Icons are listed in `src/catalog.py`, one line each: name, glyph source, categor
 
 ```bash
 npm install
+python3 scripts/abstract.py   # draws the Abstract glyphs into src/glyphs/abstract
 npm run icons:extract   # catalog -> src/data.json
 npm run build           # data -> svg/, dist/, icons.json
 ```
