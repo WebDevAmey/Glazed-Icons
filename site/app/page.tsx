@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { CATEGORIES, HUE_NAMES, icon, SITE } from '@/lib/icons';
+import { CATEGORIES, HUE_NAMES, ICONS, icon, label, SITE } from '@/lib/icons';
 import { Dock } from '@/components/Dock';
 import { ArtImage } from '@/components/Art';
 import { InstallButton } from '@/components/InstallButton';
@@ -7,11 +7,12 @@ import { Playground } from '@/components/Playground';
 import { Anatomy } from '@/components/Anatomy';
 import { CodeTabs } from '@/components/CodeTabs';
 import { Tile } from '@/components/Tile';
+import { Faq } from '@/components/Faq';
 
 const COMPARE: [string, string, string][] = [
   ['What you drop in', 'A finished, full-colour tile', 'A one-colour glyph you style yourself'],
   ['Making it look like an app icon', 'Already done: gradient, edge, highlight and shadow', 'A wrapper, a gradient and a ring for every icon'],
-  ['Changing colour', 'One prop, 18 matched hues', 'Pick shades by hand and keep them in step'],
+  ['Changing colour', `One prop, ${HUE_NAMES.length} matched hues`, 'Pick shades by hand and keep them in step'],
   ['Corners', 'Sharp, soft, round or circle', 'Whatever your wrapper does'],
   ['Where it shines', 'Feature lists, empty states, docs, landing pages', 'Dense UI: toolbars, menus, tables'],
   ['Range', `${SITE.count} icons`, 'Thousands of glyphs'],
@@ -49,9 +50,9 @@ export default function Home() {
       <section className="hero" aria-labelledby="hero-title">
         <ArtImage name="pagoda" sizes="100vw" priority alt="" />
         <div className="hero-copy">
-          <Link href="/docs/" className="badge" data-enter="1">
-            <Tile icon={icon('sparkles')} hue="violet" size={22} />
-            {SITE.count} icons, now with React components
+          <Link href="/icons/?category=Abstract" className="badge" data-enter="1">
+            <Tile icon={icon('orbit')} size={22} />
+            New: the Abstract collection
           </Link>
           <h1 id="hero-title" className="display" data-enter="2">Glossy icons, ready to ship.</h1>
           <p className="lede" data-enter="3">Colour-coded app icons for your product. Copy one as SVG, React or Tailwind, free under MIT.</p>
@@ -92,7 +93,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="make-title">
+      <section className="section" aria-labelledby="abs-title">
+        <div className="container">
+          <div className="abstract">
+            <div className="abstract-copy">
+              <p className="abstract-kicker">New collection, {ICONS.filter((i) => i.category === 'Abstract').length} icons</p>
+              <h2 id="abs-title" className="h2">Abstract</h2>
+              <p className="lede">A new collection exploring abstract geometry, spatial forms, organic patterns, movement and unconventional silhouettes.</p>
+              <div className="hero-actions" style={{ justifyContent: 'flex-start', marginTop: 4 }}>
+                <Link className="btn btn-white" href="/icons/?category=Abstract">Explore the collection<Arrow /></Link>
+              </div>
+            </div>
+            <div className="abstract-grid">
+              {ICONS.filter((i) => i.category === 'Abstract').slice(0, 24).map((ic) => (
+                <Link key={ic.name} href={`/icons/${ic.name}/`} aria-label={`${label(ic.name)} icon`} className="abstract-cell">
+                  <Tile icon={ic} size={64} />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="make-title" style={{ paddingTop: 0 }}>
         <div className="container split">
           <div className="section-head" style={{ marginBottom: 0 }}>
             <h2 id="make-title" className="h2">Your colours, your corners.</h2>
@@ -154,14 +177,7 @@ export default function Home() {
             <h2 id="faq-title" className="h2">Questions, answered.</h2>
             <p className="body">Something else? <a className="link" href={`${SITE.repo}/issues`} target="_blank" rel="noopener">Ask on GitHub</a>.</p>
           </div>
-          <div className="faq-list">
-            {FAQ.map(([q, a]) => (
-              <details key={q}>
-                <summary>{q}<span className="plus" aria-hidden="true" /></summary>
-                <p>{a}</p>
-              </details>
-            ))}
-          </div>
+          <Faq items={FAQ as [string, string][]} />
         </div>
       </section>
 
