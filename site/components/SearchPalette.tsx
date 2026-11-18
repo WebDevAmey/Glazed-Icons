@@ -47,6 +47,7 @@ export function SearchPalette() {
     <>
       <button type="button" className="nav-search" onClick={open} aria-label="Search icons" aria-keyshortcuts={mac ? 'Meta+K' : 'Control+K'}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+        <span className="nav-search-text">Search</span>
         <kbd aria-hidden="true">{mac ? '⌘K' : 'Ctrl K'}</kbd>
       </button>
       <dialog ref={dlg} className="palette" aria-label="Search icons" onClick={(e) => { if (e.target === dlg.current) dlg.current.close(); }}>
