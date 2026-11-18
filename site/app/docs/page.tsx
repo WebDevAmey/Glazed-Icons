@@ -55,7 +55,7 @@ export function Launch() {
               <tr><td><code>size</code></td><td>number, in px</td><td>32</td></tr>
               <tr><td><code>hue</code></td><td>one of the {HUE_NAMES.length} hues</td><td>the icon&apos;s own</td></tr>
               <tr><td><code>color</code></td><td>any hex; light and dark shades are derived</td><td>none</td></tr>
-              <tr><td><code>ink</code></td><td>glyph colour as a hex</td><td>white; near-black for the Abstract collection</td></tr>
+              <tr><td><code>ink</code></td><td>glyph colour as a hex</td><td>white; near-black for the Abstract collection; Blossom icons paint their own colours</td></tr>
               <tr><td><code>radius</code></td><td><code>sharp</code>, <code>soft</code>, <code>round</code>, <code>circle</code> or 0 to 16</td><td><code>soft</code> (8)</td></tr>
               <tr><td><code>glyph</code></td><td>glyph size on the 32 grid, 8 to 26</td><td>17; 20 for Abstract</td></tr>
               <tr><td><code>gloss</code></td><td>top light, 0 to 1</td><td>0.6</td></tr>
