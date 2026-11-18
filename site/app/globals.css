@@ -233,7 +233,7 @@ button { font: inherit; color: inherit; }
   .nav-link { padding: 0 10px; }
   .nav-end { padding-left: 4px; }
 }
-@media (max-width: 420px) { .nav-brand > span:last-child { display: none; } .nav-cta { padding: 0 12px; } }
+@media (max-width: 420px) { .nav-brand > span:last-child { display: none; } .nav-cta { display: none; } .nav-link { padding: 0 9px; } }
 .icon-btn { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 999px; border: 0; background: transparent; color: var(--ink-2); cursor: pointer; transition: background-color 150ms ease, color 150ms ease, transform 140ms var(--ease-out); }
 .icon-btn:hover { background: var(--sunken); color: var(--ink); }
 .icon-btn:active { transform: scale(0.94); }
@@ -523,8 +523,8 @@ button { font: inherit; color: inherit; }
 .studio { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; padding-top: 20px; align-items: start; }
 .studio-stage { position: sticky; top: 76px; display: grid; place-items: center; aspect-ratio: 1; max-height: calc(100svh - 96px); width: 100%; border-radius: 28px; overflow: hidden; isolation: isolate; box-shadow: var(--ring); background: var(--surface); }
 .studio-ground { position: absolute; inset: 0; z-index: -1; transition: opacity 300ms ease, background-color 300ms ease; }
-.studio-stage[data-ground='light'] .studio-ground { background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--glow) 22%, transparent), transparent 52%), #fbfafc; }
-.studio-stage[data-ground='dark'] .studio-ground { background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--glow) 30%, transparent), transparent 52%), #12142a; }
+.studio-stage[data-ground='light'] .studio-ground { background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--glow, #c7c9f2) 22%, transparent), transparent 52%), #fbfafc; }
+.studio-stage[data-ground='dark'] .studio-ground { background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--glow, #8b8fd8) 30%, transparent), transparent 52%), #12142a; }
 .studio-tile { display: grid; place-items: center; }
 .studio-tile .tile { transition: border-radius 120ms ease-out; }
 .stage-seg { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); background: rgb(255 255 255 / 0.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
@@ -635,6 +635,41 @@ button { font: inherit; color: inherit; }
 .abstract-blossom { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); background: #222122; }
 @media (max-width: 960px) { .abstract, .abstract-blossom { grid-template-columns: 1fr; padding: 36px 24px; } .abstract-blossom .abstract-copy { order: -1; } }
 @media (max-width: 520px) { .abstract-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } .abstract-cell:nth-child(n + 17) { display: none; } }
+
+/* ---------- illustrations: glass & resin ---------- */
+.obj-browser { margin-top: 20px; }
+.obj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(208px, 1fr)); gap: 16px; padding-top: 14px; }
+.obj-card { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: var(--ink-2); border-radius: 22px; }
+.obj-frame { display: grid; place-items: center; aspect-ratio: 1; padding: 8px; border-radius: 22px; background: var(--surface); box-shadow: var(--ring); overflow: hidden; transition: box-shadow 220ms ease, transform 260ms var(--ease-out); }
+.obj-frame picture, .obj-frame img { display: block; }
+.obj-frame img { width: auto; height: auto; max-width: 100%; max-height: 100%; border-radius: 12px; transition: transform 320ms var(--ease-out); }
+.obj-title { padding: 0 4px; font-size: 0.875rem; font-weight: 500; }
+@media (hover: hover) and (pointer: fine) {
+  .obj-card:hover .obj-frame { box-shadow: var(--float); transform: translateY(-2px); }
+  .obj-card:hover .obj-frame img { transform: scale(1.03); }
+  .obj-card:hover .obj-title { color: var(--ink); }
+}
+.obj-card:active .obj-frame { transform: scale(0.98); }
+.obj-card:focus-visible { outline: none; }
+.obj-card:focus-visible .obj-frame { outline: 2px solid var(--focus); outline-offset: 3px; }
+.cell-wrap { animation: cell-in 360ms var(--ease-out) both; animation-delay: calc(var(--i, 0) * 14ms); }
+.stage-controls { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); }
+.stage-controls .stage-seg { position: static; transform: none; }
+.obj-stage-img { display: block; max-width: 100%; justify-self: center; transition: width 360ms var(--ease-out), height 360ms var(--ease-out); }
+.obj-stage-img img { display: block; width: 100%; height: 100%; border-radius: 18px; box-shadow: 0 30px 60px -30px rgb(19 19 22 / 0.35); }
+.studio-size-bar { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; }
+.studio-size-bar .stage-seg { position: static; transform: none; }
+.studio-size-bar .studio-size { position: static; transform: none; white-space: nowrap; }
+.studio-stage:has(.obj-stage-img) { grid-template-columns: minmax(0, 1fr); padding: 76px 16px 68px; height: auto; min-height: 0; aspect-ratio: auto; }
+@media (min-width: 961px) { .studio-stage:has(.obj-stage-img) { min-height: 560px; } }
+.glass-show { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 48px; align-items: center; padding: 48px; border-radius: 32px; background: var(--sunken); box-shadow: inset 0 0 0 1px var(--line); }
+.glass-copy { display: flex; flex-direction: column; gap: 18px; }
+.glass-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.glass-grid .obj-title { display: none; }
+.glass-grid .obj-frame { padding: 5px; border-radius: 16px; }
+.glass-grid .obj-frame img { border-radius: 10px; }
+@media (max-width: 960px) { .glass-show { grid-template-columns: 1fr; padding: 32px 20px; } }
+@media (max-width: 520px) { .glass-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .glass-grid .obj-card:nth-child(n + 10) { display: none; } .obj-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
 
 /* ---------- smoothness ---------- */
 .section { content-visibility: auto; contain-intrinsic-size: auto 900px; }
