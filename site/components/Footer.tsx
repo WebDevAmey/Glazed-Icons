@@ -37,7 +37,7 @@ export function Footer() {
             <h2 id="f-library">Library</h2>
             <ul>
               <li><Link href="/icons/">All icons</Link></li>
-              <li><Link href="/objects/">Glass &amp; Resin</Link></li>
+              <li><Link href="/3d/">3D icons</Link></li>
               <li><Link href="/docs/">Docs</Link></li>
               <li><Link href="/docs/#react">React</Link></li>
               <li><Link href="/docs/#tailwind">Tailwind</Link></li>

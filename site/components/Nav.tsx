@@ -9,7 +9,7 @@ import { SearchPalette } from './SearchPalette';
 
 const LINKS = [
   { href: '/icons/', label: 'Icons', match: '/icons' },
-  { href: '/objects/', label: 'Objects', match: '/objects' },
+  { href: '/3d/', label: '3D', match: '/3d' },
   { href: '/docs/', label: 'Docs', match: '/docs' },
   { href: '/#compare', label: 'Compare', wide: true },
   { href: SITE.repo, label: 'GitHub', external: true, wide: true },

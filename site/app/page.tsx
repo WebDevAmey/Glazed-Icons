@@ -153,11 +153,11 @@ export default function Home() {
         <div className="container">
           <div className="glass-show">
             <div className="glass-copy">
-              <p className="abstract-kicker" style={{ color: 'var(--muted)' }}>New illustrations, {GLASS.count} objects</p>
+              <p className="abstract-kicker" style={{ color: 'var(--muted)' }}>New, {GLASS.count} 3D icons</p>
               <h2 id="glass-title" className="h2">{GLASS.title}</h2>
               <p className="lede">{GLASS.description}</p>
               <div className="hero-actions" style={{ justifyContent: 'flex-start', marginTop: 4 }}>
-                <Link className="btn btn-primary btn-lg" href="/objects/">Explore the objects<Arrow /></Link>
+                <Link className="btn btn-primary btn-lg" href="/3d/">Browse 3D icons<Arrow /></Link>
               </div>
             </div>
             <div className="glass-grid">
