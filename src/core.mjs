@@ -50,7 +50,7 @@ export function resolve(icon, hues, opts = {}) {
     glyph: clamp(num(opts.glyph, num(icon.glyph, DEFAULTS.glyph)), 8, 26),
     gloss: clamp(num(opts.gloss, DEFAULTS.gloss), 0, 1),
     rim: clamp(num(opts.rim, DEFAULTS.rim), 0, 1),
-    shadow: clamp(num(opts.shadow, dark ? 0 : DEFAULTS.shadow), 0, 1),
+    shadow: clamp(num(opts.shadow, num(icon.shadow, dark ? 0 : DEFAULTS.shadow)), 0, 1),
     stroke: clamp(num(opts.stroke, DEFAULTS.stroke), 1, 3),
   };
 }

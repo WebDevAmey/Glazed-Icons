@@ -10,6 +10,7 @@ from catalog import CATALOG, HUES  # noqa: E402
 
 TABLER = os.path.join(ROOT, 'node_modules', '@tabler', 'icons', 'icons')
 ABSTRACT = os.path.join(ROOT, 'src', 'glyphs', 'abstract')
+BLOSSOM = os.path.join(ROOT, 'src', 'glyphs', 'blossom')
 INK = '#141414'  # Abstract glyphs are drawn dark, like ink on coloured card
 icons, seen = [], set()
 for line in CATALOG.strip().splitlines():
@@ -22,6 +23,8 @@ for line in CATALOG.strip().splitlines():
     seen.add(name)
     if kind == 'a':
         path = os.path.join(ABSTRACT, glyph + '.svg')
+    elif kind == 'b':
+        path = os.path.join(BLOSSOM, glyph + '.svg')
     else:
         path = os.path.join(TABLER, 'filled' if kind == 'f' else 'outline', glyph + '.svg')
     svg = open(path).read()
@@ -33,6 +36,10 @@ for line in CATALOG.strip().splitlines():
     if kind == 'a':
         entry['ink'] = INK
         entry['glyph'] = 20  # bold shapes read best a little larger
+    if kind == 'b':
+        entry['multi'] = True  # paints its own colours; ink does not apply
+        entry['glyph'] = 24
+        entry['shadow'] = 0.3
     icons.append(entry)
 
 with open(os.path.join(ROOT, 'src', 'data.json'), 'w') as f:

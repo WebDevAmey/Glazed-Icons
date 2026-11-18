@@ -23,7 +23,7 @@ fs.writeFileSync(path.join(out, 'icons.json'), JSON.stringify({ version: VERSION
 
 // 3. Core ESM: data + toSvg, framework free.
 const coreSrc = fs.readFileSync(path.join(here, 'core.mjs'), 'utf8');
-const data = icons.map(({ name, hue, style, body, category, tags, ink, glyph }) => ({ name, hue, style, body, category, tags, ...(ink && { ink }), ...(glyph && { glyph }) }));
+const data = icons.map(({ name, hue, style, body, category, tags, ink, glyph, multi, shadow }) => ({ name, hue, style, body, category, tags, ...(ink && { ink }), ...(glyph && { glyph }), ...(multi && { multi }), ...(shadow !== undefined && { shadow }) }));
 fs.writeFileSync(path.join(out, 'dist', 'index.js'),
 `${coreSrc}
 export const hues = ${JSON.stringify(hues)};
