@@ -1,11 +1,11 @@
 import { createElement, forwardRef } from 'react';
 import { glaze } from './index.js';
 function make(name, displayName) {
-  const C = forwardRef(function GlazeIcon({ size = 32, hue, color, radius, glyph, gloss, rim, shadow, stroke, title, className, style, ...rest }, ref) {
+  const C = forwardRef(function GlazeIcon({ size = 32, hue, color, ink, radius, glyph, gloss, rim, shadow, stroke, title, className, style, ...rest }, ref) {
     return createElement('span', {
       ref, className, role: title ? 'img' : undefined, 'aria-label': title, 'aria-hidden': title ? undefined : true,
       style: { display: 'inline-flex', width: size, height: size, lineHeight: 0, filter: 'drop-shadow(0 6px 10px rgb(0 0 0 / 0.12)) drop-shadow(0 2px 3px rgb(0 0 0 / 0.08))', ...style },
-      dangerouslySetInnerHTML: { __html: glaze(name, { size, hue, color, radius, glyph, gloss, rim, shadow, stroke }) }, ...rest,
+      dangerouslySetInnerHTML: { __html: glaze(name, { size, hue, color, ink, radius, glyph, gloss, rim, shadow, stroke }) }, ...rest,
     });
   });
   C.displayName = displayName;
@@ -205,3 +205,43 @@ export const BatteryIcon = /*#__PURE__*/ make('battery', 'BatteryIcon');
 export const WifiIcon = /*#__PURE__*/ make('wifi', 'WifiIcon');
 export const BluetoothIcon = /*#__PURE__*/ make('bluetooth', 'BluetoothIcon');
 export const PrinterIcon = /*#__PURE__*/ make('printer', 'PrinterIcon');
+export const FanIcon = /*#__PURE__*/ make('fan', 'FanIcon');
+export const StrataIcon = /*#__PURE__*/ make('strata', 'StrataIcon');
+export const PinchIcon = /*#__PURE__*/ make('pinch', 'PinchIcon');
+export const PinwheelIcon = /*#__PURE__*/ make('pinwheel', 'PinwheelIcon');
+export const HalvesIcon = /*#__PURE__*/ make('halves', 'HalvesIcon');
+export const ArchesIcon = /*#__PURE__*/ make('arches', 'ArchesIcon');
+export const SparkleIcon = /*#__PURE__*/ make('sparkle', 'SparkleIcon');
+export const BowlIcon = /*#__PURE__*/ make('bowl', 'BowlIcon');
+export const OpenBookIcon = /*#__PURE__*/ make('open-book', 'OpenBookIcon');
+export const RippleIcon = /*#__PURE__*/ make('ripple', 'RippleIcon');
+export const DoorwayIcon = /*#__PURE__*/ make('doorway', 'DoorwayIcon');
+export const SunburstIcon = /*#__PURE__*/ make('sunburst', 'SunburstIcon');
+export const CrescentsIcon = /*#__PURE__*/ make('crescents', 'CrescentsIcon');
+export const CloverIcon = /*#__PURE__*/ make('clover', 'CloverIcon');
+export const PeaksIcon = /*#__PURE__*/ make('peaks', 'PeaksIcon');
+export const TideIcon = /*#__PURE__*/ make('tide', 'TideIcon');
+export const VortexIcon = /*#__PURE__*/ make('vortex', 'VortexIcon');
+export const ChaliceIcon = /*#__PURE__*/ make('chalice', 'ChaliceIcon');
+export const SproutIcon = /*#__PURE__*/ make('sprout', 'SproutIcon');
+export const RainbowIcon = /*#__PURE__*/ make('rainbow', 'RainbowIcon');
+export const QuatrefoilIcon = /*#__PURE__*/ make('quatrefoil', 'QuatrefoilIcon');
+export const TurnIcon = /*#__PURE__*/ make('turn', 'TurnIcon');
+export const CubicIcon = /*#__PURE__*/ make('cubic', 'CubicIcon');
+export const MirrorIcon = /*#__PURE__*/ make('mirror', 'MirrorIcon');
+export const BloomIcon = /*#__PURE__*/ make('bloom', 'BloomIcon');
+export const LodestarIcon = /*#__PURE__*/ make('lodestar', 'LodestarIcon');
+export const VennIcon = /*#__PURE__*/ make('venn', 'VennIcon');
+export const HorizonIcon = /*#__PURE__*/ make('horizon', 'HorizonIcon');
+export const GazeIcon = /*#__PURE__*/ make('gaze', 'GazeIcon');
+export const PillarIcon = /*#__PURE__*/ make('pillar', 'PillarIcon');
+export const GroveIcon = /*#__PURE__*/ make('grove', 'GroveIcon');
+export const PhasesIcon = /*#__PURE__*/ make('phases', 'PhasesIcon');
+export const SlopeIcon = /*#__PURE__*/ make('slope', 'SlopeIcon');
+export const WindowIcon = /*#__PURE__*/ make('window', 'WindowIcon');
+export const GustIcon = /*#__PURE__*/ make('gust', 'GustIcon');
+export const LotusIcon = /*#__PURE__*/ make('lotus', 'LotusIcon');
+export const StairsIcon = /*#__PURE__*/ make('stairs', 'StairsIcon');
+export const OrbitIcon = /*#__PURE__*/ make('orbit', 'OrbitIcon');
+export const PetalsIcon = /*#__PURE__*/ make('petals', 'PetalsIcon');
+export const SeedIcon = /*#__PURE__*/ make('seed', 'SeedIcon');

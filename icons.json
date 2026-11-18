@@ -86,6 +86,11 @@
       "#ff2056",
       "#ec003f"
     ],
+    "cream": [
+      "#fffaf0",
+      "#f6ecd9",
+      "#ead9bb"
+    ],
     "ink": [
       "#525252",
       "#262626",
@@ -2353,6 +2358,596 @@
       ],
       "style": "stroke",
       "component": "PrinterIcon"
+    },
+    {
+      "name": "fan",
+      "category": "Abstract",
+      "hue": "orange",
+      "tags": [
+        "arcs",
+        "radar",
+        "signal",
+        "spread",
+        "quarter"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "FanIcon"
+    },
+    {
+      "name": "strata",
+      "category": "Abstract",
+      "hue": "blue",
+      "tags": [
+        "layers",
+        "discs",
+        "stack",
+        "levels",
+        "sparkle"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "StrataIcon"
+    },
+    {
+      "name": "pinch",
+      "category": "Abstract",
+      "hue": "pink",
+      "tags": [
+        "hourglass",
+        "waist",
+        "time",
+        "curve"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "PinchIcon"
+    },
+    {
+      "name": "pinwheel",
+      "category": "Abstract",
+      "hue": "green",
+      "tags": [
+        "spin",
+        "windmill",
+        "turn",
+        "blades"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "PinwheelIcon"
+    },
+    {
+      "name": "halves",
+      "category": "Abstract",
+      "hue": "cream",
+      "tags": [
+        "split",
+        "balance",
+        "mirror",
+        "dot"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "HalvesIcon"
+    },
+    {
+      "name": "arches",
+      "category": "Abstract",
+      "hue": "amber",
+      "tags": [
+        "gate",
+        "arch",
+        "nested",
+        "door"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "ArchesIcon"
+    },
+    {
+      "name": "sparkle",
+      "category": "Abstract",
+      "hue": "orange",
+      "tags": [
+        "star",
+        "shine",
+        "twinkle",
+        "magic"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "SparkleIcon"
+    },
+    {
+      "name": "bowl",
+      "category": "Abstract",
+      "hue": "blue",
+      "tags": [
+        "cup",
+        "ball",
+        "rest",
+        "vessel"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "BowlIcon"
+    },
+    {
+      "name": "open-book",
+      "category": "Abstract",
+      "hue": "cream",
+      "tags": [
+        "read",
+        "pages",
+        "story",
+        "learn"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "OpenBookIcon"
+    },
+    {
+      "name": "ripple",
+      "category": "Abstract",
+      "hue": "amber",
+      "tags": [
+        "waves",
+        "water",
+        "flow",
+        "pattern"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "RippleIcon"
+    },
+    {
+      "name": "doorway",
+      "category": "Abstract",
+      "hue": "green",
+      "tags": [
+        "arch",
+        "steps",
+        "enter",
+        "portal"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "DoorwayIcon"
+    },
+    {
+      "name": "sunburst",
+      "category": "Abstract",
+      "hue": "orange",
+      "tags": [
+        "sun",
+        "rays",
+        "burst",
+        "light"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "SunburstIcon"
+    },
+    {
+      "name": "crescents",
+      "category": "Abstract",
+      "hue": "blue",
+      "tags": [
+        "moon",
+        "phases",
+        "night"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "CrescentsIcon"
+    },
+    {
+      "name": "clover",
+      "category": "Abstract",
+      "hue": "pink",
+      "tags": [
+        "lucky",
+        "four",
+        "leaf",
+        "lobes"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "CloverIcon"
+    },
+    {
+      "name": "peaks",
+      "category": "Abstract",
+      "hue": "cream",
+      "tags": [
+        "mountains",
+        "landscape",
+        "sun"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "PeaksIcon"
+    },
+    {
+      "name": "tide",
+      "category": "Abstract",
+      "hue": "green",
+      "tags": [
+        "dome",
+        "waves",
+        "sea",
+        "horizon"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "TideIcon"
+    },
+    {
+      "name": "vortex",
+      "category": "Abstract",
+      "hue": "blue",
+      "tags": [
+        "swirl",
+        "spin",
+        "spiral",
+        "motion"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "VortexIcon"
+    },
+    {
+      "name": "chalice",
+      "category": "Abstract",
+      "hue": "pink",
+      "tags": [
+        "cup",
+        "trophy",
+        "goblet",
+        "ball"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "ChaliceIcon"
+    },
+    {
+      "name": "sprout",
+      "category": "Abstract",
+      "hue": "cream",
+      "tags": [
+        "leaf",
+        "grow",
+        "plant",
+        "seed"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "SproutIcon"
+    },
+    {
+      "name": "rainbow",
+      "category": "Abstract",
+      "hue": "amber",
+      "tags": [
+        "arches",
+        "arcs",
+        "nested",
+        "dot"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "RainbowIcon"
+    },
+    {
+      "name": "quatrefoil",
+      "category": "Abstract",
+      "hue": "green",
+      "tags": [
+        "petals",
+        "x",
+        "cross",
+        "shape"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "QuatrefoilIcon"
+    },
+    {
+      "name": "turn",
+      "category": "Abstract",
+      "hue": "orange",
+      "tags": [
+        "s",
+        "curve",
+        "switch",
+        "path"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "TurnIcon"
+    },
+    {
+      "name": "cubic",
+      "category": "Abstract",
+      "hue": "blue",
+      "tags": [
+        "cube",
+        "box",
+        "3d",
+        "isometric"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "CubicIcon"
+    },
+    {
+      "name": "mirror",
+      "category": "Abstract",
+      "hue": "pink",
+      "tags": [
+        "reflect",
+        "bows",
+        "symmetry"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "MirrorIcon"
+    },
+    {
+      "name": "bloom",
+      "category": "Abstract",
+      "hue": "amber",
+      "tags": [
+        "flower",
+        "petals",
+        "blossom"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "BloomIcon"
+    },
+    {
+      "name": "lodestar",
+      "category": "Abstract",
+      "hue": "green",
+      "tags": [
+        "compass",
+        "star",
+        "north",
+        "guide"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "LodestarIcon"
+    },
+    {
+      "name": "venn",
+      "category": "Abstract",
+      "hue": "orange",
+      "tags": [
+        "overlap",
+        "circles",
+        "union"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "VennIcon"
+    },
+    {
+      "name": "horizon",
+      "category": "Abstract",
+      "hue": "cream",
+      "tags": [
+        "hills",
+        "sunset",
+        "landscape"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "HorizonIcon"
+    },
+    {
+      "name": "gaze",
+      "category": "Abstract",
+      "hue": "pink",
+      "tags": [
+        "eye",
+        "look",
+        "vision",
+        "watch"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "GazeIcon"
+    },
+    {
+      "name": "pillar",
+      "category": "Abstract",
+      "hue": "blue",
+      "tags": [
+        "column",
+        "temple",
+        "classic"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "PillarIcon"
+    },
+    {
+      "name": "grove",
+      "category": "Abstract",
+      "hue": "amber",
+      "tags": [
+        "trees",
+        "canopy",
+        "mushrooms"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "GroveIcon"
+    },
+    {
+      "name": "phases",
+      "category": "Abstract",
+      "hue": "cream",
+      "tags": [
+        "moon",
+        "crescents",
+        "cycle"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "PhasesIcon"
+    },
+    {
+      "name": "slope",
+      "category": "Abstract",
+      "hue": "pink",
+      "tags": [
+        "ramp",
+        "ball",
+        "roll",
+        "motion"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "SlopeIcon"
+    },
+    {
+      "name": "window",
+      "category": "Abstract",
+      "hue": "blue",
+      "tags": [
+        "frame",
+        "concave",
+        "square"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "WindowIcon"
+    },
+    {
+      "name": "gust",
+      "category": "Abstract",
+      "hue": "amber",
+      "tags": [
+        "wind",
+        "breeze",
+        "air",
+        "flow"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "GustIcon"
+    },
+    {
+      "name": "lotus",
+      "category": "Abstract",
+      "hue": "green",
+      "tags": [
+        "flower",
+        "calm",
+        "petals",
+        "drop"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "LotusIcon"
+    },
+    {
+      "name": "stairs",
+      "category": "Abstract",
+      "hue": "orange",
+      "tags": [
+        "steps",
+        "climb",
+        "arch",
+        "progress"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "StairsIcon"
+    },
+    {
+      "name": "orbit",
+      "category": "Abstract",
+      "hue": "pink",
+      "tags": [
+        "planet",
+        "ring",
+        "space",
+        "moons"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "OrbitIcon"
+    },
+    {
+      "name": "petals",
+      "category": "Abstract",
+      "hue": "cream",
+      "tags": [
+        "quarters",
+        "flower",
+        "shape"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "PetalsIcon"
+    },
+    {
+      "name": "seed",
+      "category": "Abstract",
+      "hue": "green",
+      "tags": [
+        "almond",
+        "leaf",
+        "grain"
+      ],
+      "style": "fill",
+      "ink": "#141414",
+      "glyph": 20,
+      "component": "SeedIcon"
     }
   ]
 }
