@@ -1,25 +1,27 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { ILLUSTRATION_SNIPPET_LABELS, snippetsFor, src, type Illustration, type IllustrationSnippet } from '@/lib/illustrations';
+import { render3D, SIZES_3D, SNIPPET_3D_LABELS, snippetsFor, src, type Icon3D, type Size3D, type Snippet3D } from '@/lib/illustrations';
 import { copyText, downloadBlob, toast } from '@/lib/client';
 import { Seg } from './Seg';
 
-type Ground = 'light' | 'dark';
-type Scale = '1' | '2';
+type Ground = 'light' | 'dark' | 'clear';
 
-/** Detail view: the illustration on a stage, its code, and the original files. */
-export function ObjectStudio({ it }: { it: Illustration }) {
+/** Detail view: the 3D icon on a choice of grounds and sizes, its code, and downloads. */
+export function ObjectStudio({ it }: { it: Icon3D }) {
   const [ground, setGround] = useState<Ground>('light');
-  const [scale, setScale] = useState<Scale>('2');
-  const [tab, setTab] = useState<IllustrationSnippet>('html');
+  const [size, setSize] = useState<Size3D>(256);
+  const [tab, setTab] = useState<Snippet3D>('html');
   useEffect(() => { if (document.documentElement.dataset.theme === 'dark') setGround('dark'); }, []);
-  const code = snippetsFor(it)[tab];
+  const code = snippetsFor(it, size)[tab];
 
   const save = async (kind: 'png' | 'webp') => {
-    const file = kind === 'png' ? it.png : it.webp;
-    downloadBlob(`${it.name}.${kind}`, await (await fetch(src(file))).blob());
-    toast(`${kind.toUpperCase()} downloaded`);
+    const name = `${it.name}-${size}.${kind}`;
+    const blob = size === it.width
+      ? await (await fetch(src(kind === 'png' ? it.png : it.webp))).blob()
+      : await render3D(it, size, kind === 'png' ? 'image/png' : 'image/webp');
+    downloadBlob(name, blob);
+    toast(`${size} px ${kind.toUpperCase()} downloaded`);
   };
 
   return (
@@ -27,15 +29,14 @@ export function ObjectStudio({ it }: { it: Illustration }) {
       <div className="studio-stage" data-ground={ground}>
         <div className="studio-ground" aria-hidden="true" />
         <div className="stage-controls">
-          <Seg label="Preview background" className="stage-seg" value={ground} onChange={setGround} options={[{ value: 'light', label: 'Light' }, { value: 'dark', label: 'Dark' }]} />
+          <Seg label="Preview background" className="stage-seg" value={ground} onChange={setGround} options={[{ value: 'light', label: 'Light' }, { value: 'dark', label: 'Dark' }, { value: 'clear', label: 'Clear' }]} />
         </div>
-        <picture className="obj-stage-img" style={{ width: it.width * +scale, aspectRatio: `${it.width} / ${it.height}` }}>
+        <picture className="obj-stage-img" style={{ width: size }}>
           <source srcSet={src(it.webp)} type="image/webp" />
-          <img src={src(it.png)} width={it.width} height={it.height} alt={`${it.title}, a glass and resin illustration`} />
+          <img src={src(it.png)} width={it.width} height={it.height} alt={`${it.title}, a 3D glass icon`} />
         </picture>
         <div className="studio-size-bar">
-          <Seg label="Preview size" className="stage-seg" value={scale} onChange={setScale} options={[{ value: '1', label: '1×' }, { value: '2', label: '2×' }]} />
-          <span className="studio-size">{it.width} × {it.height} px</span>
+          <Seg label="Icon size" className="stage-seg" value={String(size)} onChange={(v) => setSize(+v as Size3D)} options={SIZES_3D.map((s) => ({ value: String(s), label: String(s) }))} />
         </div>
       </div>
 
@@ -43,7 +44,7 @@ export function ObjectStudio({ it }: { it: Illustration }) {
         <header>
           <h1 className="display">{it.title}</h1>
           <p className="body" style={{ marginTop: 10 }}>
-            From the Digital Objects collection, in glass and resin. Shipped exactly as supplied, at its native {it.width} × {it.height} px.
+            A 3D icon in glass and resin on a transparent background. Its shadow and glow are kept as soft alpha, so it works on light and dark surfaces.
           </p>
           <div className="meta" style={{ marginTop: 14 }}>
             <span>Glass &amp; Resin</span>
@@ -53,10 +54,10 @@ export function ObjectStudio({ it }: { it: Illustration }) {
 
         <div className="code-card">
           <div className="code-bar">
-            <Seg kind="tab" label="Code format" value={tab} onChange={setTab} options={(Object.keys(ILLUSTRATION_SNIPPET_LABELS) as IllustrationSnippet[]).map((k) => ({ value: k, label: ILLUSTRATION_SNIPPET_LABELS[k] }))} />
-            <button type="button" className="code-copy" onClick={() => copyText(code, `${ILLUSTRATION_SNIPPET_LABELS[tab]} copied`)}>Copy</button>
+            <Seg kind="tab" label="Code format" value={tab} onChange={setTab} options={(Object.keys(SNIPPET_3D_LABELS) as Snippet3D[]).map((k) => ({ value: k, label: SNIPPET_3D_LABELS[k] }))} />
+            <button type="button" className="code-copy" onClick={() => copyText(code, `${SNIPPET_3D_LABELS[tab]} copied`)}>Copy</button>
           </div>
-          <pre role="tabpanel" tabIndex={0} aria-label={`${ILLUSTRATION_SNIPPET_LABELS[tab]} code`}><code>{code}</code></pre>
+          <pre role="tabpanel" tabIndex={0} aria-label={`${SNIPPET_3D_LABELS[tab]} code`}><code>{code}</code></pre>
         </div>
 
         <div className="actions">
@@ -64,7 +65,7 @@ export function ObjectStudio({ it }: { it: Illustration }) {
           <button type="button" className="btn btn-quiet" onClick={() => save('webp')}>Download WebP</button>
           <button type="button" className="btn btn-quiet" onClick={() => copyText(`${location.origin}${src(it.webp)}`, 'Link copied')}>Copy link</button>
         </div>
-        <p className="small" style={{ margin: 0 }}>Both files are lossless and pixel-identical to the original. The 2× preview is enlarged on screen only.</p>
+        <p className="small" style={{ margin: 0 }}>Downloads are {size} × {size} px with a transparent background. The 512 px files are the lossless masters.</p>
       </div>
     </div>
   );

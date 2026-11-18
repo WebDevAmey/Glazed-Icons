@@ -5,17 +5,17 @@ import { ObjectBrowser } from '@/components/ObjectBrowser';
 
 export const metadata: Metadata = {
   title: GLASS.title,
-  description: `${GLASS.description} Search them, preview each one and download it as lossless PNG or WebP. Free under MIT.`,
-  alternates: { canonical: '/objects/' },
+  description: `${GLASS.description} Search them, preview each one on light or dark and download transparent PNG or WebP. Free under MIT.`,
+  alternates: { canonical: '/3d/' },
 };
 
-export default function ObjectsPage() {
+export default function Icons3DPage() {
   return (
     <div className="container">
       <div className="page-head">
-        <p className="abstract-kicker" style={{ color: 'var(--muted)' }}>Illustrations, {GLASS.count} objects</p>
+        <p className="abstract-kicker" style={{ color: 'var(--muted)' }}>3D icons, {GLASS.count} in the set</p>
         <h1 className="display">{GLASS.title}</h1>
-        <p className="lede">{GLASS.description} Open any object to preview it and download the original file.</p>
+        <p className="lede">{GLASS.description} Open any icon to preview it at size and download it.</p>
       </div>
       <Suspense fallback={<div style={{ minHeight: 600 }} />}>
         <ObjectBrowser collection={GLASS} />

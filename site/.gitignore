@@ -4,4 +4,4 @@ out/
 lib/generated/
 next-env.d.ts
 *.tsbuildinfo
-public/illustrations/
+public/3d/
