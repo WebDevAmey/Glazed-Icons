@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { RADII, darkInk, glyphOf, inkOf, shades, type Icon, type TileOptions } from '@/lib/icons';
+import { RADII, glyphOf, shadowOf, inkOf, shades, type Icon, type TileOptions } from '@/lib/icons';
 
 /**
  * The CSS twin of the package's SVG tile: gradient fill, top gloss, glass rim,
@@ -18,7 +18,7 @@ export function Tile({ icon, size = 48, className = '', style, ...opts }: TileOp
     '--glyph': opts.glyph ?? glyphOf(icon),
     ...(opts.gloss !== undefined && { '--gloss': opts.gloss }),
     ...(opts.rim !== undefined && { '--rim': opts.rim }),
-    ...(opts.shadow !== undefined ? { '--sh': opts.shadow } : darkInk(inkOf(icon, opts)) ? { '--sh': 0 } : {}),
+    '--sh': opts.shadow ?? shadowOf(icon, opts),
     ...style,
   } as CSSProperties;
   const ink = inkOf(icon, opts);

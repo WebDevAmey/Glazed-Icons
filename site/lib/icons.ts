@@ -15,6 +15,10 @@ export interface Icon {
   ink?: string;
   /** Default glyph size on the 32 grid when it differs from the library default. */
   glyph?: number;
+  /** The glyph paints its own colours (the Blossom collection), so ink does not apply. */
+  multi?: boolean;
+  /** Default glyph shadow when it differs from the library default. */
+  shadow?: number;
 }
 
 /** Everything a tile can be told, shared by the site, the SVG export and the code snippets. */
@@ -70,7 +74,7 @@ export const INK = '#141414';
 export const inkOf = (ic: Icon, opts: TileOptions = {}) => opts.ink || ic.ink || WHITE;
 export const darkInk = (hex: string) => isDarkInk(hex) as boolean;
 export const glyphOf = (ic: Icon) => ic.glyph ?? DEFAULTS.glyph;
-export const shadowOf = (ic: Icon, opts: TileOptions = {}) => (darkInk(inkOf(ic, opts)) ? 0 : DEFAULTS.shadow);
+export const shadowOf = (ic: Icon, opts: TileOptions = {}) => ic.shadow ?? (darkInk(inkOf(ic, opts)) ? 0 : DEFAULTS.shadow);
 
 /** Only the options that differ from the defaults, so snippets stay short. */
 export function changed(ic: Icon, opts: TileOptions) {
