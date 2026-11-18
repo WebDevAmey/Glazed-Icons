@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { CATEGORIES, ICONS, RADII, icon, label, search, toSvg, type Hue, type Radius } from '@/lib/icons';
+import { CATEGORIES, ICONS, RADII, getIcon, icon, label, search, toSvg, type Hue, type Radius } from '@/lib/icons';
 import { downloadBlob, toast } from '@/lib/client';
 import { Tile } from './Tile';
 import { HuePicker, RadiusPicker } from './Controls';
@@ -11,29 +11,35 @@ import { Slider } from './Slider';
 
 const ALL = 'All icons';
 
-/** Ruler-style list: a tick beside each label, spacer ticks between, ticks grow toward the pointer. */
-function Ruler({ items, value, onChange, counts }: { items: string[]; value: string; onChange: (c: string) => void; counts: Record<string, number> }) {
+/** Each category is introduced by one of its own icons. */
+const COVER: Record<string, string> = {
+  [ALL]: 'apps', Development: 'code', 'Cloud & Data': 'database', 'AI & Magic': 'sparkles', Security: 'shield-check',
+  Communication: 'message-circle', 'Time & Alerts': 'bell', Analytics: 'chart-pie', Media: 'player-play', Files: 'folder',
+  Design: 'palette', Navigation: 'compass', Interface: 'settings', Commerce: 'shopping-cart', Nature: 'leaf',
+  People: 'user', Devices: 'device-mobile', Abstract: 'orbit', Blossom: 'kamal',
+};
+
+/** Category list: a highlight slides to the chosen category, and each row carries its own tile. */
+function Categories({ items, value, onChange, counts }: { items: string[]; value: string; onChange: (c: string) => void; counts: Record<string, number> }) {
   const list = useRef<HTMLDivElement>(null);
-  const grow = (y: number | null) => {
-    list.current?.querySelectorAll<HTMLElement>('[data-tick]').forEach((t) => {
-      if (y === null) return t.style.removeProperty('--grow');
-      const r = t.getBoundingClientRect();
-      const d = Math.abs(y - (r.top + r.height / 2));
-      t.style.setProperty('--grow', String(Math.max(0, 1 - d / 64)));
-    });
-  };
+  const [mark, setMark] = useState<{ y: number; h: number } | null>(null);
+  useLayoutEffect(() => {
+    const el = list.current?.querySelector<HTMLElement>(`[data-cat="${CSS.escape(value)}"]`);
+    if (el) setMark({ y: el.offsetTop, h: el.offsetHeight });
+  }, [value]);
   return (
-    <div className="ruler" ref={list} onPointerMove={(e) => grow(e.clientY)} onPointerLeave={() => grow(null)} role="radiogroup" aria-label="Category">
-      {items.map((c, i) => (
-        <div key={c} className="ruler-group">
-          {i > 0 && <><span className="tick" data-tick aria-hidden="true" /><span className="tick" data-tick aria-hidden="true" /></>}
-          <button type="button" role="radio" aria-checked={value === c} className="ruler-item" onClick={() => onChange(c)}>
-            <span className="tick" data-tick aria-hidden="true" />
-            <span className="ruler-label">{c}</span>
-            <span className="ruler-count">{counts[c]}</span>
+    <div className="cats-list" ref={list} role="radiogroup" aria-label="Category">
+      {mark && <span className="cats-mark" aria-hidden="true" style={{ transform: `translateY(${mark.y}px)`, height: mark.h }} />}
+      {items.map((c) => {
+        const cover = getIcon(COVER[c] ?? '') ?? ICONS.find((i) => i.category === c)!;
+        return (
+          <button key={c} type="button" role="radio" aria-checked={value === c} data-cat={c} className="cat-item" onClick={() => onChange(c)}>
+            <Tile icon={cover} size={22} />
+            <span className="cat-label">{c}</span>
+            <span className="cat-count">{counts[c]}</span>
           </button>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
@@ -113,7 +119,7 @@ export function Browser() {
         <div className="sidebar-panel" id="sidebar-panel" inert={!open}>
           <div className="sidebar-scroll">
             <p className="sidebar-title">Categories</p>
-            <Ruler items={[ALL, ...CATEGORIES]} value={cat} onChange={pick} counts={counts} />
+            <Categories items={[ALL, ...CATEGORIES]} value={cat} onChange={pick} counts={counts} />
             <div className="sidebar-style">
               <p className="sidebar-title">Style</p>
               <div>
