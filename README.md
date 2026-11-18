@@ -7,6 +7,7 @@ into buttons, feature lists, docs and landing pages.
 - 282 icons in 18 categories, 19 hues
 - The Abstract collection: 40 original geometric glyphs in dark ink
 - The Blossom collection: 48 original multi-colour flowers
+- Digital Objects — Glass & Resin: 40 translucent 3D illustrations as PNG and WebP
 - Plain SVG, framework-free JS, and tree-shakable React components
 - Recolour any icon to any hue, four corner radii, any size
 - Typed names and options
@@ -105,6 +106,20 @@ them with `colors`, slot by slot (`null` keeps a slot) or by hex:
 <KamalIcon colors={[null, '#ff2d55', '#ffb3c7']} />
 <KamalIcon colors={{ '#ffc21a': '#ff2d55' }} />
 ```
+
+## Digital Objects — Glass & Resin
+
+Forty translucent 3D objects in glass and resin: prisms, orbits, crystals, portals, a globe,
+a lotus and more. These are raster illustrations, not tiles, so they ship as files exactly
+as supplied: no recolouring, redrawing or resizing.
+
+```html
+<img src="node_modules/glaze-icons/illustrations/glass-resin/glass-prism.webp" width="191" height="191" alt="Glass prism">
+```
+
+Each file comes as lossless PNG and lossless WebP at its native size (about 165 to 191px).
+`illustrations.json` lists every asset with its name, title, tags and dimensions.
+`scripts/glass.py` cuts them from the source sheet in `src/sources/`.
 
 ## Categories
 

@@ -17,14 +17,18 @@
       "default": "./dist/react.js"
     },
     "./svg/*": "./svg/*",
-    "./icons.json": "./icons.json"
+    "./icons.json": "./icons.json",
+    "./illustrations/*": "./illustrations/*",
+    "./illustrations.json": "./illustrations.json"
   },
   "files": [
-    "dist",
-    "svg",
-    "icons.json",
     "LICENSE",
-    "NOTICE"
+    "NOTICE",
+    "dist",
+    "icons.json",
+    "illustrations",
+    "illustrations.json",
+    "svg"
   ],
   "peerDependencies": {
     "react": ">=17"
@@ -45,7 +49,8 @@
   ],
   "scripts": {
     "icons:extract": "python3 scripts/extract.py",
-    "build": "node scripts/build.mjs"
+    "build": "node scripts/build.mjs",
+    "illustrations": "python3 scripts/glass.py"
   },
   "devDependencies": {
     "@tabler/icons": "3.34.1"
