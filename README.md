@@ -36,6 +36,7 @@ Every option works as a React prop and as a `glaze()` option:
 | `hue` | one of the 19 hues below | the icon's own |
 | `color` | any hex; light and dark shades are derived from it | none |
 | `ink` | glyph colour as a hex | white; near-black for Abstract |
+| `colors` | Blossom only: new glyph colours, as an array in palette order or a map from old hex to new | the flower's own |
 | `radius` | `sharp`, `soft`, `round`, `circle`, or 0 to 16 | `soft` (8) |
 | `glyph` | glyph size on the 32 grid, 8 to 26 | 17; 20 for Abstract |
 | `gloss` | top light, 0 to 1 | 0.6 |
@@ -95,6 +96,14 @@ import { KamalIcon, MarigoldIcon } from 'glaze-icons/react';
 
 <KamalIcon size={48} />
 <MarigoldIcon size={48} hue="cream" />
+```
+
+Every flower lists its colours in `palette` (in `icons.json`), outline first. Recolour any of
+them with `colors`, slot by slot (`null` keeps a slot) or by hex:
+
+```jsx
+<KamalIcon colors={[null, '#ff2d55', '#ffb3c7']} />
+<KamalIcon colors={{ '#ffc21a': '#ff2d55' }} />
 ```
 
 ## Categories
