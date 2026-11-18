@@ -2963,7 +2963,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff9e7a",
         "#ff8a1f",
         "#ffc21a",
@@ -2987,7 +2987,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff6f9e",
         "#ffaecb",
         "#ff6b4a"
@@ -3010,7 +3010,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#2c63d9",
         "#ffc21a"
       ],
@@ -3032,8 +3032,9 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
-        "#0f7d72"
+        "#fff4de",
+        "#0f7d72",
+        "#fff3dc"
       ],
       "glyph": 24,
       "shadow": 0.3,
@@ -3053,7 +3054,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff6b4a",
         "#0f7d72",
         "#ffc21a"
@@ -3076,9 +3077,10 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ffaecb",
-        "#ff6f9e"
+        "#ff6f9e",
+        "#fff3dc"
       ],
       "glyph": 24,
       "shadow": 0.3,
@@ -3098,6 +3100,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
+        "#fff4de",
         "#fff3dc",
         "#1f9d58",
         "#ff6f9e"
@@ -3120,7 +3123,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff8a1f",
         "#ff9e7a",
         "#ffc21a"
@@ -3143,7 +3146,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#2c63d9",
         "#4aa6f2",
         "#ffc21a"
@@ -3166,7 +3169,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff6f9e",
         "#ff8a1f"
       ],
@@ -3189,7 +3192,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#4aa6f2",
         "#ff8a1f",
         "#2c63d9",
@@ -3213,7 +3216,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ffc21a",
         "#ff6f9e",
         "#ffaecb"
@@ -3236,7 +3239,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#4aa6f2",
         "#ff8a1f"
       ],
@@ -3258,10 +3261,11 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ffc21a",
         "#a67cf2",
-        "#6f45cf"
+        "#6f45cf",
+        "#fff3dc"
       ],
       "glyph": 24,
       "shadow": 0.3,
@@ -3281,7 +3285,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff6b4a",
         "#ffc21a"
       ],
@@ -3303,7 +3307,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#4aa6f2",
         "#0f7d72",
         "#ffc21a"
@@ -3326,8 +3330,9 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff9e7a",
+        "#fff3dc",
         "#0f7d72"
       ],
       "glyph": 24,
@@ -3348,7 +3353,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff6b4a",
         "#ffc21a",
         "#1f9d58"
@@ -3371,7 +3376,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#4aa6f2",
         "#2c63d9",
         "#ff8a1f"
@@ -3394,6 +3399,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
+        "#fff4de",
         "#fff3dc",
         "#1f9d58",
         "#ff8a1f"
@@ -3417,7 +3423,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ffc21a",
         "#a67cf2",
         "#6f45cf"
@@ -3441,7 +3447,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#0f7d72",
         "#ff6f9e",
         "#ffc21a"
@@ -3464,7 +3470,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#1f9d58",
         "#ffc21a",
         "#7fd3a8"
@@ -3487,7 +3493,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff6b4a",
         "#ff9e7a",
         "#ffc21a"
@@ -3511,7 +3517,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#0f7d72",
         "#ff6f9e",
         "#ffaecb"
@@ -3534,7 +3540,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff6f9e",
         "#ffaecb",
         "#ffc21a"
@@ -3558,9 +3564,10 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#7fd3a8",
         "#0f7d72",
+        "#fff3dc",
         "#ffc21a"
       ],
       "glyph": 24,
@@ -3581,9 +3588,10 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ffc21a",
-        "#2c63d9"
+        "#2c63d9",
+        "#fff3dc"
       ],
       "glyph": 24,
       "shadow": 0.3,
@@ -3603,7 +3611,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff8a1f",
         "#ff6f9e"
       ],
@@ -3625,7 +3633,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ffc21a",
         "#1f9d58"
       ],
@@ -3647,8 +3655,9 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
-        "#a67cf2"
+        "#fff4de",
+        "#a67cf2",
+        "#fff3dc"
       ],
       "glyph": 24,
       "shadow": 0.3,
@@ -3668,7 +3677,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#1f9d58",
         "#ffc21a",
         "#ff8a1f"
@@ -3691,7 +3700,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#a67cf2",
         "#ff6f9e",
         "#ffc21a"
@@ -3715,7 +3724,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#1f9d58",
         "#ff6f9e",
         "#ffaecb"
@@ -3738,6 +3747,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
+        "#fff4de",
         "#fff3dc",
         "#2c63d9",
         "#ffc21a"
@@ -3760,8 +3770,9 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
-        "#ff6f9e"
+        "#fff4de",
+        "#ff6f9e",
+        "#fff3dc"
       ],
       "glyph": 24,
       "shadow": 0.3,
@@ -3781,11 +3792,12 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ffc21a",
         "#a67cf2",
         "#ff6f9e",
-        "#6f45cf"
+        "#6f45cf",
+        "#fff3dc"
       ],
       "glyph": 24,
       "shadow": 0.3,
@@ -3805,7 +3817,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ffaecb",
         "#ff9e7a",
         "#ffc21a"
@@ -3828,7 +3840,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff6f9e",
         "#ffc21a"
       ],
@@ -3850,9 +3862,10 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ffaecb",
-        "#1f9d58"
+        "#1f9d58",
+        "#fff3dc"
       ],
       "glyph": 24,
       "shadow": 0.3,
@@ -3873,8 +3886,9 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#0f7d72",
+        "#fff3dc",
         "#ffc21a"
       ],
       "glyph": 24,
@@ -3895,9 +3909,10 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff6f9e",
-        "#1d2766"
+        "#1d2766",
+        "#fff3dc"
       ],
       "glyph": 24,
       "shadow": 0.3,
@@ -3917,7 +3932,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff6f9e",
         "#1f9d58"
       ],
@@ -3939,7 +3954,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#1f9d58",
         "#ffc21a"
       ],
@@ -3961,7 +3976,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ffc21a",
         "#1f9d58",
         "#7fd3a8"
@@ -3985,6 +4000,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
+        "#fff4de",
         "#fff3dc",
         "#1d2766",
         "#ffc21a"
@@ -4008,7 +4024,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#a67cf2",
         "#6f45cf",
         "#ffc21a"
@@ -4031,7 +4047,7 @@
       "style": "fill",
       "multi": true,
       "palette": [
-        "#fff3dc",
+        "#fff4de",
         "#ff6b4a",
         "#ff9e7a",
         "#ffc21a"

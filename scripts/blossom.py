@@ -18,7 +18,7 @@ P = dict(
     orange='#ff8a1f', teal='#0f7d72', green='#1f9d58', mint='#7fd3a8', blue='#2c63d9',
     sky='#4aa6f2', violet='#a67cf2', purple='#6f45cf', navy='#1d2766', cream='#fff3dc',
 )
-OUTLINE = P['cream']
+OUTLINE = '#fff4de'  # same cream as the palette, its own value so it is its own slot
 
 f = lambda v: f'{v:.2f}'.rstrip('0').rstrip('.')
 
