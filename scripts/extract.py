@@ -9,6 +9,8 @@ sys.path.insert(0, os.path.join(ROOT, 'src'))
 from catalog import CATALOG, HUES  # noqa: E402
 
 TABLER = os.path.join(ROOT, 'node_modules', '@tabler', 'icons', 'icons')
+ABSTRACT = os.path.join(ROOT, 'src', 'glyphs', 'abstract')
+INK = '#141414'  # Abstract glyphs are drawn dark, like ink on coloured card
 icons, seen = [], set()
 for line in CATALOG.strip().splitlines():
     name, src, category, hue, tags = line.split('|')
@@ -18,13 +20,20 @@ for line in CATALOG.strip().splitlines():
     if hue not in HUES:
         sys.exit(f'unknown hue "{hue}" on {name}')
     seen.add(name)
-    path = os.path.join(TABLER, 'filled' if kind == 'f' else 'outline', glyph + '.svg')
+    if kind == 'a':
+        path = os.path.join(ABSTRACT, glyph + '.svg')
+    else:
+        path = os.path.join(TABLER, 'filled' if kind == 'f' else 'outline', glyph + '.svg')
     svg = open(path).read()
     body = re.search(r'<svg[^>]*>(.*)</svg>', svg, re.S).group(1)
     body = re.sub(r'<path stroke="none" d="M0 0h24v24H0z" fill="none"\s*/>', '', body)
     body = re.sub(r'\s+', ' ', body).strip().replace('currentColor', '#fff')
-    icons.append(dict(name=name, category=category, hue=hue, tags=tags.split(),
-                      style='fill' if kind == 'f' else 'stroke', source=glyph, body=body))
+    entry = dict(name=name, category=category, hue=hue, tags=tags.split(),
+                 style='stroke' if kind == 'o' else 'fill', source=glyph, body=body)
+    if kind == 'a':
+        entry['ink'] = INK
+        entry['glyph'] = 20  # bold shapes read best a little larger
+    icons.append(entry)
 
 with open(os.path.join(ROOT, 'src', 'data.json'), 'w') as f:
     json.dump(dict(hues=HUES, icons=icons), f)

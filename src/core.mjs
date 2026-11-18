@@ -5,7 +5,7 @@
 //   gloss  white light falling from the top edge, fading out by the middle
 //   edge   a hairline of black at 10%, so the tile holds its shape on any ground
 //   rim    a 1px glass line just inside the edge, brightest at the top
-//   glyph  white, with a short soft shadow
+//   glyph  white (or the icon's own ink), with a short soft shadow on light glyphs
 // Every layer has a knob, so the same recipe goes from flat to very glossy.
 
 export const RADII = { sharp: 4, soft: 8, round: 11, circle: 16 };
@@ -30,18 +30,27 @@ export function shadesFrom(hex) {
   return [toHex(mix(base, [255, 255, 255], 0.26)), toHex(base), toHex(mix(base, [0, 0, 0], 0.16))];
 }
 
+/** True when a glyph colour is dark enough that a drop shadow would muddy it. */
+export function isDarkInk(hex) {
+  const [r, g, b] = hexToRgb(hex);
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b < 128;
+}
+
 /** Resolves options to concrete numbers on the 32-unit grid. */
 export function resolve(icon, hues, opts = {}) {
   const colors = opts.color ? shadesFrom(opts.color) : hues[opts.hue ?? icon.hue] ?? hues[icon.hue];
   const r = typeof opts.radius === 'number' ? clamp(opts.radius, 0, 16) : RADII[opts.radius ?? DEFAULTS.radius] ?? RADII.soft;
+  const ink = opts.ink || icon.ink || '#fff';
+  const dark = isDarkInk(ink);
   return {
+    ink,
     size: num(opts.size, DEFAULTS.size),
     colors,
     r,
-    glyph: clamp(num(opts.glyph, DEFAULTS.glyph), 8, 26),
+    glyph: clamp(num(opts.glyph, num(icon.glyph, DEFAULTS.glyph)), 8, 26),
     gloss: clamp(num(opts.gloss, DEFAULTS.gloss), 0, 1),
     rim: clamp(num(opts.rim, DEFAULTS.rim), 0, 1),
-    shadow: clamp(num(opts.shadow, DEFAULTS.shadow), 0, 1),
+    shadow: clamp(num(opts.shadow, dark ? 0 : DEFAULTS.shadow), 0, 1),
     stroke: clamp(num(opts.stroke, DEFAULTS.stroke), 1, 3),
   };
 }
@@ -49,12 +58,13 @@ export function resolve(icon, hues, opts = {}) {
 export function toSvg(icon, hues, opts = {}) {
   const o = resolve(icon, hues, opts);
   const [c4, , c6] = o.colors;
-  const id = `glz-${icon.name}-${hash(JSON.stringify(o))}`;
+  const { ink: _ink, ...plain } = o;
+  const id = `glz-${icon.name}-${hash(JSON.stringify(o.ink === '#fff' ? plain : o))}`;
   const off = (32 - o.glyph) / 2;
   const k = (o.glyph / 24).toFixed(4);
   const paint = icon.style === 'fill'
-    ? 'fill="#fff" stroke="none"'
-    : `fill="none" stroke="#fff" stroke-width="${o.stroke}" stroke-linecap="round" stroke-linejoin="round"`;
+    ? `fill="${o.ink}" stroke="none"`
+    : `fill="none" stroke="${o.ink}" stroke-width="${o.stroke}" stroke-linecap="round" stroke-linejoin="round"`;
   const title = opts.title ? `<title>${String(opts.title).replace(/</g, '&lt;')}</title>` : '';
   const a11y = opts.title ? 'role="img"' : 'aria-hidden="true"';
   const shadow = o.shadow > 0
