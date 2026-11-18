@@ -1,6 +1,7 @@
 # name | tabler source | category | hue | extra tags
 # source "f:x" = Tabler filled, "o:x" = Tabler outline (stroked),
 #        "a:x" = Glazed's own Abstract glyph in src/glyphs/abstract (dark ink by default)
+#        "b:x" = Glazed's own Blossom glyph in src/glyphs/blossom (multi-colour, own fills)
 CATALOG = """
 code|o:code|Development|blue|html markup brackets dev
 terminal|o:terminal-2|Development|ink|console shell cli command
@@ -236,6 +237,54 @@ stairs|a:stairs|Abstract|orange|steps climb arch progress
 orbit|a:orbit|Abstract|pink|planet ring space moons
 petals|a:petals|Abstract|cream|quarters flower shape
 seed|a:seed|Abstract|green|almond leaf grain
+aster|b:aster|Blossom|ink|flower floral petals bloom garden
+begonia|b:begonia|Blossom|ink|flower floral petals bloom garden
+bluebell|b:bluebell|Blossom|ink|flower floral petals bloom garden
+butterfly-pea|b:butterfly-pea|Blossom|ink|flower floral petals bloom garden
+camellia|b:camellia|Blossom|ink|flower floral petals bloom garden
+carnation|b:carnation|Blossom|ink|flower floral petals bloom garden
+champa|b:champa|Blossom|ink|flower floral petals bloom garden
+chrysanthemum|b:chrysanthemum|Blossom|ink|flower floral petals bloom garden
+cornflower|b:cornflower|Blossom|ink|flower floral petals bloom garden
+cosmos|b:cosmos|Blossom|ink|flower floral petals bloom garden
+crocus|b:crocus|Blossom|ink|flower floral petals lotus spring bulb
+dahlia|b:dahlia|Blossom|ink|flower floral petals bloom garden
+forget-me-not|b:forget-me-not|Blossom|ink|flower floral petals bloom garden
+frangipani|b:frangipani|Blossom|ink|flower floral petals swirl tropical
+geranium|b:geranium|Blossom|ink|flower floral petals bloom garden
+gerbera|b:gerbera|Blossom|ink|flower floral petals bloom garden
+gulmohar|b:gulmohar|Blossom|ink|flower floral petals bloom garden
+hibiscus|b:hibiscus|Blossom|ink|flower floral petals bloom garden
+iris|b:iris|Blossom|ink|flower floral petals bloom garden
+jasmine|b:jasmine|Blossom|ink|flower floral petals bloom garden
+kamal|b:kamal|Blossom|ink|flower floral petals lotus india sacred
+kolam|b:kolam|Blossom|ink|flower floral petals pattern india floor
+lantana|b:lantana|Blossom|ink|flower floral petals bloom garden
+lily|b:lily|Blossom|ink|flower floral petals bloom garden
+magnolia|b:magnolia|Blossom|ink|flower floral petals lotus tree bloom
+mallow|b:mallow|Blossom|ink|flower floral petals bloom garden
+mandala|b:mandala|Blossom|ink|flower floral petals pattern rangoli india
+marigold|b:marigold|Blossom|ink|flower floral petals bloom garden
+marsh-marigold|b:marsh-marigold|Blossom|ink|flower floral petals bloom garden
+mogra|b:mogra|Blossom|ink|flower floral petals bloom garden
+orchid|b:orchid|Blossom|ink|flower floral petals bloom garden
+oxalis|b:oxalis|Blossom|ink|flower floral petals bloom garden
+pansy|b:pansy|Blossom|ink|flower floral petals bloom garden
+peony|b:peony|Blossom|ink|flower floral petals lotus bloom spring
+periwinkle|b:periwinkle|Blossom|ink|flower floral petals bloom garden
+phlox|b:phlox|Blossom|ink|flower floral petals bloom garden
+pinwheel-bloom|b:pinwheel-bloom|Blossom|ink|flower floral petals swirl spin
+plumeria|b:plumeria|Blossom|ink|flower floral petals swirl tropical
+poppy|b:poppy|Blossom|ink|flower floral petals bloom garden
+primrose|b:primrose|Blossom|ink|flower floral petals bloom garden
+rangoli|b:rangoli|Blossom|ink|flower floral petals pattern india festival
+ranunculus|b:ranunculus|Blossom|ink|flower floral petals bloom garden
+sakura|b:sakura|Blossom|ink|flower floral petals bloom garden
+shamrock|b:shamrock|Blossom|ink|flower floral petals bloom garden
+star-jasmine|b:star-jasmine|Blossom|ink|flower floral petals bloom garden
+sunflower|b:sunflower|Blossom|ink|flower floral petals sun summer rays
+waterlily|b:waterlily|Blossom|ink|flower floral petals lotus pond calm
+zinnia|b:zinnia|Blossom|ink|flower floral petals bloom garden
 """
 
 # Tailwind CSS v4 shades: 400 (light), 500 (base), 600 (dark)
