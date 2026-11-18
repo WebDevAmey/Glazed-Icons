@@ -1,6 +1,6 @@
 import data from './generated/data.json';
 // Plain ESM copied from the library by scripts/sync.mjs
-import { toSvg as coreToSvg, shadesFrom, isDarkInk, DEFAULTS as CORE_DEFAULTS } from './generated/core.mjs';
+import { toSvg as coreToSvg, shadesFrom, isDarkInk, repaint as coreRepaint, DEFAULTS as CORE_DEFAULTS } from './generated/core.mjs';
 
 export type Hue = keyof typeof data.hues;
 export type Radius = 'sharp' | 'soft' | 'round' | 'circle';
@@ -19,6 +19,8 @@ export interface Icon {
   multi?: boolean;
   /** Default glyph shadow when it differs from the library default. */
   shadow?: number;
+  /** Multi-colour icons: the glyph's colours in order, outline first. */
+  palette?: string[];
 }
 
 /** Everything a tile can be told, shared by the site, the SVG export and the code snippets. */
@@ -26,6 +28,8 @@ export interface TileOptions {
   hue?: Hue;
   color?: string;
   ink?: string;
+  /** Multi-colour icons: original hex to new hex. */
+  colors?: Record<string, string>;
   radius?: Radius | number;
   glyph?: number;
   gloss?: number;
@@ -63,6 +67,9 @@ export function shades(ic: Icon, opts: TileOptions = {}): [string, string, strin
   return HUES[opts.hue ?? ic.hue];
 }
 
+/** The glyph body with any recoloured palette slots applied. */
+export const bodyOf = (ic: Icon, opts: TileOptions = {}) => coreRepaint(ic, opts.colors) as string;
+
 export function toSvg(ic: Icon, opts: TileOptions & { size?: number } = {}): string {
   return coreToSvg(ic, HUES, opts);
 }
@@ -78,11 +85,15 @@ export const shadowOf = (ic: Icon, opts: TileOptions = {}) => ic.shadow ?? (dark
 
 /** Only the options that differ from the defaults, so snippets stay short. */
 export function changed(ic: Icon, opts: TileOptions) {
-  const out: [string, string | number][] = [];
+  const out: [string, string | number | Record<string, string>][] = [];
   if (opts.color) out.push(['color', opts.color]);
   else if (opts.hue && opts.hue !== ic.hue) out.push(['hue', opts.hue]);
   if (opts.radius !== undefined && opts.radius !== 'soft' && opts.radius !== RADII.soft) out.push(['radius', opts.radius]);
-  if (opts.ink && opts.ink !== (ic.ink || WHITE)) out.push(['ink', opts.ink]);
+  if (opts.ink && opts.ink !== (ic.ink || WHITE) && !ic.multi) out.push(['ink', opts.ink]);
+  if (opts.colors) {
+    const diff = Object.fromEntries(Object.entries(opts.colors).filter(([k, v]) => v && v.toLowerCase() !== k.toLowerCase()));
+    if (Object.keys(diff).length) out.push(['colors', diff]);
+  }
   if (opts.glyph !== undefined && opts.glyph !== glyphOf(ic)) out.push(['glyph', opts.glyph]);
   if (opts.gloss !== undefined && round(opts.gloss) !== DEFAULTS.gloss) out.push(['gloss', round(opts.gloss)]);
   if (opts.rim !== undefined && round(opts.rim) !== DEFAULTS.rim) out.push(['rim', round(opts.rim)]);
@@ -93,8 +104,9 @@ export function changed(ic: Icon, opts: TileOptions) {
 
 export function snippets(ic: Icon, opts: TileOptions = {}, size = 40) {
   const diff = changed(ic, opts);
-  const jsxProps = [`size={${size}}`, ...diff.map(([k, v]) => (typeof v === 'number' ? `${k}={${v}}` : `${k}="${v}"`))];
-  const jsOpts = [`size: ${size}`, ...diff.map(([k, v]) => (typeof v === 'number' ? `${k}: ${v}` : `${k}: '${v}'`))];
+  const obj = (v: Record<string, string>) => `{ ${Object.entries(v).map(([a, b]) => `'${a}': '${b}'`).join(', ')} }`;
+  const jsxProps = [`size={${size}}`, ...diff.map(([k, v]) => (typeof v === 'object' ? `${k}={${obj(v)}}` : typeof v === 'number' ? `${k}={${v}}` : `${k}="${v}"`))];
+  const jsOpts = [`size: ${size}`, ...diff.map(([k, v]) => (typeof v === 'object' ? `${k}: ${obj(v)}` : typeof v === 'number' ? `${k}: ${v}` : `${k}: '${v}'`))];
   const hue = opts.hue ?? ic.hue;
   const r = typeof opts.radius === 'number' ? opts.radius : RADII[opts.radius ?? 'soft'];
   const rc = r >= 16 ? 'rounded-full' : `rounded-[${Math.round(r)}px]`;
@@ -109,7 +121,7 @@ export function snippets(ic: Icon, opts: TileOptions = {}, size = 40) {
     react: `import { ${component(ic.name)} } from '${SITE.pkg}/react';\n\n<${component(ic.name)} ${jsxProps.join(' ')} />`,
     js: `import { glaze } from '${SITE.pkg}';\n\nel.innerHTML = glaze('${ic.name}', { ${jsOpts.join(', ')} });`,
     svg: toSvg(ic, { ...opts, size }),
-    tailwind: `<div class="relative flex size-8 items-center justify-center overflow-hidden ${rc} bg-linear-to-b ${grad} shadow-[inset_0_0_0_1px_rgb(0_0_0/.1),inset_0_0_0_2px_rgb(255_255_255/.22)] before:absolute before:inset-x-0 before:top-0 before:h-1/2 before:bg-linear-to-b before:from-white/25 before:to-transparent">\n  <svg class="relative size-[${glyphOf(ic)}px] ${textInk}${textInk === 'text-white' ? ' drop-shadow-[0_1px_1px_rgb(0_0_0/.3)]' : ''}" viewBox="0 0 24 24" ${paint}>${ic.body.replace(/#fff/g, 'currentColor')}</svg>\n</div>`,
+    tailwind: `<div class="relative flex size-8 items-center justify-center overflow-hidden ${rc} bg-linear-to-b ${grad} shadow-[inset_0_0_0_1px_rgb(0_0_0/.1),inset_0_0_0_2px_rgb(255_255_255/.22)] before:absolute before:inset-x-0 before:top-0 before:h-1/2 before:bg-linear-to-b before:from-white/25 before:to-transparent">\n  <svg class="relative size-[${glyphOf(ic)}px] ${textInk}${textInk === 'text-white' ? ' drop-shadow-[0_1px_1px_rgb(0_0_0/.3)]' : ''}" viewBox="0 0 24 24" ${paint}>${bodyOf(ic, opts).replace(/#fff"/g, 'currentColor"')}</svg>\n</div>`,
   };
 }
 export type SnippetKind = keyof ReturnType<typeof snippets>;

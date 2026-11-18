@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { RADII, glyphOf, shadowOf, inkOf, shades, type Icon, type TileOptions } from '@/lib/icons';
+import { RADII, bodyOf, glyphOf, shadowOf, inkOf, shades, type Icon, type TileOptions } from '@/lib/icons';
 
 /**
  * The CSS twin of the package's SVG tile: gradient fill, top gloss, glass rim,
@@ -27,7 +27,7 @@ export function Tile({ icon, size = 48, className = '', style, ...opts }: TileOp
     : { fill: 'none', stroke: ink, strokeWidth: opts.stroke ?? 2, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
   return (
     <span className={`tile ${className}`} style={vars} aria-hidden="true">
-      <svg viewBox="0 0 24 24" {...paint} dangerouslySetInnerHTML={{ __html: icon.body }} />
+      <svg viewBox="0 0 24 24" {...paint} dangerouslySetInnerHTML={{ __html: bodyOf(icon, opts) }} />
     </span>
   );
 }

@@ -9,7 +9,7 @@ const lib = path.join(site, 'lib', 'generated');
 fs.mkdirSync(lib, { recursive: true });
 
 const data = JSON.parse(fs.readFileSync(path.join(src, 'data.json'), 'utf8'));
-data.icons = data.icons.map(({ name, category, hue, tags, style, body, ink, glyph, multi, shadow }) => ({ name, category, hue, tags, style, body, ...(ink && { ink }), ...(glyph && { glyph }), ...(multi && { multi }), ...(shadow !== undefined && { shadow }) }));
+data.icons = data.icons.map(({ name, category, hue, tags, style, body, ink, glyph, multi, shadow, palette }) => ({ name, category, hue, tags, style, body, ...(ink && { ink }), ...(glyph && { glyph }), ...(multi && { multi }), ...(shadow !== undefined && { shadow }), ...(palette && { palette }) }));
 fs.writeFileSync(path.join(lib, 'data.json'), JSON.stringify(data));
 fs.copyFileSync(path.join(src, 'core.mjs'), path.join(lib, 'core.mjs'));
 console.log(`synced ${data.icons.length} icons`);
