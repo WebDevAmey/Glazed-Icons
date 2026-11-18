@@ -78,10 +78,12 @@ console.log(icons.length); // ${SITE.count}`}</code></pre>
 
           <h2 id="tailwind">Tailwind</h2>
           <p>The tile is plain Tailwind, so you can wrap any glyph from any set. Every icon page has a Tailwind tab with the exact classes.</p>
-          <pre><code>{`<div class="flex size-8 items-center justify-center rounded-lg
-  bg-linear-to-b from-pink-400 to-pink-600 shadow-lg
-  ring-1 ring-white/20 ring-offset-2 ring-offset-pink-500 ring-inset">
-  <svg class="size-4 text-white drop-shadow-xl drop-shadow-black/40">…</svg>
+          <pre><code>{`<div class="relative flex size-8 items-center justify-center overflow-hidden
+  rounded-[8px] bg-linear-to-b from-pink-400 to-pink-600
+  shadow-[inset_0_0_0_1px_rgb(0_0_0/.1),inset_0_0_0_2px_rgb(255_255_255/.22)]
+  before:absolute before:inset-x-0 before:top-0 before:h-1/2
+  before:bg-linear-to-b before:from-white/25 before:to-transparent">
+  <svg class="relative size-[17px] text-white drop-shadow-[0_1px_1px_rgb(0_0_0/.3)]">…</svg>
 </div>`}</code></pre>
 
           <h2 id="colours">Colours and corners</h2>
