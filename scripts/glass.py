@@ -1,9 +1,8 @@
-"""Separates the "Digital Objects — Glass & Resin" sheet into 40 individual illustrations.
+"""Step 1 of the Glass & Resin 3D icons: split the supplied sheet into 40 tiles.
 
-The supplied sheet sits on a flat gutter colour. Each asset is cut at its own edge,
-found where the gutter colour stops, so nothing inside an illustration is trimmed,
-resized, redrawn or recoloured. Files are written losslessly as PNG at their native
-size, with a WebP copy for the web, and described in illustrations.json.
+The sheet sits on a flat gutter colour. Each tile is cut at its own edge, found where
+the gutter colour stops, and saved losslessly at its native size to
+src/sources/glass-resin/. scripts/glass3d.py turns these tiles into transparent icons.
 
 Run: python3 scripts/glass.py   (needs Pillow and NumPy)
 """
@@ -13,12 +12,12 @@ from PIL import Image
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 SHEET = os.path.join(ROOT, 'src', 'sources', 'glass-resin-sheet.jpg')
-OUT = os.path.join(ROOT, 'illustrations', 'glass-resin')
+OUT = os.path.join(ROOT, 'src', 'sources', 'glass-resin')
 GUTTER = (238, 239, 244)
 COLLECTION = {
     'id': 'glass-resin',
-    'title': 'Digital Objects — Glass & Resin',
-    'description': 'Forty translucent 3D objects in glass and resin: prisms, orbits, crystals, portals and more, with soft refraction and pastel light.',
+    'title': 'Glass & Resin 3D Icons',
+    'description': 'Forty translucent 3D icons in glass and resin: prisms, orbits, crystals, portals and more, cut out on transparent backgrounds.',
 }
 
 # In sheet order, left to right, top to bottom: name, title, tags
@@ -96,18 +95,11 @@ def boxes(img):
 def main():
     img = Image.open(SHEET).convert('RGB')
     found = boxes(img)
-    assert len(found) == len(ASSETS), f'found {len(found)} assets, expected {len(ASSETS)}'
+    assert len(found) == len(ASSETS), f'found {len(found)} tiles, expected {len(ASSETS)}'
     os.makedirs(OUT, exist_ok=True)
-    items = []
-    for (name, title, tags), box in zip(ASSETS, found):
-        piece = img.crop(box)
-        piece.save(os.path.join(OUT, f'{name}.png'), optimize=True)
-        piece.save(os.path.join(OUT, f'{name}.webp'), lossless=True, method=6)
-        items.append({'name': name, 'title': title, 'tags': tags.split(), 'width': piece.width, 'height': piece.height,
-                      'png': f'illustrations/glass-resin/{name}.png', 'webp': f'illustrations/glass-resin/{name}.webp'})
-    with open(os.path.join(ROOT, 'illustrations.json'), 'w') as fh:
-        json.dump({'collections': [{**COLLECTION, 'count': len(items), 'items': items}]}, fh, indent=2, ensure_ascii=False)
-    print(len(items), 'illustrations written to illustrations/glass-resin')
+    for (name, _, _), box in zip(ASSETS, found):
+        img.crop(box).save(os.path.join(OUT, f'{name}.png'), optimize=True)
+    print(len(found), 'tiles written to src/sources/glass-resin')
 
 
 if __name__ == '__main__':
