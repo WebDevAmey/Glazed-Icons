@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { HUE_NAMES, SITE } from '@/lib/icons';
-import { ArtImage } from '@/components/Art';
 
 export const metadata: Metadata = {
   title: 'Docs',
@@ -23,8 +22,7 @@ const SECTIONS = [
 export default function Docs() {
   return (
     <div className="container">
-      <div className="art page-banner">
-        <ArtImage name="frost" sizes="(max-width: 1240px) 100vw, 1240px" priority style={{ objectPosition: '50% 40%' }} />
+      <div className="page-head">
         <h1 className="display">Docs</h1>
         <p className="lede">Everything you need to put a Glazed icon on screen. It takes about a minute.</p>
       </div>
