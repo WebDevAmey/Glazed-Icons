@@ -13,3 +13,14 @@ data.icons = data.icons.map(({ name, category, hue, tags, style, body, ink, glyp
 fs.writeFileSync(path.join(lib, 'data.json'), JSON.stringify(data));
 fs.copyFileSync(path.join(src, 'core.mjs'), path.join(lib, 'core.mjs'));
 console.log(`synced ${data.icons.length} icons`);
+
+// Illustrations: copy the manifest and the files exactly as the package ships them.
+const repo = path.join(site, '..');
+const ill = JSON.parse(fs.readFileSync(path.join(repo, 'illustrations.json'), 'utf8'));
+fs.writeFileSync(path.join(lib, 'illustrations.json'), JSON.stringify(ill));
+for (const c of ill.collections) {
+  const dest = path.join(site, 'public', 'illustrations', c.id);
+  fs.mkdirSync(dest, { recursive: true });
+  for (const it of c.items) for (const f of [it.png, it.webp]) fs.copyFileSync(path.join(repo, f), path.join(dest, path.basename(f)));
+  console.log(`synced ${c.items.length} illustrations (${c.id})`);
+}
