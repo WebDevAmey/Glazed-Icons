@@ -2962,6 +2962,13 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff9e7a",
+        "#ff8a1f",
+        "#ffc21a",
+        "#ff6b4a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "AsterIcon"
@@ -2979,6 +2986,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff6f9e",
+        "#ffaecb",
+        "#ff6b4a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "BegoniaIcon"
@@ -2996,6 +3009,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#2c63d9",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "BluebellIcon"
@@ -3013,6 +3031,10 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#0f7d72"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "ButterflyPeaIcon"
@@ -3030,6 +3052,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff6b4a",
+        "#0f7d72",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "CamelliaIcon"
@@ -3047,6 +3075,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ffaecb",
+        "#ff6f9e"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "CarnationIcon"
@@ -3064,6 +3097,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#1f9d58",
+        "#ff6f9e"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "ChampaIcon"
@@ -3081,6 +3119,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff8a1f",
+        "#ff9e7a",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "ChrysanthemumIcon"
@@ -3098,6 +3142,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#2c63d9",
+        "#4aa6f2",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "CornflowerIcon"
@@ -3115,6 +3165,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff6f9e",
+        "#ff8a1f"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "CosmosIcon"
@@ -3133,6 +3188,13 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#4aa6f2",
+        "#ff8a1f",
+        "#2c63d9",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "CrocusIcon"
@@ -3150,6 +3212,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ffc21a",
+        "#ff6f9e",
+        "#ffaecb"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "DahliaIcon"
@@ -3167,6 +3235,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#4aa6f2",
+        "#ff8a1f"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "ForgetMeNotIcon"
@@ -3184,6 +3257,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ffc21a",
+        "#a67cf2",
+        "#6f45cf"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "FrangipaniIcon"
@@ -3201,6 +3280,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff6b4a",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "GeraniumIcon"
@@ -3218,6 +3302,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#4aa6f2",
+        "#0f7d72",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "GerberaIcon"
@@ -3235,6 +3325,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff9e7a",
+        "#0f7d72"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "GulmoharIcon"
@@ -3252,6 +3347,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff6b4a",
+        "#ffc21a",
+        "#1f9d58"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "HibiscusIcon"
@@ -3269,6 +3370,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#4aa6f2",
+        "#2c63d9",
+        "#ff8a1f"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "IrisIcon"
@@ -3286,6 +3393,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#1f9d58",
+        "#ff8a1f"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "JasmineIcon"
@@ -3304,6 +3416,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ffc21a",
+        "#a67cf2",
+        "#6f45cf"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "KamalIcon"
@@ -3322,6 +3440,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#0f7d72",
+        "#ff6f9e",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "KolamIcon"
@@ -3339,6 +3463,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#1f9d58",
+        "#ffc21a",
+        "#7fd3a8"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "LantanaIcon"
@@ -3356,6 +3486,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff6b4a",
+        "#ff9e7a",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "LilyIcon"
@@ -3374,6 +3510,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#0f7d72",
+        "#ff6f9e",
+        "#ffaecb"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "MagnoliaIcon"
@@ -3391,6 +3533,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff6f9e",
+        "#ffaecb",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "MallowIcon"
@@ -3409,6 +3557,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#7fd3a8",
+        "#0f7d72",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "MandalaIcon"
@@ -3426,6 +3580,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ffc21a",
+        "#2c63d9"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "MarigoldIcon"
@@ -3443,6 +3602,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff8a1f",
+        "#ff6f9e"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "MarshMarigoldIcon"
@@ -3460,6 +3624,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ffc21a",
+        "#1f9d58"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "MograIcon"
@@ -3477,6 +3646,10 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#a67cf2"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "OrchidIcon"
@@ -3494,6 +3667,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#1f9d58",
+        "#ffc21a",
+        "#ff8a1f"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "OxalisIcon"
@@ -3511,6 +3690,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#a67cf2",
+        "#ff6f9e",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "PansyIcon"
@@ -3529,6 +3714,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#1f9d58",
+        "#ff6f9e",
+        "#ffaecb"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "PeonyIcon"
@@ -3546,6 +3737,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#2c63d9",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "PeriwinkleIcon"
@@ -3563,6 +3759,10 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff6f9e"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "PhloxIcon"
@@ -3580,6 +3780,13 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ffc21a",
+        "#a67cf2",
+        "#ff6f9e",
+        "#6f45cf"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "PinwheelBloomIcon"
@@ -3597,6 +3804,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ffaecb",
+        "#ff9e7a",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "PlumeriaIcon"
@@ -3614,6 +3827,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff6f9e",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "PoppyIcon"
@@ -3631,6 +3849,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ffaecb",
+        "#1f9d58"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "PrimroseIcon"
@@ -3649,6 +3872,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#0f7d72",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "RangoliIcon"
@@ -3666,6 +3894,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff6f9e",
+        "#1d2766"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "RanunculusIcon"
@@ -3683,6 +3916,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff6f9e",
+        "#1f9d58"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "SakuraIcon"
@@ -3700,6 +3938,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#1f9d58",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "ShamrockIcon"
@@ -3717,6 +3960,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ffc21a",
+        "#1f9d58",
+        "#7fd3a8"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "StarJasmineIcon"
@@ -3735,6 +3984,11 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#1d2766",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "SunflowerIcon"
@@ -3753,6 +4007,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#a67cf2",
+        "#6f45cf",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "WaterlilyIcon"
@@ -3770,6 +4030,12 @@
       ],
       "style": "fill",
       "multi": true,
+      "palette": [
+        "#fff3dc",
+        "#ff6b4a",
+        "#ff9e7a",
+        "#ffc21a"
+      ],
       "glyph": 24,
       "shadow": 0.3,
       "component": "ZinniaIcon"

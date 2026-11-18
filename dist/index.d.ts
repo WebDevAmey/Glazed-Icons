@@ -9,6 +9,8 @@ export interface GlazeOptions {
   color?: string;
   /** Glyph colour as a hex. Default white; Abstract icons default to near-black ink. */
   ink?: string;
+  /** Multi-colour icons only: new colours for the glyph's palette slots, as an array in slot order or a map from original hex to new hex. */
+  colors?: (string | null)[] | Record<string, string>;
   /** sharp | soft | round | circle, or 0 to 16 on the 32-unit grid. Default soft (8). */
   radius?: GlazeRadius;
   /** Glyph size on the 32-unit grid, 8 to 26. Default 17. */
@@ -29,6 +31,7 @@ export declare const RADII: Record<'sharp' | 'soft' | 'round' | 'circle', number
 export declare const DEFAULTS: Required<Pick<GlazeOptions, 'size' | 'glyph' | 'gloss' | 'rim' | 'shadow' | 'stroke'>> & { radius: 'soft' };
 export declare function shadesFrom(hex: string): [string, string, string];
 export declare const hues: Record<GlazeHue, [string, string, string]>;
-export declare const icons: { name: GlazeIconName; hue: GlazeHue; style: 'fill' | 'stroke'; body: string; category: string; tags: string[]; ink?: string }[];
+export declare const icons: { name: GlazeIconName; hue: GlazeHue; style: 'fill' | 'stroke'; body: string; category: string; tags: string[]; ink?: string; multi?: boolean; palette?: string[] }[];
+export declare function repaint(icon: { body: string; palette?: string[] }, colors?: GlazeOptions['colors']): string;
 export declare function isDarkInk(hex: string): boolean;
 export declare function glaze(name: GlazeIconName, opts?: GlazeOptions): string;

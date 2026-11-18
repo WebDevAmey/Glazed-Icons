@@ -1,11 +1,11 @@
 import { createElement, forwardRef } from 'react';
 import { glaze } from './index.js';
 function make(name, displayName) {
-  const C = forwardRef(function GlazeIcon({ size = 32, hue, color, ink, radius, glyph, gloss, rim, shadow, stroke, title, className, style, ...rest }, ref) {
+  const C = forwardRef(function GlazeIcon({ size = 32, hue, color, ink, colors, radius, glyph, gloss, rim, shadow, stroke, title, className, style, ...rest }, ref) {
     return createElement('span', {
       ref, className, role: title ? 'img' : undefined, 'aria-label': title, 'aria-hidden': title ? undefined : true,
       style: { display: 'inline-flex', width: size, height: size, lineHeight: 0, filter: 'drop-shadow(0 6px 10px rgb(0 0 0 / 0.12)) drop-shadow(0 2px 3px rgb(0 0 0 / 0.08))', ...style },
-      dangerouslySetInnerHTML: { __html: glaze(name, { size, hue, color, ink, radius, glyph, gloss, rim, shadow, stroke }) }, ...rest,
+      dangerouslySetInnerHTML: { __html: glaze(name, { size, hue, color, ink, colors, radius, glyph, gloss, rim, shadow, stroke }) }, ...rest,
     });
   });
   C.displayName = displayName;
