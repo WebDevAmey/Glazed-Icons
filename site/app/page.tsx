@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { CATEGORIES, HUE_NAMES, ICONS, icon, label, SITE } from '@/lib/icons';
-import { Dock } from '@/components/Dock';
-import { ArtImage } from '@/components/Art';
+import { Marquee } from '@/components/Marquee';
 import { InstallButton } from '@/components/InstallButton';
 import { Playground } from '@/components/Playground';
 import { Anatomy } from '@/components/Anatomy';
@@ -48,52 +47,63 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <section className="hero" aria-labelledby="hero-title">
-        <ArtImage name="pagoda" sizes="100vw" priority alt="" />
-        <div className="hero-copy">
+        <div className="container hero-copy">
           <Link href="/icons/?category=Blossom" className="badge" data-enter="1">
-            <Tile icon={icon('kamal')} size={22} />
+            <span className="badge-dot" aria-hidden="true" />
             New: Abstract and Blossom collections
+            <Arrow />
           </Link>
-          <h1 id="hero-title" className="display" data-enter="2">Glossy icons, ready to ship.</h1>
-          <p className="lede" data-enter="3">Colour-coded app icons for your product. Copy one as SVG, React or Tailwind, free under MIT.</p>
+          <h1 id="hero-title" className="display hero-title" data-enter="2">
+            Glossy <Tile icon={icon('sparkles')} size={96} className="inline-tile t1" /> icons,{' '}
+            ready <Tile icon={icon('kamal')} size={96} className="inline-tile t2" /> to ship <Tile icon={icon('rocket')} size={96} className="inline-tile t3" />
+          </h1>
+          <p className="lede" data-enter="3">{SITE.count} colour-coded app icons for your product. Copy any of them as SVG, React or Tailwind. Free and open source.</p>
           <div className="hero-actions" data-enter="4">
-            <Link className="btn btn-white" href="/icons/">Browse icons<Arrow /></Link>
+            <Link className="btn btn-primary btn-lg" href="/icons/">Browse icons<Arrow /></Link>
             <InstallButton />
           </div>
         </div>
-        <div className="hero-dock" data-enter="5"><Dock /></div>
+        <Marquee />
       </section>
 
-      <section aria-label="Highlights">
+      <section className="section" aria-label="Highlights" style={{ paddingTop: 72 }}>
         <div className="container features">
           <Link href="/icons/" className="feature">
+            <div className="feature-art" style={{ ['--tint' as string]: '#a684ff' }} aria-hidden="true">
+              <Tile icon={icon('palette')} size={56} className="fa-a" />
+              <Tile icon={icon('sparkles')} size={76} className="fa-b" />
+              <Tile icon={icon('heart')} size={56} className="fa-c" />
+            </div>
             <div className="feature-copy">
-              <Tile icon={icon('sparkles')} size={40} />
               <h2 className="h3">Expressive, not noisy</h2>
               <p>Bright tiles with one quiet recipe, so a page full of them still reads calm.</p>
             </div>
-            <div className="art"><ArtImage name="crystal" sizes="(max-width: 860px) 100vw, 400px" /><span className="go" aria-hidden="true"><Arrow /></span></div>
           </Link>
           <Link href="/docs/" className="feature">
+            <div className="feature-art" style={{ ['--tint' as string]: '#ffb900' }} aria-hidden="true">
+              <code className="fa-code">{'<RocketIcon size={48} />'}</code>
+              <Tile icon={icon('rocket')} size={76} className="fa-b" />
+            </div>
             <div className="feature-copy">
-              <Tile icon={icon('package')} size={40} />
               <h2 className="h3">Ready for production</h2>
               <p>SVG files, a plain JS function, typed React components and Tailwind classes.</p>
             </div>
-            <div className="art"><ArtImage name="frost" sizes="(max-width: 860px) 100vw, 400px" /><span className="go" aria-hidden="true"><Arrow /></span></div>
           </Link>
           <a href={SITE.repo} className="feature" target="_blank" rel="noopener">
+            <div className="feature-art" style={{ ['--tint' as string]: '#00bc7d' }} aria-hidden="true">
+              <Tile icon={icon('git-branch')} size={56} hue="ink" className="fa-a" />
+              <Tile icon={icon('code')} size={76} className="fa-b" />
+              <Tile icon={icon('git-pull-request')} size={56} className="fa-c" />
+            </div>
             <div className="feature-copy">
-              <Tile icon={icon('code')} hue="ink" size={40} />
               <h2 className="h3">Open source, for good</h2>
               <p>MIT licensed. Fork it, extend it, ship it in products you sell.</p>
             </div>
-            <div className="art"><ArtImage name="lavender" sizes="(max-width: 860px) 100vw, 400px" /><span className="go" aria-hidden="true"><Arrow /></span></div>
           </a>
         </div>
       </section>
 
-      <section className="section" aria-labelledby="abs-title">
+      <section className="section" aria-labelledby="abs-title" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="abstract">
             <div className="abstract-copy">
