@@ -24,7 +24,7 @@ export function IconStudio({ icon }: { icon: Icon }) {
   const opts = { hue: s.hue, color: s.color ?? undefined, ink: s.ink, radius: s.radius, glyph: s.glyph, gloss: s.gloss, rim: s.rim, shadow: s.shadow, stroke: s.stroke };
   const svg = (px: number) => toSvg(icon, { ...opts, size: px });
   const dirty = JSON.stringify(s) !== JSON.stringify(fresh);
-  const colourName = s.color ? s.color : s.hue;
+  const colourName = s.color ? s.color : s.hue === 'ink' ? 'a dark tile' : s.hue;
 
   return (
     <div className="studio">
@@ -66,7 +66,7 @@ export function IconStudio({ icon }: { icon: Icon }) {
             />
           </div>
 
-          <div>
+          {!icon.multi && <div>
             <span className="control-label">Glyph colour</span>
             <Seg
               label="Glyph colour"
@@ -78,12 +78,12 @@ export function IconStudio({ icon }: { icon: Icon }) {
               })}
               options={[{ value: 'white', label: 'White' }, { value: 'ink', label: 'Ink' }]}
             />
-          </div>
+          </div>}
 
           <div className="sliders">
             <Slider label="Size" value={s.size} min={16} max={256} step={4} onChange={(v) => set('size', v)} format={(v) => `${v}px`} />
             <Slider label="Corners" value={s.radius} min={0} max={16} step={0.5} onChange={(v) => set('radius', v)} format={(v) => (v >= 16 ? 'Circle' : `${v}`)} />
-            <Slider label="Glyph" value={s.glyph} min={10} max={24} step={0.5} onChange={(v) => set('glyph', v)} format={(v) => `${Math.round((v / 32) * 100)}%`} />
+            <Slider label="Glyph" value={s.glyph} min={10} max={26} step={0.5} onChange={(v) => set('glyph', v)} format={(v) => `${Math.round((v / 32) * 100)}%`} />
             <Slider label="Gloss" value={s.gloss} min={0} max={1} step={0.01} onChange={(v) => set('gloss', v)} format={pct} />
             <Slider label="Rim" value={s.rim} min={0} max={1} step={0.01} onChange={(v) => set('rim', v)} format={pct} />
             <Slider label="Shadow" value={s.shadow} min={0} max={1} step={0.01} onChange={(v) => set('shadow', v)} format={pct} />
