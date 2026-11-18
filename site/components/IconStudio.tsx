@@ -10,18 +10,28 @@ import { Seg } from './Seg';
 import { Slider } from './Slider';
 
 type Ground = 'light' | 'dark' | 'scene';
+
+/** One-click palettes for multi-colour glyphs. Applied to every slot after the outline, in turn. */
+const PRESETS: { name: string; colors: string[] }[] = [
+  { name: 'Sunset', colors: ['#ff6b4a', '#ffb347', '#ffd166', '#ff8fab'] },
+  { name: 'Ocean', colors: ['#1e6fd9', '#4cc9f0', '#a9e6f5', '#0b3d91'] },
+  { name: 'Forest', colors: ['#2d6a4f', '#52b788', '#b7e4c7', '#ffd166'] },
+  { name: 'Berry', colors: ['#9d4edd', '#e0aaff', '#ff6fb5', '#5a189a'] },
+  { name: 'Candy', colors: ['#ff6f9e', '#ffaecb', '#7fd3a8', '#ffc21a'] },
+];
+const slotName = (i: number) => (i === 0 ? 'Outline' : `Colour ${i}`);
 const pct = (v: number) => `${Math.round(v * 100)}%`;
 
 /** The interactive half of an icon's page: preview, every knob, code and downloads. */
 export function IconStudio({ icon }: { icon: Icon }) {
   const ownInk = icon.ink || WHITE;
-  const fresh = { hue: icon.hue as Hue, color: null as string | null, ink: ownInk, size: 64, radius: RADII.soft, glyph: glyphOf(icon), gloss: DEFAULTS.gloss, rim: DEFAULTS.rim, shadow: shadowOf(icon), stroke: DEFAULTS.stroke };
+  const fresh = { hue: icon.hue as Hue, color: null as string | null, ink: ownInk, colors: {} as Record<string, string>, size: 64, radius: RADII.soft, glyph: glyphOf(icon), gloss: DEFAULTS.gloss, rim: DEFAULTS.rim, shadow: shadowOf(icon), stroke: DEFAULTS.stroke };
   const [s, setS] = useState(fresh);
   const [ground, setGround] = useState<Ground>('light');
   useEffect(() => { if (document.documentElement.dataset.theme === 'dark') setGround('dark'); }, []);
   const set = <K extends keyof typeof s>(k: K, v: (typeof s)[K]) => setS((p) => ({ ...p, [k]: v }));
 
-  const opts = { hue: s.hue, color: s.color ?? undefined, ink: s.ink, radius: s.radius, glyph: s.glyph, gloss: s.gloss, rim: s.rim, shadow: s.shadow, stroke: s.stroke };
+  const opts = { hue: s.hue, color: s.color ?? undefined, ink: s.ink, colors: Object.keys(s.colors).length ? s.colors : undefined, radius: s.radius, glyph: s.glyph, gloss: s.gloss, rim: s.rim, shadow: s.shadow, stroke: s.stroke };
   const svg = (px: number) => toSvg(icon, { ...opts, size: px });
   const dirty = JSON.stringify(s) !== JSON.stringify(fresh);
   const colourName = s.color ? s.color : s.hue === 'ink' ? 'a dark tile' : s.hue;
@@ -65,6 +75,40 @@ export function IconStudio({ icon }: { icon: Icon }) {
               onCustom={(hex) => set('color', hex)}
             />
           </div>
+
+          {icon.multi && icon.palette && (
+            <div className="paint">
+              <div className="paint-head">
+                <span className="control-label" style={{ margin: 0 }}>Glyph colours</span>
+                <button type="button" className="text-btn" onClick={() => set('colors', {})} disabled={!Object.keys(s.colors).length}>Original</button>
+              </div>
+              <div className="paint-slots">
+                {icon.palette.map((c, i) => {
+                  const now = s.colors[c] ?? c;
+                  return (
+                    <label key={c} className="paint-slot" title={`${slotName(i)}: ${now}`}>
+                      <span className="paint-chip" style={{ background: now }} />
+                      <input type="color" value={now.length === 4 ? `#${now.slice(1).split('').map((x) => x + x).join('')}` : now} onChange={(e) => setS((p) => ({ ...p, colors: { ...p.colors, [c]: e.target.value } }))} aria-label={`${slotName(i)} colour`} />
+                      <span className="paint-name">{slotName(i)}</span>
+                    </label>
+                  );
+                })}
+              </div>
+              <div className="paint-presets" role="group" aria-label="Colour presets">
+                {PRESETS.map((pr) => (
+                  <button
+                    key={pr.name}
+                    type="button"
+                    className="chip"
+                    onClick={() => set('colors', Object.fromEntries(icon.palette!.slice(1).map((c, i) => [c, pr.colors[i % pr.colors.length]])))}
+                  >
+                    <span className="preset-dots" aria-hidden="true">{pr.colors.map((c) => <i key={c} style={{ background: c }} />)}</span>
+                    {pr.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           {!icon.multi && <div>
             <span className="control-label">Glyph colour</span>
