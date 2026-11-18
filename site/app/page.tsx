@@ -50,9 +50,9 @@ export default function Home() {
       <section className="hero" aria-labelledby="hero-title">
         <ArtImage name="pagoda" sizes="100vw" priority alt="" />
         <div className="hero-copy">
-          <Link href="/icons/?category=Abstract" className="badge" data-enter="1">
-            <Tile icon={icon('orbit')} size={22} />
-            New: the Abstract collection
+          <Link href="/icons/?category=Blossom" className="badge" data-enter="1">
+            <Tile icon={icon('kamal')} size={22} />
+            New: Abstract and Blossom collections
           </Link>
           <h1 id="hero-title" className="display" data-enter="2">Glossy icons, ready to ship.</h1>
           <p className="lede" data-enter="3">Colour-coded app icons for your product. Copy one as SVG, React or Tailwind, free under MIT.</p>
@@ -110,6 +110,28 @@ export default function Home() {
                   <Tile icon={ic} size={64} />
                 </Link>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="bl-title" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="abstract abstract-blossom">
+            <div className="abstract-grid">
+              {ICONS.filter((i) => i.category === 'Blossom').slice(0, 24).map((ic) => (
+                <Link key={ic.name} href={`/icons/${ic.name}/`} aria-label={`${label(ic.name)} icon`} className="abstract-cell">
+                  <Tile icon={ic} size={64} />
+                </Link>
+              ))}
+            </div>
+            <div className="abstract-copy">
+              <p className="abstract-kicker">New collection, {ICONS.filter((i) => i.category === 'Blossom').length} icons</p>
+              <h2 id="bl-title" className="h2">Blossom</h2>
+              <p className="lede">Flowers drawn in layers: cream outlines, bright petals and warm centres. Lotuses, marigolds, dahlias, rangoli and kolam, in full colour.</p>
+              <div className="hero-actions" style={{ justifyContent: 'flex-start', marginTop: 4 }}>
+                <Link className="btn btn-white" href="/icons/?category=Blossom">Explore the collection<Arrow /></Link>
+              </div>
             </div>
           </div>
         </div>

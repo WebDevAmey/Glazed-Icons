@@ -632,7 +632,8 @@ button { font: inherit; color: inherit; }
 @media (hover: hover) and (pointer: fine) { .abstract-cell:hover .tile { transform: translateY(-3px) rotate(-3deg); } }
 .abstract-cell:active .tile { transform: scale(0.95); }
 .abstract-cell:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
-@media (max-width: 960px) { .abstract { grid-template-columns: 1fr; padding: 36px 24px; } }
+.abstract-blossom { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); background: #222122; }
+@media (max-width: 960px) { .abstract, .abstract-blossom { grid-template-columns: 1fr; padding: 36px 24px; } .abstract-blossom .abstract-copy { order: -1; } }
 @media (max-width: 520px) { .abstract-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } .abstract-cell:nth-child(n + 17) { display: none; } }
 
 /* ---------- smoothness ---------- */
