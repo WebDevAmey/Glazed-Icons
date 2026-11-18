@@ -2948,6 +2948,831 @@
       "ink": "#141414",
       "glyph": 20,
       "component": "SeedIcon"
+    },
+    {
+      "name": "aster",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "AsterIcon"
+    },
+    {
+      "name": "begonia",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "BegoniaIcon"
+    },
+    {
+      "name": "bluebell",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "BluebellIcon"
+    },
+    {
+      "name": "butterfly-pea",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "ButterflyPeaIcon"
+    },
+    {
+      "name": "camellia",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "CamelliaIcon"
+    },
+    {
+      "name": "carnation",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "CarnationIcon"
+    },
+    {
+      "name": "champa",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "ChampaIcon"
+    },
+    {
+      "name": "chrysanthemum",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "ChrysanthemumIcon"
+    },
+    {
+      "name": "cornflower",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "CornflowerIcon"
+    },
+    {
+      "name": "cosmos",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "CosmosIcon"
+    },
+    {
+      "name": "crocus",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "lotus",
+        "spring",
+        "bulb"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "CrocusIcon"
+    },
+    {
+      "name": "dahlia",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "DahliaIcon"
+    },
+    {
+      "name": "forget-me-not",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "ForgetMeNotIcon"
+    },
+    {
+      "name": "frangipani",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "swirl",
+        "tropical"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "FrangipaniIcon"
+    },
+    {
+      "name": "geranium",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "GeraniumIcon"
+    },
+    {
+      "name": "gerbera",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "GerberaIcon"
+    },
+    {
+      "name": "gulmohar",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "GulmoharIcon"
+    },
+    {
+      "name": "hibiscus",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "HibiscusIcon"
+    },
+    {
+      "name": "iris",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "IrisIcon"
+    },
+    {
+      "name": "jasmine",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "JasmineIcon"
+    },
+    {
+      "name": "kamal",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "lotus",
+        "india",
+        "sacred"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "KamalIcon"
+    },
+    {
+      "name": "kolam",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "pattern",
+        "india",
+        "floor"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "KolamIcon"
+    },
+    {
+      "name": "lantana",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "LantanaIcon"
+    },
+    {
+      "name": "lily",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "LilyIcon"
+    },
+    {
+      "name": "magnolia",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "lotus",
+        "tree",
+        "bloom"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "MagnoliaIcon"
+    },
+    {
+      "name": "mallow",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "MallowIcon"
+    },
+    {
+      "name": "mandala",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "pattern",
+        "rangoli",
+        "india"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "MandalaIcon"
+    },
+    {
+      "name": "marigold",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "MarigoldIcon"
+    },
+    {
+      "name": "marsh-marigold",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "MarshMarigoldIcon"
+    },
+    {
+      "name": "mogra",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "MograIcon"
+    },
+    {
+      "name": "orchid",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "OrchidIcon"
+    },
+    {
+      "name": "oxalis",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "OxalisIcon"
+    },
+    {
+      "name": "pansy",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "PansyIcon"
+    },
+    {
+      "name": "peony",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "lotus",
+        "bloom",
+        "spring"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "PeonyIcon"
+    },
+    {
+      "name": "periwinkle",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "PeriwinkleIcon"
+    },
+    {
+      "name": "phlox",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "PhloxIcon"
+    },
+    {
+      "name": "pinwheel-bloom",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "swirl",
+        "spin"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "PinwheelBloomIcon"
+    },
+    {
+      "name": "plumeria",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "swirl",
+        "tropical"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "PlumeriaIcon"
+    },
+    {
+      "name": "poppy",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "PoppyIcon"
+    },
+    {
+      "name": "primrose",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "PrimroseIcon"
+    },
+    {
+      "name": "rangoli",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "pattern",
+        "india",
+        "festival"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "RangoliIcon"
+    },
+    {
+      "name": "ranunculus",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "RanunculusIcon"
+    },
+    {
+      "name": "sakura",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "SakuraIcon"
+    },
+    {
+      "name": "shamrock",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "ShamrockIcon"
+    },
+    {
+      "name": "star-jasmine",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "StarJasmineIcon"
+    },
+    {
+      "name": "sunflower",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "sun",
+        "summer",
+        "rays"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "SunflowerIcon"
+    },
+    {
+      "name": "waterlily",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "lotus",
+        "pond",
+        "calm"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "WaterlilyIcon"
+    },
+    {
+      "name": "zinnia",
+      "category": "Blossom",
+      "hue": "ink",
+      "tags": [
+        "flower",
+        "floral",
+        "petals",
+        "bloom",
+        "garden"
+      ],
+      "style": "fill",
+      "multi": true,
+      "glyph": 24,
+      "shadow": 0.3,
+      "component": "ZinniaIcon"
     }
   ]
 }
