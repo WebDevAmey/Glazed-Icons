@@ -1,0 +1,585 @@
+{
+  "collections": [
+    {
+      "id": "glass-resin",
+      "title": "Glass & Resin 3D Icons",
+      "description": "Forty translucent 3D icons in glass and resin: prisms, orbits, crystals, portals and more, cut out on transparent backgrounds.",
+      "count": 40,
+      "items": [
+        {
+          "name": "glass-prism",
+          "title": "Prism",
+          "tags": [
+            "triangle",
+            "pyramid",
+            "refraction",
+            "light",
+            "shape"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-prism.png",
+          "webp": "3d/glass-resin/glass-prism.webp"
+        },
+        {
+          "name": "glass-cube",
+          "title": "Cube",
+          "tags": [
+            "box",
+            "square",
+            "nested",
+            "frame",
+            "shape"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-cube.png",
+          "webp": "3d/glass-resin/glass-cube.webp"
+        },
+        {
+          "name": "glass-layers",
+          "title": "Layers",
+          "tags": [
+            "stack",
+            "sheets",
+            "levels",
+            "planes"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-layers.png",
+          "webp": "3d/glass-resin/glass-layers.webp"
+        },
+        {
+          "name": "glass-torus",
+          "title": "Torus",
+          "tags": [
+            "ring",
+            "orbit",
+            "donut",
+            "sphere"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-torus.png",
+          "webp": "3d/glass-resin/glass-torus.webp"
+        },
+        {
+          "name": "glass-mobius",
+          "title": "Möbius loop",
+          "tags": [
+            "infinity",
+            "loop",
+            "ribbon",
+            "twist"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-mobius.png",
+          "webp": "3d/glass-resin/glass-mobius.webp"
+        },
+        {
+          "name": "glass-molecule",
+          "title": "Molecule",
+          "tags": [
+            "atoms",
+            "bond",
+            "chemistry",
+            "science",
+            "bubbles"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-molecule.png",
+          "webp": "3d/glass-resin/glass-molecule.webp"
+        },
+        {
+          "name": "glass-dodecahedron",
+          "title": "Dodecahedron",
+          "tags": [
+            "polyhedron",
+            "gem",
+            "geometry",
+            "glow"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-dodecahedron.png",
+          "webp": "3d/glass-resin/glass-dodecahedron.webp"
+        },
+        {
+          "name": "glass-sand-timer",
+          "title": "Sand timer",
+          "tags": [
+            "hourglass",
+            "time",
+            "wait",
+            "sand"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-sand-timer.png",
+          "webp": "3d/glass-resin/glass-sand-timer.webp"
+        },
+        {
+          "name": "glass-arch",
+          "title": "Arch",
+          "tags": [
+            "portal",
+            "gate",
+            "doorway",
+            "neon"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-arch.png",
+          "webp": "3d/glass-resin/glass-arch.webp"
+        },
+        {
+          "name": "glass-orbital",
+          "title": "Orbital",
+          "tags": [
+            "atom",
+            "orbit",
+            "planet",
+            "science"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-orbital.png",
+          "webp": "3d/glass-resin/glass-orbital.webp"
+        },
+        {
+          "name": "glass-terrarium",
+          "title": "Terrarium",
+          "tags": [
+            "tree",
+            "nature",
+            "plant",
+            "box",
+            "eco"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-terrarium.png",
+          "webp": "3d/glass-resin/glass-terrarium.webp"
+        },
+        {
+          "name": "glass-wifi",
+          "title": "Wi-Fi block",
+          "tags": [
+            "wifi",
+            "signal",
+            "wireless",
+            "network",
+            "cube"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-wifi.png",
+          "webp": "3d/glass-resin/glass-wifi.webp"
+        },
+        {
+          "name": "glass-idea",
+          "title": "Idea bulb",
+          "tags": [
+            "lightbulb",
+            "idea",
+            "mountain",
+            "creative"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-idea.png",
+          "webp": "3d/glass-resin/glass-idea.webp"
+        },
+        {
+          "name": "glass-key",
+          "title": "Key",
+          "tags": [
+            "key",
+            "lock",
+            "access",
+            "security",
+            "unlock"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-key.png",
+          "webp": "3d/glass-resin/glass-key.webp"
+        },
+        {
+          "name": "glass-mail",
+          "title": "Mail block",
+          "tags": [
+            "envelope",
+            "email",
+            "message",
+            "cube"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-mail.png",
+          "webp": "3d/glass-resin/glass-mail.webp"
+        },
+        {
+          "name": "glass-brain",
+          "title": "Brain",
+          "tags": [
+            "mind",
+            "ai",
+            "think",
+            "intelligence",
+            "cube"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-brain.png",
+          "webp": "3d/glass-resin/glass-brain.webp"
+        },
+        {
+          "name": "glass-telephone",
+          "title": "Telephone",
+          "tags": [
+            "phone",
+            "call",
+            "rotary",
+            "retro"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-telephone.png",
+          "webp": "3d/glass-resin/glass-telephone.webp"
+        },
+        {
+          "name": "glass-globe",
+          "title": "Globe",
+          "tags": [
+            "earth",
+            "world",
+            "planet",
+            "water"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-globe.png",
+          "webp": "3d/glass-resin/glass-globe.webp"
+        },
+        {
+          "name": "glass-crystals",
+          "title": "Crystals",
+          "tags": [
+            "crystal",
+            "gem",
+            "quartz",
+            "cluster"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-crystals.png",
+          "webp": "3d/glass-resin/glass-crystals.webp"
+        },
+        {
+          "name": "glass-blocks",
+          "title": "Blocks",
+          "tags": [
+            "cubes",
+            "stack",
+            "build",
+            "boxes"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-blocks.png",
+          "webp": "3d/glass-resin/glass-blocks.webp"
+        },
+        {
+          "name": "glass-planet",
+          "title": "Planet",
+          "tags": [
+            "saturn",
+            "ring",
+            "space",
+            "sphere"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-planet.png",
+          "webp": "3d/glass-resin/glass-planet.webp"
+        },
+        {
+          "name": "glass-gem",
+          "title": "Gem",
+          "tags": [
+            "jewel",
+            "faceted",
+            "diamond",
+            "polyhedron"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-gem.png",
+          "webp": "3d/glass-resin/glass-gem.webp"
+        },
+        {
+          "name": "glass-chart",
+          "title": "Bar chart",
+          "tags": [
+            "chart",
+            "growth",
+            "analytics",
+            "bars",
+            "stats"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-chart.png",
+          "webp": "3d/glass-resin/glass-chart.webp"
+        },
+        {
+          "name": "glass-hourglass",
+          "title": "Hourglass",
+          "tags": [
+            "time",
+            "timer",
+            "wait",
+            "sand",
+            "violet"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-hourglass.png",
+          "webp": "3d/glass-resin/glass-hourglass.webp"
+        },
+        {
+          "name": "glass-lotus",
+          "title": "Lotus",
+          "tags": [
+            "flower",
+            "calm",
+            "bloom",
+            "petals"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-lotus.png",
+          "webp": "3d/glass-resin/glass-lotus.webp"
+        },
+        {
+          "name": "glass-waves",
+          "title": "Waves",
+          "tags": [
+            "water",
+            "flow",
+            "wave",
+            "sea"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-waves.png",
+          "webp": "3d/glass-resin/glass-waves.webp"
+        },
+        {
+          "name": "glass-vortex",
+          "title": "Vortex",
+          "tags": [
+            "swirl",
+            "spiral",
+            "sphere",
+            "motion"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-vortex.png",
+          "webp": "3d/glass-resin/glass-vortex.webp"
+        },
+        {
+          "name": "glass-core",
+          "title": "Core cube",
+          "tags": [
+            "cube",
+            "glow",
+            "core",
+            "energy",
+            "nested"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-core.png",
+          "webp": "3d/glass-resin/glass-core.webp"
+        },
+        {
+          "name": "glass-bubbles",
+          "title": "Bubbles",
+          "tags": [
+            "spheres",
+            "orbs",
+            "drops",
+            "balls"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-bubbles.png",
+          "webp": "3d/glass-resin/glass-bubbles.webp"
+        },
+        {
+          "name": "glass-rings",
+          "title": "Rings",
+          "tags": [
+            "stack",
+            "rings",
+            "loops",
+            "coils"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-rings.png",
+          "webp": "3d/glass-resin/glass-rings.webp"
+        },
+        {
+          "name": "glass-portal",
+          "title": "Portal",
+          "tags": [
+            "ring",
+            "gate",
+            "mirror",
+            "stage"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-portal.png",
+          "webp": "3d/glass-resin/glass-portal.webp"
+        },
+        {
+          "name": "glass-stairs",
+          "title": "Stairs",
+          "tags": [
+            "steps",
+            "progress",
+            "climb",
+            "growth"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-stairs.png",
+          "webp": "3d/glass-resin/glass-stairs.webp"
+        },
+        {
+          "name": "glass-infinity",
+          "title": "Infinity",
+          "tags": [
+            "loop",
+            "endless",
+            "forever",
+            "ribbon"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-infinity.png",
+          "webp": "3d/glass-resin/glass-infinity.webp"
+        },
+        {
+          "name": "glass-blob",
+          "title": "Blob",
+          "tags": [
+            "jelly",
+            "organic",
+            "shape",
+            "soft"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-blob.png",
+          "webp": "3d/glass-resin/glass-blob.webp"
+        },
+        {
+          "name": "glass-coil",
+          "title": "Coil",
+          "tags": [
+            "spring",
+            "rings",
+            "stack",
+            "gold"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-coil.png",
+          "webp": "3d/glass-resin/glass-coil.webp"
+        },
+        {
+          "name": "glass-network",
+          "title": "Network sphere",
+          "tags": [
+            "globe",
+            "mesh",
+            "nodes",
+            "connection",
+            "web"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-network.png",
+          "webp": "3d/glass-resin/glass-network.webp"
+        },
+        {
+          "name": "glass-pearl",
+          "title": "Pearl",
+          "tags": [
+            "shell",
+            "clam",
+            "ocean",
+            "treasure"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-pearl.png",
+          "webp": "3d/glass-resin/glass-pearl.webp"
+        },
+        {
+          "name": "glass-cross",
+          "title": "Cross",
+          "tags": [
+            "plus",
+            "cubes",
+            "add",
+            "health",
+            "blocks"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-cross.png",
+          "webp": "3d/glass-resin/glass-cross.webp"
+        },
+        {
+          "name": "glass-atom",
+          "title": "Atom",
+          "tags": [
+            "science",
+            "orbit",
+            "nucleus",
+            "energy"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-atom.png",
+          "webp": "3d/glass-resin/glass-atom.webp"
+        },
+        {
+          "name": "glass-ring-chart",
+          "title": "Ring chart",
+          "tags": [
+            "donut",
+            "chart",
+            "pie",
+            "progress",
+            "segments"
+          ],
+          "width": 512,
+          "height": 512,
+          "png": "3d/glass-resin/glass-ring-chart.png",
+          "webp": "3d/glass-resin/glass-ring-chart.webp"
+        }
+      ]
+    }
+  ]
+}

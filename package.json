@@ -18,16 +18,16 @@
     },
     "./svg/*": "./svg/*",
     "./icons.json": "./icons.json",
-    "./illustrations/*": "./illustrations/*",
-    "./illustrations.json": "./illustrations.json"
+    "./3d/*": "./3d/*",
+    "./3d.json": "./3d.json"
   },
   "files": [
     "LICENSE",
     "NOTICE",
     "dist",
+    "3d",
+    "3d.json",
     "icons.json",
-    "illustrations",
-    "illustrations.json",
     "svg"
   ],
   "peerDependencies": {
@@ -45,12 +45,14 @@
     "glossy",
     "app-icons",
     "gradient",
-    "tailwind"
+    "tailwind",
+    "3d-icons",
+    "glass"
   ],
   "scripts": {
     "icons:extract": "python3 scripts/extract.py",
     "build": "node scripts/build.mjs",
-    "illustrations": "python3 scripts/glass.py"
+    "icons:3d": "python3 scripts/glass.py && python3 scripts/glass3d.py"
   },
   "devDependencies": {
     "@tabler/icons": "3.34.1"
