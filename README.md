@@ -1,11 +1,12 @@
 # Glaze Icons
 
-234 glossy app-tile icons. Every icon is a coloured tile with a soft gradient,
+282 glossy app-tile icons. Every icon is a coloured tile with a soft gradient,
 an inset highlight ring and a white glyph, the look of a polished app dock, ready to drop
 into buttons, feature lists, docs and landing pages.
 
-- 234 icons in 17 categories, 19 hues
+- 282 icons in 18 categories, 19 hues
 - The Abstract collection: 40 original geometric glyphs in dark ink
+- The Blossom collection: 48 original multi-colour flowers
 - Plain SVG, framework-free JS, and tree-shakable React components
 - Recolour any icon to any hue, four corner radii, any size
 - Typed names and options
@@ -82,6 +83,20 @@ import { OrbitIcon, BloomIcon } from 'glaze-icons/react';
 <BloomIcon size={48} hue="cream" />
 ```
 
+## The Blossom collection
+
+48 flowers drawn in layers, each with a cream outline, coloured petals and a bright centre:
+lotuses, dahlias, marigolds, pinwheels, rangoli and kolam patterns. They paint their own
+colours, so `ink` does not apply; `hue` changes the tile behind them, which is dark by default.
+The glyphs are built in `scripts/blossom.py`.
+
+```jsx
+import { KamalIcon, MarigoldIcon } from 'glaze-icons/react';
+
+<KamalIcon size={48} />
+<MarigoldIcon size={48} hue="cream" />
+```
+
 ## Categories
 
 - Development: 16
@@ -101,6 +116,7 @@ import { OrbitIcon, BloomIcon } from 'glaze-icons/react';
 - People: 7
 - Devices: 11
 - Abstract: 40
+- Blossom: 48
 
 ## Contributing
 
@@ -109,6 +125,7 @@ Icons are listed in `src/catalog.py`, one line each: name, glyph source, categor
 ```bash
 npm install
 python3 scripts/abstract.py   # draws the Abstract glyphs into src/glyphs/abstract
+python3 scripts/blossom.py    # draws the Blossom flowers into src/glyphs/blossom
 npm run icons:extract   # catalog -> src/data.json
 npm run build           # data -> svg/, dist/, icons.json
 ```
