@@ -1,5 +1,6 @@
 # name | tabler source | category | hue | extra tags
-# source "f:x" = Tabler filled, "o:x" = Tabler outline (stroked)
+# source "f:x" = Tabler filled, "o:x" = Tabler outline (stroked),
+#        "a:x" = Glazed's own Abstract glyph in src/glyphs/abstract (dark ink by default)
 CATALOG = """
 code|o:code|Development|blue|html markup brackets dev
 terminal|o:terminal-2|Development|ink|console shell cli command
@@ -195,6 +196,46 @@ battery|f:battery-4|Devices|green|power charge
 wifi|o:wifi|Devices|blue|wireless network internet
 bluetooth|o:bluetooth|Devices|indigo|wireless pair
 printer|o:printer|Devices|teal|print paper
+fan|a:fan|Abstract|orange|arcs radar signal spread quarter
+strata|a:strata|Abstract|blue|layers discs stack levels sparkle
+pinch|a:pinch|Abstract|pink|hourglass waist time curve
+pinwheel|a:pinwheel|Abstract|green|spin windmill turn blades
+halves|a:halves|Abstract|cream|split balance mirror dot
+arches|a:arches|Abstract|amber|gate arch nested door
+sparkle|a:sparkle|Abstract|orange|star shine twinkle magic
+bowl|a:bowl|Abstract|blue|cup ball rest vessel
+open-book|a:open-book|Abstract|cream|read pages story learn
+ripple|a:ripple|Abstract|amber|waves water flow pattern
+doorway|a:doorway|Abstract|green|arch steps enter portal
+sunburst|a:sunburst|Abstract|orange|sun rays burst light
+crescents|a:crescents|Abstract|blue|moon phases night
+clover|a:clover|Abstract|pink|lucky four leaf lobes
+peaks|a:peaks|Abstract|cream|mountains landscape sun
+tide|a:tide|Abstract|green|dome waves sea horizon
+vortex|a:vortex|Abstract|blue|swirl spin spiral motion
+chalice|a:chalice|Abstract|pink|cup trophy goblet ball
+sprout|a:sprout|Abstract|cream|leaf grow plant seed
+rainbow|a:rainbow|Abstract|amber|arches arcs nested dot
+quatrefoil|a:quatrefoil|Abstract|green|petals x cross shape
+turn|a:turn|Abstract|orange|s curve switch path
+cubic|a:cubic|Abstract|blue|cube box 3d isometric
+mirror|a:mirror|Abstract|pink|reflect bows symmetry
+bloom|a:bloom|Abstract|amber|flower petals blossom
+lodestar|a:lodestar|Abstract|green|compass star north guide
+venn|a:venn|Abstract|orange|overlap circles union
+horizon|a:horizon|Abstract|cream|hills sunset landscape
+gaze|a:gaze|Abstract|pink|eye look vision watch
+pillar|a:pillar|Abstract|blue|column temple classic
+grove|a:grove|Abstract|amber|trees canopy mushrooms
+phases|a:phases|Abstract|cream|moon crescents cycle
+slope|a:slope|Abstract|pink|ramp ball roll motion
+window|a:window|Abstract|blue|frame concave square
+gust|a:gust|Abstract|amber|wind breeze air flow
+lotus|a:lotus|Abstract|green|flower calm petals drop
+stairs|a:stairs|Abstract|orange|steps climb arch progress
+orbit|a:orbit|Abstract|pink|planet ring space moons
+petals|a:petals|Abstract|cream|quarters flower shape
+seed|a:seed|Abstract|green|almond leaf grain
 """
 
 # Tailwind CSS v4 shades: 400 (light), 500 (base), 600 (dark)
@@ -216,5 +257,6 @@ HUES = {
   'fuchsia': ('#ed6bff', '#e12afb', '#c800de'),
   'pink':    ('#fb64b6', '#f6339a', '#e60076'),
   'rose':    ('#ff637e', '#ff2056', '#ec003f'),
+  'cream':   ('#fffaf0', '#f6ecd9', '#ead9bb'),
   'ink':     ('#525252', '#262626', '#171717'),
 }
