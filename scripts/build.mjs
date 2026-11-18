@@ -23,7 +23,7 @@ fs.writeFileSync(path.join(out, 'icons.json'), JSON.stringify({ version: VERSION
 
 // 3. Core ESM: data + toSvg, framework free.
 const coreSrc = fs.readFileSync(path.join(here, 'core.mjs'), 'utf8');
-const data = icons.map(({ name, hue, style, body, category, tags, ink, glyph, multi, shadow }) => ({ name, hue, style, body, category, tags, ...(ink && { ink }), ...(glyph && { glyph }), ...(multi && { multi }), ...(shadow !== undefined && { shadow }) }));
+const data = icons.map(({ name, hue, style, body, category, tags, ink, glyph, multi, shadow, palette }) => ({ name, hue, style, body, category, tags, ...(ink && { ink }), ...(glyph && { glyph }), ...(multi && { multi }), ...(shadow !== undefined && { shadow }), ...(palette && { palette }) }));
 fs.writeFileSync(path.join(out, 'dist', 'index.js'),
 `${coreSrc}
 export const hues = ${JSON.stringify(hues)};
@@ -42,11 +42,11 @@ fs.writeFileSync(path.join(out, 'dist', 'react.js'),
 `import { createElement, forwardRef } from 'react';
 import { glaze } from './index.js';
 function make(name, displayName) {
-  const C = forwardRef(function GlazeIcon({ size = 32, hue, color, ink, radius, glyph, gloss, rim, shadow, stroke, title, className, style, ...rest }, ref) {
+  const C = forwardRef(function GlazeIcon({ size = 32, hue, color, ink, colors, radius, glyph, gloss, rim, shadow, stroke, title, className, style, ...rest }, ref) {
     return createElement('span', {
       ref, className, role: title ? 'img' : undefined, 'aria-label': title, 'aria-hidden': title ? undefined : true,
       style: { display: 'inline-flex', width: size, height: size, lineHeight: 0, filter: 'drop-shadow(0 6px 10px rgb(0 0 0 / 0.12)) drop-shadow(0 2px 3px rgb(0 0 0 / 0.08))', ...style },
-      dangerouslySetInnerHTML: { __html: glaze(name, { size, hue, color, ink, radius, glyph, gloss, rim, shadow, stroke }) }, ...rest,
+      dangerouslySetInnerHTML: { __html: glaze(name, { size, hue, color, ink, colors, radius, glyph, gloss, rim, shadow, stroke }) }, ...rest,
     });
   });
   C.displayName = displayName;
@@ -69,6 +69,8 @@ export interface GlazeOptions {
   color?: string;
   /** Glyph colour as a hex. Default white; Abstract icons default to near-black ink. */
   ink?: string;
+  /** Multi-colour icons only: new colours for the glyph's palette slots, as an array in slot order or a map from original hex to new hex. */
+  colors?: (string | null)[] | Record<string, string>;
   /** sharp | soft | round | circle, or 0 to 16 on the 32-unit grid. Default soft (8). */
   radius?: GlazeRadius;
   /** Glyph size on the 32-unit grid, 8 to 26. Default 17. */
@@ -90,7 +92,8 @@ export declare const RADII: Record<'sharp' | 'soft' | 'round' | 'circle', number
 export declare const DEFAULTS: Required<Pick<GlazeOptions, 'size' | 'glyph' | 'gloss' | 'rim' | 'shadow' | 'stroke'>> & { radius: 'soft' };
 export declare function shadesFrom(hex: string): [string, string, string];
 export declare const hues: Record<GlazeHue, [string, string, string]>;
-export declare const icons: { name: GlazeIconName; hue: GlazeHue; style: 'fill' | 'stroke'; body: string; category: string; tags: string[]; ink?: string }[];
+export declare const icons: { name: GlazeIconName; hue: GlazeHue; style: 'fill' | 'stroke'; body: string; category: string; tags: string[]; ink?: string; multi?: boolean; palette?: string[] }[];
+export declare function repaint(icon: { body: string; palette?: string[] }, colors?: GlazeOptions['colors']): string;
 export declare function isDarkInk(hex: string): boolean;
 export declare function glaze(name: GlazeIconName, opts?: GlazeOptions): string;
 `);

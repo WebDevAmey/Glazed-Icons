@@ -38,6 +38,10 @@ for line in CATALOG.strip().splitlines():
         entry['glyph'] = 20  # bold shapes read best a little larger
     if kind == 'b':
         entry['multi'] = True  # paints its own colours; ink does not apply
+        seen_c = []
+        for c in re.findall(r'fill="(#[0-9a-fA-F]{3,8})"', body):
+            if c.lower() not in seen_c: seen_c.append(c.lower())
+        entry['palette'] = seen_c  # slot 0 is the outline
         entry['glyph'] = 24
         entry['shadow'] = 0.3
     icons.append(entry)

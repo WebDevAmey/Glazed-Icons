@@ -30,6 +30,22 @@ export function shadesFrom(hex) {
   return [toHex(mix(base, [255, 255, 255], 0.26)), toHex(base), toHex(mix(base, [0, 0, 0], 0.16))];
 }
 
+/**
+ * Recolours a multi-colour glyph. `colors` is either an array matching the icon's
+ * palette slot by slot (null or '' keeps a slot) or a map from original hex to new hex.
+ */
+export function repaint(icon, colors) {
+  if (!colors || !icon.palette) return icon.body;
+  const map = {};
+  if (Array.isArray(colors)) icon.palette.forEach((c, i) => { if (colors[i]) map[c.toLowerCase()] = colors[i]; });
+  else for (const [k, v] of Object.entries(colors)) if (v) map[k.toLowerCase()] = v;
+  if (!Object.keys(map).length) return icon.body;
+  return icon.body.replace(/(fill|stroke)="(#[0-9a-fA-F]{3,8})"/g, (m, attr, hex) => {
+    const to = map[hex.toLowerCase()];
+    return to && /^#[0-9a-fA-F]{3,8}$/.test(to) ? `${attr}="${to}"` : m;
+  });
+}
+
 /** True when a glyph colour is dark enough that a drop shadow would muddy it. */
 export function isDarkInk(hex) {
   const [r, g, b] = hexToRgb(hex);
@@ -44,6 +60,7 @@ export function resolve(icon, hues, opts = {}) {
   const dark = isDarkInk(ink);
   return {
     ink,
+    ...(opts.colors && { colors: opts.colors }),
     size: num(opts.size, DEFAULTS.size),
     colors,
     r,
@@ -60,6 +77,7 @@ export function toSvg(icon, hues, opts = {}) {
   const [c4, , c6] = o.colors;
   const { ink: _ink, ...plain } = o;
   const id = `glz-${icon.name}-${hash(JSON.stringify(o.ink === '#fff' ? plain : o))}`;
+  const body = repaint(icon, opts.colors);
   const off = (32 - o.glyph) / 2;
   const k = (o.glyph / 24).toFixed(4);
   const paint = icon.style === 'fill'
@@ -79,6 +97,6 @@ export function toSvg(icon, hues, opts = {}) {
     + (o.gloss > 0 ? `<rect width="32" height="32" rx="${o.r}" fill="url(#${id}-g)"/>` : '')
     + (o.rim > 0 ? `<rect x="1.5" y="1.5" width="29" height="29" rx="${Math.max(o.r - 1.5, 0)}" stroke="url(#${id}-r)"/>` : '')
     + `<rect x="0.5" y="0.5" width="31" height="31" rx="${Math.max(o.r - 0.5, 0)}" stroke="#000" stroke-opacity="0.1"/>`
-    + `<g${o.shadow > 0 ? ` filter="url(#${id}-s)"` : ''}><g transform="translate(${off} ${off}) scale(${k})" ${paint}>${icon.body}</g></g>`
+    + `<g${o.shadow > 0 ? ` filter="url(#${id}-s)"` : ''}><g transform="translate(${off} ${off}) scale(${k})" ${paint}>${body}</g></g>`
     + `</svg>`;
 }
