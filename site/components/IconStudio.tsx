@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { DEFAULTS, RADII, component, shades, toSvg, type Hue, type Icon } from '@/lib/icons';
+import { DEFAULTS, INK, RADII, WHITE, component, glyphOf, shades, shadowOf, toSvg, type Hue, type Icon } from '@/lib/icons';
 import { copyText, downloadBlob, svgToPng, toast } from '@/lib/client';
 import { Tile } from './Tile';
 import { HuePicker } from './Controls';
@@ -14,13 +14,14 @@ const pct = (v: number) => `${Math.round(v * 100)}%`;
 
 /** The interactive half of an icon's page: preview, every knob, code and downloads. */
 export function IconStudio({ icon }: { icon: Icon }) {
-  const fresh = { hue: icon.hue as Hue, color: null as string | null, size: 64, radius: RADII.soft, glyph: DEFAULTS.glyph, gloss: DEFAULTS.gloss, rim: DEFAULTS.rim, shadow: DEFAULTS.shadow, stroke: DEFAULTS.stroke };
+  const ownInk = icon.ink || WHITE;
+  const fresh = { hue: icon.hue as Hue, color: null as string | null, ink: ownInk, size: 64, radius: RADII.soft, glyph: glyphOf(icon), gloss: DEFAULTS.gloss, rim: DEFAULTS.rim, shadow: shadowOf(icon), stroke: DEFAULTS.stroke };
   const [s, setS] = useState(fresh);
   const [ground, setGround] = useState<Ground>('light');
   useEffect(() => { if (document.documentElement.dataset.theme === 'dark') setGround('dark'); }, []);
   const set = <K extends keyof typeof s>(k: K, v: (typeof s)[K]) => setS((p) => ({ ...p, [k]: v }));
 
-  const opts = { hue: s.hue, color: s.color ?? undefined, radius: s.radius, glyph: s.glyph, gloss: s.gloss, rim: s.rim, shadow: s.shadow, stroke: s.stroke };
+  const opts = { hue: s.hue, color: s.color ?? undefined, ink: s.ink, radius: s.radius, glyph: s.glyph, gloss: s.gloss, rim: s.rim, shadow: s.shadow, stroke: s.stroke };
   const svg = (px: number) => toSvg(icon, { ...opts, size: px });
   const dirty = JSON.stringify(s) !== JSON.stringify(fresh);
   const colourName = s.color ? s.color : s.hue;
@@ -62,6 +63,20 @@ export function IconStudio({ icon }: { icon: Icon }) {
               onChange={(h) => setS((p) => ({ ...p, hue: h ?? icon.hue, color: null }))}
               custom={s.color}
               onCustom={(hex) => set('color', hex)}
+            />
+          </div>
+
+          <div>
+            <span className="control-label">Glyph colour</span>
+            <Seg
+              label="Glyph colour"
+              value={s.ink === WHITE ? 'white' : 'ink'}
+              onChange={(v) => setS((p) => {
+                const ink = v === 'white' ? WHITE : INK;
+                const shadowWasDefault = p.shadow === shadowOf(icon, { ink: p.ink });
+                return { ...p, ink, shadow: shadowWasDefault ? shadowOf(icon, { ink }) : p.shadow };
+              })}
+              options={[{ value: 'white', label: 'White' }, { value: 'ink', label: 'Ink' }]}
             />
           </div>
 
