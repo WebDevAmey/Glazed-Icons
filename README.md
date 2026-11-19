@@ -41,7 +41,8 @@ Every option works as a React prop and as a `glaze()` option:
 | `radius` | `sharp`, `soft`, `round`, `circle`, or 0 to 16 | `soft` (8) |
 | `glyph` | glyph size on the 32 grid, 8 to 26 | 17; 20 for Abstract |
 | `gloss` | top light, 0 to 1 | 0.6 |
-| `rim` | glass line inside the edge, 0 to 1 | 0.7 |
+| `rim` | how strong the rim is, 0 to 1 | 0.7 |
+| `rimStyle` | `glass`, `hairline`, `double`, `bevel`, `pressed`, `chrome`, `gold`, `tint` or `none` | glass |
 | `shadow` | glyph shadow, 0 to 1 | 0.6; 0 for dark ink |
 | `stroke` | line weight for outline glyphs, 1 to 3 | 2 |
 | `title` | accessible name; without it the icon is decorative | none |
@@ -105,6 +106,28 @@ them with `colors`, slot by slot (`null` keeps a slot) or by hex:
 ```jsx
 <KamalIcon colors={[null, '#ff2d55', '#ffb3c7']} />
 <KamalIcon colors={{ '#ffc21a': '#ff2d55' }} />
+```
+
+### Rim types
+
+The rim is the line just inside the tile's edge. `rimStyle` picks its kind and `rim` sets
+its strength, so `rimStyle: 'gold', rim: 0.5` gives a soft gold edge.
+
+| Type | Looks like |
+| --- | --- |
+| `glass` | white line, brightest at the top (default) |
+| `hairline` | a fine, even white line |
+| `double` | two thin lines, like a frame |
+| `bevel` | light top left, shade bottom right, so the tile looks raised |
+| `pressed` | the reverse of bevel, so the tile looks pressed in |
+| `chrome` | polished silver |
+| `gold` | polished gold |
+| `tint` | a lighter shade of the tile's own colour |
+| `none` | no rim |
+
+```jsx
+<RocketIcon rimStyle="gold" />
+glaze('rocket', { rimStyle: 'bevel', rim: 1 })
 ```
 
 ## Glass & Resin 3D icons

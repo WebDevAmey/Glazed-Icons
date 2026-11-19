@@ -42,11 +42,11 @@ fs.writeFileSync(path.join(out, 'dist', 'react.js'),
 `import { createElement, forwardRef } from 'react';
 import { glaze } from './index.js';
 function make(name, displayName) {
-  const C = forwardRef(function GlazeIcon({ size = 32, hue, color, ink, colors, radius, glyph, gloss, rim, shadow, stroke, title, className, style, ...rest }, ref) {
+  const C = forwardRef(function GlazeIcon({ size = 32, hue, color, ink, colors, radius, glyph, gloss, rim, rimStyle, shadow, stroke, title, className, style, ...rest }, ref) {
     return createElement('span', {
       ref, className, role: title ? 'img' : undefined, 'aria-label': title, 'aria-hidden': title ? undefined : true,
       style: { display: 'inline-flex', width: size, height: size, lineHeight: 0, filter: 'drop-shadow(0 6px 10px rgb(0 0 0 / 0.12)) drop-shadow(0 2px 3px rgb(0 0 0 / 0.08))', ...style },
-      dangerouslySetInnerHTML: { __html: glaze(name, { size, hue, color, ink, colors, radius, glyph, gloss, rim, shadow, stroke }) }, ...rest,
+      dangerouslySetInnerHTML: { __html: glaze(name, { size, hue, color, ink, colors, radius, glyph, gloss, rim, rimStyle, shadow, stroke }) }, ...rest,
     });
   });
   C.displayName = displayName;
@@ -60,6 +60,7 @@ const hueUnion = Object.keys(hues).map((h) => `'${h}'`).join(' | ');
 const nameUnion = icons.map((i) => `'${i.name}'`).join(' | ');
 const optsType = `export type GlazeHue = ${hueUnion};
 export type GlazeRadius = 'sharp' | 'soft' | 'round' | 'circle' | number;
+export type GlazeRimStyle = 'glass' | 'hairline' | 'double' | 'bevel' | 'pressed' | 'chrome' | 'gold' | 'tint' | 'none';
 export interface GlazeOptions {
   /** Pixel size of the tile. Default 32. */
   size?: number;
@@ -77,8 +78,10 @@ export interface GlazeOptions {
   glyph?: number;
   /** Top light, 0 to 1. Default 0.6. */
   gloss?: number;
-  /** Glass line inside the edge, 0 to 1. Default 0.7. */
+  /** How strong the rim is, 0 to 1. Default 0.7. */
   rim?: number;
+  /** The kind of rim: glass, hairline, double, bevel, pressed, chrome, gold, tint or none. Default glass. */
+  rimStyle?: GlazeRimStyle;
   /** Glyph shadow, 0 to 1. Default 0.6. */
   shadow?: number;
   /** Line weight for outline glyphs, 1 to 3. Default 2. */
@@ -89,7 +92,8 @@ export interface GlazeOptions {
 export type GlazeIconName = ${nameUnion};`;
 fs.writeFileSync(path.join(out, 'dist', 'index.d.ts'), `${optsType}
 export declare const RADII: Record<'sharp' | 'soft' | 'round' | 'circle', number>;
-export declare const DEFAULTS: Required<Pick<GlazeOptions, 'size' | 'glyph' | 'gloss' | 'rim' | 'shadow' | 'stroke'>> & { radius: 'soft' };
+export declare const DEFAULTS: Required<Pick<GlazeOptions, 'size' | 'glyph' | 'gloss' | 'rim' | 'shadow' | 'stroke'>> & { radius: 'soft'; rimStyle: 'glass' };
+export declare const RIM_STYLES: GlazeRimStyle[];
 export declare function shadesFrom(hex: string): [string, string, string];
 export declare const hues: Record<GlazeHue, [string, string, string]>;
 export declare const icons: { name: GlazeIconName; hue: GlazeHue; style: 'fill' | 'stroke'; body: string; category: string; tags: string[]; ink?: string; multi?: boolean; palette?: string[] }[];
