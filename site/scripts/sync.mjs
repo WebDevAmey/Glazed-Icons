@@ -13,14 +13,3 @@ data.icons = data.icons.map(({ name, category, hue, tags, style, body, ink, glyp
 fs.writeFileSync(path.join(lib, 'data.json'), JSON.stringify(data));
 fs.copyFileSync(path.join(src, 'core.mjs'), path.join(lib, 'core.mjs'));
 console.log(`synced ${data.icons.length} icons`);
-
-// 3D icons: copy the manifest and the files exactly as the package ships them.
-const repo = path.join(site, '..');
-const set3d = JSON.parse(fs.readFileSync(path.join(repo, '3d.json'), 'utf8'));
-fs.writeFileSync(path.join(lib, '3d.json'), JSON.stringify(set3d));
-for (const c of set3d.collections) {
-  const dest = path.join(site, 'public', '3d', c.id);
-  fs.mkdirSync(dest, { recursive: true });
-  for (const it of c.items) for (const f of [it.png, it.webp]) fs.copyFileSync(path.join(repo, f), path.join(dest, path.basename(f)));
-  console.log(`synced ${c.items.length} 3D icons (${c.id})`);
-}
