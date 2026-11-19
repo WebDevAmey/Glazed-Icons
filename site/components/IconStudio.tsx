@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { DEFAULTS, INK, RADII, WHITE, component, glyphOf, shades, shadowOf, toSvg, type Hue, type Icon } from '@/lib/icons';
+import { DEFAULTS, INK, RADII, RIM_LABELS, RIM_STYLES, WHITE, component, glyphOf, shades, shadowOf, toSvg, type Hue, type Icon, type RimStyle } from '@/lib/icons';
 import { copyText, downloadBlob, svgToPng, toast } from '@/lib/client';
 import { Tile } from './Tile';
 import { HuePicker } from './Controls';
@@ -25,13 +25,13 @@ const pct = (v: number) => `${Math.round(v * 100)}%`;
 /** The interactive half of an icon's page: preview, every knob, code and downloads. */
 export function IconStudio({ icon }: { icon: Icon }) {
   const ownInk = icon.ink || WHITE;
-  const fresh = { hue: icon.hue as Hue, color: null as string | null, ink: ownInk, colors: {} as Record<string, string>, size: 64, radius: RADII.soft, glyph: glyphOf(icon), gloss: DEFAULTS.gloss, rim: DEFAULTS.rim, shadow: shadowOf(icon), stroke: DEFAULTS.stroke };
+  const fresh = { hue: icon.hue as Hue, color: null as string | null, ink: ownInk, colors: {} as Record<string, string>, size: 64, radius: RADII.soft, glyph: glyphOf(icon), gloss: DEFAULTS.gloss, rim: DEFAULTS.rim, rimStyle: 'glass' as RimStyle, shadow: shadowOf(icon), stroke: DEFAULTS.stroke };
   const [s, setS] = useState(fresh);
   const [ground, setGround] = useState<Ground>('light');
   useEffect(() => { if (document.documentElement.dataset.theme === 'dark') setGround('dark'); }, []);
   const set = <K extends keyof typeof s>(k: K, v: (typeof s)[K]) => setS((p) => ({ ...p, [k]: v }));
 
-  const opts = { hue: s.hue, color: s.color ?? undefined, ink: s.ink, colors: Object.keys(s.colors).length ? s.colors : undefined, radius: s.radius, glyph: s.glyph, gloss: s.gloss, rim: s.rim, shadow: s.shadow, stroke: s.stroke };
+  const opts = { hue: s.hue, color: s.color ?? undefined, ink: s.ink, colors: Object.keys(s.colors).length ? s.colors : undefined, radius: s.radius, glyph: s.glyph, gloss: s.gloss, rim: s.rim, rimStyle: s.rimStyle, shadow: s.shadow, stroke: s.stroke };
   const svg = (px: number) => toSvg(icon, { ...opts, size: px });
   const dirty = JSON.stringify(s) !== JSON.stringify(fresh);
   const colourName = s.color ? s.color : s.hue === 'ink' ? 'a dark tile' : s.hue;
@@ -124,12 +124,31 @@ export function IconStudio({ icon }: { icon: Icon }) {
             />
           </div>}
 
+          <div>
+            <span className="control-label" id="rim-label">Rim</span>
+            <div className="rim-picker" role="radiogroup" aria-labelledby="rim-label">
+              {RIM_STYLES.map((r) => (
+                <button
+                  key={r}
+                  type="button"
+                  role="radio"
+                  aria-checked={s.rimStyle === r}
+                  className="rim-option"
+                  onClick={() => setS((p) => ({ ...p, rimStyle: r, rim: r !== 'none' && p.rim === 0 ? DEFAULTS.rim : p.rim }))}
+                >
+                  <Tile icon={icon} {...opts} rimStyle={r} rim={r === 'none' ? 0 : Math.max(s.rim, 0.85)} glyph={Math.min(s.glyph, 17)} size={40} />
+                  <span>{RIM_LABELS[r]}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="sliders">
             <Slider label="Size" value={s.size} min={16} max={256} step={4} onChange={(v) => set('size', v)} format={(v) => `${v}px`} />
             <Slider label="Corners" value={s.radius} min={0} max={16} step={0.5} onChange={(v) => set('radius', v)} format={(v) => (v >= 16 ? 'Circle' : `${v}`)} />
             <Slider label="Glyph" value={s.glyph} min={10} max={26} step={0.5} onChange={(v) => set('glyph', v)} format={(v) => `${Math.round((v / 32) * 100)}%`} />
             <Slider label="Gloss" value={s.gloss} min={0} max={1} step={0.01} onChange={(v) => set('gloss', v)} format={pct} />
-            <Slider label="Rim" value={s.rim} min={0} max={1} step={0.01} onChange={(v) => set('rim', v)} format={pct} />
+            <Slider label="Rim strength" value={s.rimStyle === 'none' ? 0 : s.rim} min={0} max={1} step={0.01} onChange={(v) => setS((p) => ({ ...p, rim: v, rimStyle: p.rimStyle === 'none' && v > 0 ? 'glass' : p.rimStyle }))} format={pct} />
             <Slider label="Shadow" value={s.shadow} min={0} max={1} step={0.01} onChange={(v) => set('shadow', v)} format={pct} />
             {icon.style === 'stroke' && (
               <Slider label="Line weight" value={s.stroke} min={1} max={3} step={0.25} onChange={(v) => set('stroke', v)} format={(v) => `${v}`} />

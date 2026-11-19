@@ -57,7 +57,8 @@ export function Launch() {
               <tr><td><code>radius</code></td><td><code>sharp</code>, <code>soft</code>, <code>round</code>, <code>circle</code> or 0 to 16</td><td><code>soft</code> (8)</td></tr>
               <tr><td><code>glyph</code></td><td>glyph size on the 32 grid, 8 to 26</td><td>17; 20 for Abstract</td></tr>
               <tr><td><code>gloss</code></td><td>top light, 0 to 1</td><td>0.6</td></tr>
-              <tr><td><code>rim</code></td><td>glass line inside the edge, 0 to 1</td><td>0.7</td></tr>
+              <tr><td><code>rim</code></td><td>how strong the rim is, 0 to 1</td><td>0.7</td></tr>
+              <tr><td><code>rimStyle</code></td><td>the kind of rim: <code>glass</code>, <code>hairline</code>, <code>double</code>, <code>bevel</code>, <code>pressed</code>, <code>chrome</code>, <code>gold</code>, <code>tint</code> or <code>none</code></td><td>glass</td></tr>
               <tr><td><code>shadow</code></td><td>glyph shadow, 0 to 1</td><td>0.6</td></tr>
               <tr><td><code>stroke</code></td><td>line weight for outline glyphs, 1 to 3</td><td>2</td></tr>
               <tr><td><code>title</code></td><td>string, the accessible name</td><td>none, so the icon is decorative</td></tr>
