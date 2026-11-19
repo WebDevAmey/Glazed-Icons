@@ -2,7 +2,7 @@ import type { CSSProperties } from 'react';
 import { RADII, bodyOf, glyphOf, shadowOf, inkOf, shades, type Icon, type TileOptions } from '@/lib/icons';
 
 /**
- * The CSS twin of the package's SVG tile: gradient fill, top gloss, glass rim,
+ * The CSS twin of the package's SVG tile: gradient fill, top gloss, a rim of any type,
  * hairline edge and a white glyph with a short shadow. Every layer reads a CSS
  * variable, so sliders update it without re-rendering the glyph.
  */
@@ -26,7 +26,7 @@ export function Tile({ icon, size = 48, className = '', style, ...opts }: TileOp
     ? { fill: ink }
     : { fill: 'none', stroke: ink, strokeWidth: opts.stroke ?? 2, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const };
   return (
-    <span className={`tile ${className}`} style={vars} aria-hidden="true">
+    <span className={`tile ${className}`} style={vars} data-rim={opts.rimStyle && opts.rimStyle !== 'glass' ? opts.rimStyle : undefined} aria-hidden="true">
       <svg viewBox="0 0 24 24" {...paint} dangerouslySetInnerHTML={{ __html: bodyOf(icon, opts) }} />
     </span>
   );

@@ -1,9 +1,12 @@
 import data from './generated/data.json';
 // Plain ESM copied from the library by scripts/sync.mjs
-import { toSvg as coreToSvg, shadesFrom, isDarkInk, repaint as coreRepaint, DEFAULTS as CORE_DEFAULTS } from './generated/core.mjs';
+import { toSvg as coreToSvg, shadesFrom, isDarkInk, repaint as coreRepaint, DEFAULTS as CORE_DEFAULTS, RIM_STYLES as CORE_RIM_STYLES } from './generated/core.mjs';
 
 export type Hue = keyof typeof data.hues;
 export type Radius = 'sharp' | 'soft' | 'round' | 'circle';
+export type RimStyle = 'glass' | 'hairline' | 'double' | 'bevel' | 'pressed' | 'chrome' | 'gold' | 'tint' | 'none';
+export const RIM_STYLES = CORE_RIM_STYLES as RimStyle[];
+export const RIM_LABELS: Record<RimStyle, string> = { glass: 'Glass', hairline: 'Hairline', double: 'Double', bevel: 'Bevel', pressed: 'Pressed', chrome: 'Chrome', gold: 'Gold', tint: 'Tint', none: 'None' };
 export interface Icon {
   name: string;
   category: string;
@@ -34,6 +37,7 @@ export interface TileOptions {
   glyph?: number;
   gloss?: number;
   rim?: number;
+  rimStyle?: RimStyle;
   shadow?: number;
   stroke?: number;
 }
@@ -96,7 +100,8 @@ export function changed(ic: Icon, opts: TileOptions) {
   }
   if (opts.glyph !== undefined && opts.glyph !== glyphOf(ic)) out.push(['glyph', opts.glyph]);
   if (opts.gloss !== undefined && round(opts.gloss) !== DEFAULTS.gloss) out.push(['gloss', round(opts.gloss)]);
-  if (opts.rim !== undefined && round(opts.rim) !== DEFAULTS.rim) out.push(['rim', round(opts.rim)]);
+  if (opts.rimStyle && opts.rimStyle !== 'glass') out.push(['rimStyle', opts.rimStyle]);
+  if (opts.rim !== undefined && round(opts.rim) !== DEFAULTS.rim && opts.rimStyle !== 'none') out.push(['rim', round(opts.rim)]);
   if (opts.shadow !== undefined && round(opts.shadow) !== shadowOf(ic, opts)) out.push(['shadow', round(opts.shadow)]);
   if (ic.style === 'stroke' && opts.stroke !== undefined && opts.stroke !== DEFAULTS.stroke) out.push(['stroke', opts.stroke]);
   return out;

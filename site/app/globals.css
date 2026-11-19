@@ -173,16 +173,31 @@ button { font: inherit; color: inherit; }
     0 calc(var(--s) / 8) calc(var(--s) / 4.5) calc(var(--s) / -12) rgb(29 20 60 / 0.22),
     0 calc(var(--s) / 32) calc(var(--s) / 16) rgb(29 20 60 / 0.1);
 }
-.tile::before {
-  content: ''; position: absolute; inset: calc(var(--s) * 1.5 / 32); border-radius: calc(var(--s) * max(var(--rad) - 1.5, 0) / 32);
-  padding: max(1px, calc(var(--s) / 32));
-  background: linear-gradient(180deg, rgb(255 255 255 / calc(0.6 * var(--rim))), rgb(255 255 255 / calc(0.16 * var(--rim))) 50%, rgb(255 255 255 / calc(0.28 * var(--rim))));
+.tile::before, .tile::after {
+  /* the rim: a ring cut from a box with a mask; geometry and paint come from --ri, --rp and --rbg */
+  --ri: 1.5; --rp: 1;
+  --rbg: linear-gradient(180deg, rgb(255 255 255 / calc(0.6 * var(--rim))), rgb(255 255 255 / calc(0.16 * var(--rim))) 50%, rgb(255 255 255 / calc(0.28 * var(--rim))));
+  content: ''; position: absolute; inset: calc(var(--s) * var(--ri) / 32); border-radius: calc(var(--s) * max(var(--rad) - var(--ri), 0) / 32);
+  padding: max(0.75px, calc(var(--s) * var(--rp) / 32));
+  background: var(--rbg);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
   pointer-events: none;
 }
+.tile::after { display: none; }
+/* rim types, matching RIM_STYLES in the library */
+.tile[data-rim='none']::before { display: none; }
+.tile[data-rim='hairline']::before { --ri: 1; --rp: 0.5; --rbg: rgb(255 255 255 / calc(0.5 * var(--rim))); }
+.tile[data-rim='double']::before { --ri: 0.95; --rp: 0.6; --rbg: rgb(255 255 255 / calc(0.55 * var(--rim))); }
+.tile[data-rim='double']::after { display: block; --ri: 2.75; --rp: 0.5; --rbg: rgb(255 255 255 / calc(0.3 * var(--rim))); }
+.tile[data-rim='bevel']::before { --ri: 0.7; --rp: 1.6; --rbg: linear-gradient(135deg, rgb(255 255 255 / calc(0.75 * var(--rim))), rgb(255 255 255 / calc(0.08 * var(--rim))) 50%, rgb(0 0 0 / 0) 50%, rgb(0 0 0 / calc(0.3 * var(--rim)))); }
+.tile[data-rim='pressed']::before { --ri: 0.7; --rp: 1.6; --rbg: linear-gradient(135deg, rgb(0 0 0 / calc(0.32 * var(--rim))), rgb(0 0 0 / 0) 50%, rgb(255 255 255 / calc(0.06 * var(--rim))) 50%, rgb(255 255 255 / calc(0.6 * var(--rim)))); }
+.tile[data-rim='chrome']::before, .tile[data-rim='gold']::before, .tile[data-rim='tint']::before { --ri: 0.5; --rp: 1.5; opacity: var(--rim); }
+.tile[data-rim='chrome']::before { --rbg: linear-gradient(180deg, #fff, #a7aebb 30%, #f4f6f9 52%, #6b7280 78%, #e2e5ea); }
+.tile[data-rim='gold']::before { --rbg: linear-gradient(180deg, #fff4c7, #d6a21c 30%, #fff0b0 52%, #a07400 78%, #f2d36b); }
+.tile[data-rim='tint']::before { --rbg: linear-gradient(180deg, color-mix(in srgb, var(--c4), #fff 55%), color-mix(in srgb, color-mix(in srgb, var(--c4), #fff 55%) 55%, transparent)); }
 .tile svg { width: calc(var(--glyph) / 32 * 100%); height: calc(var(--glyph) / 32 * 100%); overflow: visible; filter: drop-shadow(0 calc(var(--s) / 32 * (0.4 + 0.6 * var(--sh))) calc(var(--s) / 32 * (0.35 + 0.55 * var(--sh))) rgb(0 0 0 / calc(0.32 * var(--sh)))); }
 
 /* ---------- nav: a glazed bar, built like one of the tiles ---------- */
@@ -339,6 +354,12 @@ button { font: inherit; color: inherit; }
 .play-grid .tile { --s: 52px; transition: transform 240ms var(--ease-out); }
 @media (hover: hover) and (pointer: fine) { .play-grid a:hover .tile { transform: translateY(-2px); } }
 @media (max-width: 520px) { .play-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } .play-grid .tile { --s: 48px; } }
+.rim-picker { display: grid; grid-template-columns: repeat(auto-fill, minmax(68px, 1fr)); gap: 6px; }
+.rim-option { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 4px 8px; border: 1px solid transparent; border-radius: 14px; background: transparent; color: var(--muted); font: inherit; font-size: 0.75rem; font-weight: 500; cursor: pointer; transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease, transform 140ms var(--ease-out); }
+.rim-option:hover { background: var(--sunken); color: var(--ink); }
+.rim-option:active { transform: scale(0.96); }
+.rim-option[aria-checked='true'] { border-color: var(--line-2); background: var(--surface); color: var(--ink); box-shadow: var(--ring); }
+.rim-option:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 .control-label { font-size: 0.8125rem; color: var(--muted); margin-bottom: 8px; display: block; }
 
 /* anatomy */
