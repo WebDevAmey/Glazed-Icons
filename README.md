@@ -7,7 +7,6 @@ into buttons, feature lists, docs and landing pages.
 - 282 icons in 18 categories, 19 hues
 - The Abstract collection: 40 original geometric glyphs in dark ink
 - The Blossom collection: 48 original multi-colour flowers
-- Glass & Resin: 40 translucent 3D icons on transparent backgrounds, PNG and WebP
 - Plain SVG, framework-free JS, and tree-shakable React components
 - Recolour any icon to any hue, four corner radii, any size
 - Typed names and options
@@ -129,25 +128,6 @@ its strength, so `rimStyle: 'gold', rim: 0.5` gives a soft gold edge.
 <RocketIcon rimStyle="gold" />
 glaze('rocket', { rimStyle: 'bevel', rim: 1 })
 ```
-
-## Glass & Resin 3D icons
-
-Forty translucent 3D icons in glass and resin: prisms, orbits, crystals, portals, a globe,
-a lotus and more. Each one is cut out on a transparent background, with its own soft
-shadow and coloured glow kept as a translucent layer, so it sits on light and dark
-surfaces alike.
-
-```html
-<img src="node_modules/glaze-icons/3d/glass-resin/glass-prism.webp" width="64" height="64" alt="Prism">
-```
-
-Every icon is a 512 × 512 px lossless PNG and WebP, centred with even padding, so they line
-up at any size. `3d.json` lists each one with its name, title and tags.
-
-They are made from the source sheet in `src/sources/` in two steps: `scripts/glass.py` splits
-the sheet into tiles, and `scripts/glass3d.py` upscales each tile 4× with Real-ESRGAN, masks
-the object, unmixes the pastel background from its edges and keeps the shadow as alpha.
-Run both with `npm run icons:3d`.
 
 ## Categories
 

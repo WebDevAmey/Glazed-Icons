@@ -17,16 +17,12 @@
       "default": "./dist/react.js"
     },
     "./svg/*": "./svg/*",
-    "./icons.json": "./icons.json",
-    "./3d/*": "./3d/*",
-    "./3d.json": "./3d.json"
+    "./icons.json": "./icons.json"
   },
   "files": [
     "LICENSE",
     "NOTICE",
     "dist",
-    "3d",
-    "3d.json",
     "icons.json",
     "svg"
   ],
@@ -45,14 +41,11 @@
     "glossy",
     "app-icons",
     "gradient",
-    "tailwind",
-    "3d-icons",
-    "glass"
+    "tailwind"
   ],
   "scripts": {
     "icons:extract": "python3 scripts/extract.py",
-    "build": "node scripts/build.mjs",
-    "icons:3d": "python3 scripts/glass.py && python3 scripts/glass3d.py"
+    "build": "node scripts/build.mjs"
   },
   "devDependencies": {
     "@tabler/icons": "3.34.1"
